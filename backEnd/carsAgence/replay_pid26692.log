@@ -1,6 +1,0 @@
-version 2
-JvmtiExport can_access_local_variables 160
-JvmtiExport can_hotswap_or_post_breakpoint 0
-JvmtiExport can_post_on_exceptions 100
-# 223 ciObject found
-instanceKlass java/util/zip/ZipFile$Source
