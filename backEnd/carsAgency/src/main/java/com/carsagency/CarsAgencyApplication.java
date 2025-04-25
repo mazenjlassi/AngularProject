@@ -9,8 +9,9 @@ public class CarsAgencyApplication {
 
 
 	public static void main(String[] args) {
-
-
+		Cars cars = new Cars();
+		cars.setModel("peugeot 206");
+		System.out.println(cars.getModel());
 		SpringApplication.run(CarsAgencyApplication.class, args);
 	}
 

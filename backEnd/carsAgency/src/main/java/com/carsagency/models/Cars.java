@@ -3,8 +3,9 @@ package com.carsagency.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
-    @Data
+
     @Entity
+    @Data
     public class Cars {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
