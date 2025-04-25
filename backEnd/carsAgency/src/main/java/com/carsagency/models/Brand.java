@@ -1,10 +1,12 @@
 package com.carsagency.models;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
 @Entity
+@Data
 public class Brand {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,7 +15,5 @@ public class Brand {
     private String name;
 
     @OneToMany(mappedBy = "brand")
-    private List<Cars> cars;
-
-    // Constructors, getters, setters
+    private List<Car> cars;
 }

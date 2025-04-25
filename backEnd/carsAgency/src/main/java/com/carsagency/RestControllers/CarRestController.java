@@ -1,8 +1,8 @@
 package com.carsagency.RestControllers;
 
 
-import com.carsagency.Services.CarsService;
-import com.carsagency.models.Cars;
+import com.carsagency.Services.CarService;
+import com.carsagency.models.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,15 +12,15 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/cars")
-public class CarsRestController {
+public class CarRestController {
 
     @Autowired
-    private CarsService carsService;
+    private CarService carService;
 
     @PostMapping("/add")
-    public ResponseEntity<Cars> add(@RequestBody Cars cars) {
+    public ResponseEntity<Car> add(@RequestBody Car cars) {
         try {
-            carsService.add(cars);
+            carService.add(cars);
             return new ResponseEntity<>(cars, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -28,9 +28,9 @@ public class CarsRestController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Cars>> all() {
+    public ResponseEntity<List<Car>> all() {
         try {
-            List<Cars> carsList = carsService.findAll();
+            List<Car> carsList = carService.findAll();
             if (carsList.isEmpty()) {
                 return new ResponseEntity<>(carsList, HttpStatus.NO_CONTENT);
             }
@@ -41,8 +41,8 @@ public class CarsRestController {
     }
 
     @GetMapping("/findById/{id}")
-    public ResponseEntity<Cars> findById(@PathVariable Long id) {
-        Cars cars = carsService.find(id);
+    public ResponseEntity<Car> findById(@PathVariable Long id) {
+        Car cars = carService.find(id);
         if (cars != null) {
             return new ResponseEntity<>(cars, HttpStatus.OK);
         } else {
@@ -51,11 +51,11 @@ public class CarsRestController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<Cars> update(@PathVariable Long id, @RequestBody Cars cars) {
-        Cars existingCar = carsService.find(id);
+    public ResponseEntity<Car> update(@PathVariable Long id, @RequestBody Car car) {
+        Car existingCar = carService.find(id);
         if (existingCar != null) {
-            carsService.update(cars);
-            return new ResponseEntity<>(cars, HttpStatus.OK);
+            carService.update(car);
+            return new ResponseEntity<>(car, HttpStatus.OK);
         }
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
@@ -63,7 +63,7 @@ public class CarsRestController {
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<HttpStatus> delete(@PathVariable Long id) {
         try {
-            carsService.delete(id);
+            carService.delete(id);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);

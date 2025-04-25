@@ -1,10 +1,12 @@
 package com.carsagency.models;
 
 import jakarta.persistence.*;
+import lombok.Data;
 
 import java.util.List;
 
 @Entity
+@Data
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,8 +17,19 @@ public class Customer {
     private String email;
     private String password;
 
-    @OneToMany(mappedBy = "customer")
-    private List<Cars> cars;
+    @ManyToMany
+    @JoinTable(
+            name = "saved_cars",
+            joinColumns = @JoinColumn(name = "customer_id"),
+            inverseJoinColumns = @JoinColumn(name = "car_id")
+    )
+    private List<Car> savedCars;
 
-    // Constructors, getters, setters
+    @ManyToMany
+    @JoinTable(
+            name = "purchased_cars",
+            joinColumns = @JoinColumn(name = "customer_id"),
+            inverseJoinColumns = @JoinColumn(name = "car_id")
+    )
+    private List<Car> purchasedCars;
 }

@@ -1,0 +1,29 @@
+package com.carsagency.Services;
+
+
+import com.carsagency.Repositories.CarRepository;
+import com.carsagency.models.Car;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class CarService {
+    @Autowired
+    private CarRepository carRepository;
+
+    public Car add(Car car ){return carRepository.save(car);}
+
+    public Car find(Long id){return  carRepository.findById(id).get();}
+
+    public void delete(Long id){carRepository.deleteById(id);}
+
+    public Car update(Car cars) { return carRepository.saveAndFlush(cars); }
+
+    public List<Car> findAll() { return carRepository.findAll(); }
+
+
+
+
+}
