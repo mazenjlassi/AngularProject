@@ -1,0 +1,2661 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (malloc) failed to allocate 5000 bytes for AllocateHeap
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#
+#  
+11th Gen Intel(R) Core(TM) i5-1135G7 @ 2.40GHz, 8 cores, 15G,  Windows 11 , 64 bit Build 26100 (10.0.26100.3775)
+Time: Tue Apr 22 17:31:55 2025 Afr. centrale Ouest elapsed time: 125.178816 seconds (0d 0h 2m 5s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001a9715d2570):  JavaThread "main"             [_thread_in_Java, id=13012, stack(0x0000000fafb00000,0x0000000fafc00000) (1024K)]
+
+Stack: [0x0000000fafb00000,0x0000000fafc00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6ca6d9]
+V  [jvm.dll+0x854f51]
+V  [jvm.dll+0x85747e]
+V  [jvm.dll+0x857b53]
+V  [jvm.dll+0x27dcc6]
+V  [jvm.dll+0xbf7d7]
+V  [jvm.dll+0x84bec0]
+V  [jvm.dll+0x28940d]
+V  [jvm.dll+0x28ace9]
+V  [jvm.dll+0x28e01c]
+C  0x000001a907587d2a
+
+The last pc belongs to UncommonTrapBlob (printed below).
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+v  ~UncommonTrapBlob 0x000001a907587d2a
+J 3417 c2 org.codehaus.plexus.util.xml.pull.MXParser.parseComment()V (590 bytes) @ 0x000001a907c3fe64 [0x000001a907c3f740+0x0000000000000724]
+j  org.codehaus.plexus.util.xml.pull.MXParser.parseProlog()I+289
+J 3116 c2 org.codehaus.plexus.util.xml.pull.MXParser.nextImpl()I (1203 bytes) @ 0x000001a907c1d698 [0x000001a907c1c860+0x0000000000000e38]
+J 2879 c2 org.codehaus.plexus.util.xml.pull.MXParser.next()I (10 bytes) @ 0x000001a907bf1464 [0x000001a907bf1420+0x0000000000000044]
+j  org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(Lorg/codehaus/plexus/util/xml/pull/XmlPullParser;Z)Lorg/apache/maven/model/Model;+120
+j  org.apache.maven.model.io.xpp3.MavenXpp3Reader.read(Ljava/io/Reader;Z)Lorg/apache/maven/model/Model;+38
+j  org.apache.maven.model.io.DefaultModelReader.read(Ljava/io/Reader;ZLorg/apache/maven/model/InputSource;)Lorg/apache/maven/model/Model;+27
+j  org.apache.maven.model.io.DefaultModelReader.read(Ljava/io/InputStream;Ljava/util/Map;)Lorg/apache/maven/model/Model;+24
+j  org.apache.maven.model.building.DefaultModelProcessor.read(Ljava/io/InputStream;Ljava/util/Map;)Lorg/apache/maven/model/Model;+6
+j  org.apache.maven.model.building.DefaultModelBuilder.readModel(Lorg/apache/maven/model/building/ModelSource;Ljava/io/File;Lorg/apache/maven/model/building/ModelBuildingRequest;Lorg/apache/maven/model/building/DefaultModelProblemCollector;)Lorg/apache/maven/model/Model;+144
+j  org.apache.maven.model.building.DefaultModelBuilder.build(Lorg/apache/maven/model/building/ModelBuildingRequest;Ljava/util/Collection;)Lorg/apache/maven/model/building/ModelBuildingResult;+47
+j  org.apache.maven.model.building.DefaultModelBuilder.build(Lorg/apache/maven/model/building/ModelBuildingRequest;)Lorg/apache/maven/model/building/ModelBuildingResult;+9
+j  org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.loadPom(Lorg/eclipse/aether/RepositorySystemSession;Lorg/eclipse/aether/resolution/ArtifactDescriptorRequest;Lorg/eclipse/aether/resolution/ArtifactDescriptorResult;)Lorg/apache/maven/model/Model;+648
+j  org.apache.maven.repository.internal.DefaultArtifactDescriptorReader.readArtifactDescriptor(Lorg/eclipse/aether/RepositorySystemSession;Lorg/eclipse/aether/resolution/ArtifactDescriptorRequest;)Lorg/eclipse/aether/resolution/ArtifactDescriptorResult;+13
+j  org.eclipse.aether.internal.impl.DefaultRepositorySystem.readArtifactDescriptor(Lorg/eclipse/aether/RepositorySystemSession;Lorg/eclipse/aether/resolution/ArtifactDescriptorRequest;)Lorg/eclipse/aether/resolution/ArtifactDescriptorResult;+18
+j  org.apache.maven.plugin.internal.DefaultPluginDependenciesResolver.resolve(Lorg/apache/maven/model/Plugin;Ljava/util/List;Lorg/eclipse/aether/RepositorySystemSession;)Lorg/eclipse/aether/artifact/Artifact;+70
+j  org.apache.maven.plugin.internal.DefaultMavenPluginManager.lambda$getPluginDescriptor$0(Lorg/apache/maven/model/Plugin;Ljava/util/List;Lorg/eclipse/aether/RepositorySystemSession;)Lorg/apache/maven/plugin/descriptor/PluginDescriptor;+7
+j  org.apache.maven.plugin.internal.DefaultMavenPluginManager$$Lambda+0x000001a914209de8.load()Lorg/apache/maven/plugin/descriptor/PluginDescriptor;+16
+j  org.apache.maven.plugin.DefaultPluginDescriptorCache.lambda$get$0(Lorg/apache/maven/plugin/PluginDescriptorCache$PluginDescriptorSupplier;Lorg/apache/maven/plugin/PluginDescriptorCache$Key;)Lorg/apache/maven/plugin/descriptor/PluginDescriptor;+1
+j  org.apache.maven.plugin.DefaultPluginDescriptorCache$$Lambda+0x000001a91420a000.apply(Ljava/lang/Object;)Ljava/lang/Object;+8
+J 766 c1 java.util.concurrent.ConcurrentHashMap.computeIfAbsent(Ljava/lang/Object;Ljava/util/function/Function;)Ljava/lang/Object; java.base@21.0.6 (576 bytes) @ 0x000001a90012915c [0x000001a900128b60+0x00000000000005fc]
+j  org.apache.maven.plugin.DefaultPluginDescriptorCache.get(Lorg/apache/maven/plugin/PluginDescriptorCache$Key;Lorg/apache/maven/plugin/PluginDescriptorCache$PluginDescriptorSupplier;)Lorg/apache/maven/plugin/descriptor/PluginDescriptor;+11
+j  org.apache.maven.plugin.internal.DefaultMavenPluginManager.getPluginDescriptor(Lorg/apache/maven/model/Plugin;Ljava/util/List;Lorg/eclipse/aether/RepositorySystemSession;)Lorg/apache/maven/plugin/descriptor/PluginDescriptor;+29
+j  org.apache.maven.plugin.internal.DefaultMavenPluginManager.getMojoDescriptor(Lorg/apache/maven/model/Plugin;Ljava/lang/String;Ljava/util/List;Lorg/eclipse/aether/RepositorySystemSession;)Lorg/apache/maven/plugin/descriptor/MojoDescriptor;+5
+j  org.apache.maven.plugin.DefaultBuildPluginManager.getMojoDescriptor(Lorg/apache/maven/model/Plugin;Ljava/lang/String;Ljava/util/List;Lorg/eclipse/aether/RepositorySystemSession;)Lorg/apache/maven/plugin/descriptor/MojoDescriptor;+9
+j  org.apache.maven.lifecycle.internal.DefaultLifecycleExecutionPlanCalculator.setupMojoExecution(Lorg/apache/maven/execution/MavenSession;Lorg/apache/maven/project/MavenProject;Lorg/apache/maven/plugin/MojoExecution;)V+31
+j  org.apache.maven.lifecycle.internal.DefaultLifecycleExecutionPlanCalculator.setupMojoExecutions(Lorg/apache/maven/execution/MavenSession;Lorg/apache/maven/project/MavenProject;Ljava/util/List;)V+35
+j  org.apache.maven.lifecycle.internal.DefaultLifecycleExecutionPlanCalculator.calculateExecutionPlan(Lorg/apache/maven/execution/MavenSession;Lorg/apache/maven/project/MavenProject;Ljava/util/List;Z)Lorg/apache/maven/lifecycle/MavenExecutionPlan;+28
+j  org.apache.maven.lifecycle.internal.DefaultLifecycleExecutionPlanCalculator.calculateExecutionPlan(Lorg/apache/maven/execution/MavenSession;Lorg/apache/maven/project/MavenProject;Ljava/util/List;)Lorg/apache/maven/lifecycle/MavenExecutionPlan;+5
+j  org.apache.maven.lifecycle.internal.builder.BuilderCommon.resolveBuildPlan(Lorg/apache/maven/execution/MavenSession;Lorg/apache/maven/project/MavenProject;Lorg/apache/maven/lifecycle/internal/TaskSegment;Ljava/util/Set;)Lorg/apache/maven/lifecycle/MavenExecutionPlan;+10
+j  org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(Lorg/apache/maven/execution/MavenSession;Lorg/apache/maven/execution/MavenSession;Lorg/apache/maven/lifecycle/internal/ReactorContext;Lorg/apache/maven/project/MavenProject;Lorg/apache/maven/lifecycle/internal/TaskSegment;)V+107
+j  org.apache.maven.lifecycle.internal.LifecycleModuleBuilder.buildProject(Lorg/apache/maven/execution/MavenSession;Lorg/apache/maven/lifecycle/internal/ReactorContext;Lorg/apache/maven/project/MavenProject;Lorg/apache/maven/lifecycle/internal/TaskSegment;)V+7
+j  org.apache.maven.lifecycle.internal.builder.singlethreaded.SingleThreadedBuilder.build(Lorg/apache/maven/execution/MavenSession;Lorg/apache/maven/lifecycle/internal/ReactorContext;Lorg/apache/maven/lifecycle/internal/ProjectBuildList;Ljava/util/List;Lorg/apache/maven/lifecycle/internal/ReactorBuildStatus;)V+77
+j  org.apache.maven.lifecycle.internal.LifecycleStarter.execute(Lorg/apache/maven/execution/MavenSession;)V+343
+j  org.apache.maven.DefaultMaven.doExecute(Lorg/apache/maven/execution/MavenExecutionRequest;Lorg/apache/maven/execution/MavenSession;Lorg/apache/maven/execution/MavenExecutionResult;Lorg/eclipse/aether/DefaultRepositorySystemSession;)Lorg/apache/maven/execution/MavenExecutionResult;+418
+j  org.apache.maven.DefaultMaven.doExecute(Lorg/apache/maven/execution/MavenExecutionRequest;)Lorg/apache/maven/execution/MavenExecutionResult;+98
+j  org.apache.maven.DefaultMaven.execute(Lorg/apache/maven/execution/MavenExecutionRequest;)Lorg/apache/maven/execution/MavenExecutionResult;+2
+j  org.apache.maven.cli.MavenCli.execute(Lorg/apache/maven/cli/CliRequest;)I+27
+j  org.apache.maven.cli.MavenCli.doMain(Lorg/apache/maven/cli/CliRequest;)I+66
+j  org.apache.maven.cli.MavenCli.main([Ljava/lang/String;Lorg/codehaus/plexus/classworlds/ClassWorld;)I+24
+j  java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)I+11 java.base@21.0.6
+j  java.lang.invoke.LambdaForm$MH+0x000001a91400b000.invoke(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+54 java.base@21.0.6
+j  java.lang.invoke.LambdaForm$MH+0x000001a914002800.invokeExact_MT(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;+22 java.base@21.0.6
+j  jdk.internal.reflect.DirectMethodHandleAccessor.invokeImpl(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+72 java.base@21.0.6
+j  jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+23 java.base@21.0.6
+j  java.lang.reflect.Method.invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;+102 java.base@21.0.6
+j  org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced([Ljava/lang/String;)V+45
+j  org.codehaus.plexus.classworlds.launcher.Launcher.launch([Ljava/lang/String;)V+2
+j  org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode([Ljava/lang/String;)I+108
+j  org.codehaus.plexus.classworlds.launcher.Launcher.main([Ljava/lang/String;)V+1
+j  org.codehaus.classworlds.Launcher.main([Ljava/lang/String;)V+1
+v  ~StubRoutines::call_stub 0x000001a9075310e7
+--------------------------------------------------------------------------------
+Decoding CodeBlob, name: UncommonTrapBlob, at  [0x000001a907587d00, 0x000001a907587e08]  264 bytes
+[MachCode]
+  0x000001a907587d00: 4883 ec28 | 4889 6c24 | 208b d2c5 | f877 4989 | a798 0300 | 0049 8bcf | 41b8 0200 | 0000 48b8 
+  0x000001a907587d20: f0df 1b59 | fb7f 0000 | ffd0 49c7 | 8798 0300 | 0000 0000 | 0049 c787 | a003 0000 | 0000 0000 
+  0x000001a907587d40: c5f8 7748 | 8bf8 4883 | c428 8b0f | 4803 e148 | 8b6f 3048 | 8b4f 1848 | 83c4 0848 | 8b77 108b 
+  0x000001a907587d60: 5708 4c8b | c48b 5f04 | 482b e348 | 8b1e 4883 | eb10 48ff | 3155 488b | ec48 2be3 | 4c89 45f8 
+  0x000001a907587d80: 48c7 45f0 | 0000 0000 | 4c8b c448 | 83c6 0848 | 83c1 08ff | ca75 d448 | ff31 5548 | 8bec 4883 
+  0x000001a907587da0: ec20 c5f8 | 7749 89af | a803 0000 | 49ba a27d | 5807 a901 | 0000 4d89 | 97a0 0300 | 0049 89a7 
+  0x000001a907587dc0: 9803 0000 | 4883 e4f0 | 498b cfba | 0200 0000 | 48b8 20f3 | 1b59 fb7f | 0000 ffd0 | 49c7 8798 
+  0x000001a907587de0: 0300 0000 | 0000 0049 | c787 a803 | 0000 0000 | 0000 49c7 | 87a0 0300 | 0000 0000 | 00c5 f877 
+  0x000001a907587e00: c9c3 f4f4 | f4f4 f4f4 
+[/MachCode]
+--------------------------------------------------------------------------------
+
+
+Compiled method (c2)  125569 3417   !   4       org.codehaus.plexus.util.xml.pull.MXParser::parseComment (590 bytes)
+ total in heap  [0x000001a907c3f490,0x000001a907c40ad0] = 5696
+ relocation     [0x000001a907c3f5f0,0x000001a907c3f728] = 312
+ main code      [0x000001a907c3f740,0x000001a907c401f8] = 2744
+ stub code      [0x000001a907c401f8,0x000001a907c40268] = 112
+ oops           [0x000001a907c40268,0x000001a907c40270] = 8
+ metadata       [0x000001a907c40270,0x000001a907c402c8] = 88
+ scopes data    [0x000001a907c402c8,0x000001a907c406a0] = 984
+ scopes pcs     [0x000001a907c406a0,0x000001a907c40900] = 608
+ dependencies   [0x000001a907c40900,0x000001a907c40908] = 8
+ handler table  [0x000001a907c40908,0x000001a907c40ab8] = 432
+ nul chk table  [0x000001a907c40ab8,0x000001a907c40ad0] = 24
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Entry Point]
+  # {method} {0x000001a9554c7fb0} 'parseComment' '()V' in 'org/codehaus/plexus/util/xml/pull/MXParser'
+  #           [sp+0x90]  (sp of caller)
+  0x000001a907c3f740: 448b 5208 | 49bb 0000 | 0013 a901 | 0000 4d03 | d349 3bc2 
+
+  0x000001a907c3f754: ;   {runtime_call ic_miss_stub}
+  0x000001a907c3f754: 0f85 26f2 | 93ff 6690 | 0f1f 4000 
+[Verified Entry Point]
+  0x000001a907c3f760: e91b 7f8f | ffff ff55 | 4881 ec80 | 0000 0090 | 4181 7f20 | 0100 0000 | 0f85 6e0a | 0000 4889 
+  0x000001a907c3f780: 5424 4844 | 8b5a 3c44 | 8b42 4045 | 3bc3 0f8d | 4704 0000 | 4c8b 5424 | 4841 8baa | c800 0000 
+  0x000001a907c3f7a0: 418d 5801 | 4189 5a40 
+
+  0x000001a907c3f7a8: ; implicit exception: dispatches to 0x000001a907c40144
+  0x000001a907c3f7a8: 458b 5cec | 0c45 3bc3 | 0f83 9b07 | 0000 4d8d | 14ec 430f | b76c 4210 | 83fd 0a0f | 84df 0300 
+  0x000001a907c3f7c8: 004c 8b54 | 2448 41ff | 4210 83fd | 2d0f 8595 | 0700 004c | 8b54 2448 | 410f b66a | 6285 ed0f 
+  0x000001a907c3f7e8: 8597 0700 | 0045 8b42 | 1045 8b4a | 0c41 83c0 | fc48 b900 | 00ed 78a9 | 0100 0045 | 33db 33ff 
+  0x000001a907c3f808: eb14 660f | 1f44 0000 | 4533 db33 | ff49 8b97 
+
+  0x000001a907c3f818: ; ImmutableOopMap {[72]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::parseComment@500 (line 3098)
+  0x000001a907c3f818: 5004 0000 
+
+  0x000001a907c3f81c: ;   {poll}
+  0x000001a907c3f81c: 8502 4c8b | 5424 4845 | 8b52 3c41 | 3bda 0f8d | 1a01 0000 | 4c8b 5424 | 4845 8b52 | 4048 8b5c 
+  0x000001a907c3f83c: 2448 8bab | c800 0000 | 418d 5a01 | 488b 5424 | 4889 5a40 
+
+  0x000001a907c3f850: ; implicit exception: dispatches to 0x000001a907c40118
+  0x000001a907c3f850: 418b 74ec | 0c44 3bd6 | 0f83 8205 | 0000 498d | 14ec 420f | b76c 5210 | 83fd 0a74 | 734c 8b54 
+  0x000001a907c3f870: 2448 41ff | 4210 81fd | 00d8 0000 | 0f8d 8a05 | 0000 4585 | db0f 858e | 0000 0083 | fd2d 7463 
+  0x000001a907c3f890: 83fd 3e74 | 7a83 fd09 | 0f84 9605 | 0000 83fd | 0a0f 8469 | ffff ff83 | fd0d 0f84 | a005 0000 
+  0x000001a907c3f8b0: 448d 55e0 | 4181 fae0 | d700 000f | 824f ffff | ffba 3dff | ffff 4489 | 4c24 2844 | 8944 242c 
+  0x000001a907c3f8d0: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c3f8d0: 6666 90e8 
+
+  0x000001a907c3f8d4: ; ImmutableOopMap {[72]=Oop }
+                      ;*if_icmpgt {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::isValidCodePoint@21 (line 2936)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@209 (line 3039)
+  0x000001a907c3f8d4: 2884 94ff 
+
+  0x000001a907c3f8d8: ;   {other}
+  0x000001a907c3f8d8: 0f1f 8400 | 4804 0001 | 4c8b 5424 | 4841 ff42 | 0c41 c742 | 1001 0000 | 00eb 8385 | ff74 0b41 
+  0x000001a907c3f8f8: bb01 0000 | 00e9 13ff | ffff 4533 | dbbf 0100 | 0000 e906 | ffff ff45 | 33db 33ff | e9fc feff 
+  0x000001a907c3f918: ff83 fd3e | 0f85 7606 | 0000 4c8b | 5424 4841 | 0fb6 6a62 | 85ed 0f85 | 8006 0000 | 4881 c480 
+  0x000001a907c3f938: 0000 005d 
+
+  0x000001a907c3f93c: ;   {poll_return}
+  0x000001a907c3f93c: 493b a748 | 0400 000f | 878d 0800 | 00c3 897c | 243c 4489 | 5c24 3844 | 894c 2434 | 4489 4424 
+  0x000001a907c3f95c: 3048 894c | 2420 48ff | 7424 4848 | 8f44 2428 | 488b 5424 
+
+  0x000001a907c3f970: ;   {optimized virtual_call}
+  0x000001a907c3f970: 4866 90e8 
+
+  0x000001a907c3f974: ; ImmutableOopMap {[40]=Oop [72]=Oop }
+                      ;*invokespecial fillBuf {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@12 (line 3980)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c3f974: 08f5 93ff 
+
+  0x000001a907c3f978: ;   {other}
+  0x000001a907c3f978: 0f1f 8400 | e804 0002 | 4c8b 5424 | 4845 0fb6 | 5258 4585 | d20f 842b | 0200 0049 | 8b87 b801 
+  0x000001a907c3f998: 0000 4c8b | d049 83c2 | 284d 3b97 | c801 0000 | 0f83 8705 | 0000 4d89 | 97b8 0100 | 0041 0f0d 
+  0x000001a907c3f9b8: 8ac0 0000 | 0048 c700 | 0100 0000 | 4c8b d049 
+
+  0x000001a907c3f9c8: ;   {metadata('java/io/EOFException')}
+  0x000001a907c3f9c8: 83c2 10c7 | 4008 889a | 0601 4489 | 600c c5fd | efc0 41b8 | 0700 0000 | c4c1 7892 | f862 d1fe 
+  0x000001a907c3f9e8: 2f7f 0248 | 8bf8 498b | 9fb8 0100 | 004c 8bd3 | 4983 c218 | 4d3b 97c8 | 0100 000f | 83fc 0400 
+  0x000001a907c3fa08: 004d 8997 | b801 0000 | 410f 0d8a | c000 0000 | 48c7 0301 | 0000 004c | 8bd3 4983 
+
+  0x000001a907c3fa24: ;   {metadata('java/lang/StringBuilder')}
+  0x000001a907c3fa24: c210 c743 | 0818 8000 | 0044 8963 | 0cc5 fdef | c0c4 c179 | d602 498b | 87b8 0100 | 004c 8bd0 
+  0x000001a907c3fa44: 4983 c220 | 4d3b 97c8 | 0100 000f | 8372 0400 | 004d 8997 | b801 0000 | 410f 0d8a | c000 0000 
+  0x000001a907c3fa64: 48c7 0001 | 0000 0041 | 0f0d 8a00 
+
+  0x000001a907c3fa70: ;   {metadata({type array byte})}
+  0x000001a907c3fa70: 0100 00c7 | 4008 6822 | 0000 410f | 0d8a 4001 | 0000 c740 | 0c10 0000 | 0041 0f0d | 8a80 0100 
+  0x000001a907c3fa90: 004c 8bd8 | 4983 c310 | c5fd efc0 | 62d1 fe08 | 7f03 4c8b | d34c 8bd8 | 49c1 eb03 | 4489 5b14 
+  0x000001a907c3fab0: 4c8b d84d | 33da 49c1 | eb15 4d85 | db74 1649 | c1ea 094c | 8b44 2420 | 4d03 c241 | 8038 020f 
+  0x000001a907c3fad0: 8597 0300 | 0048 897c | 2440 48ff | 7424 4848 | 8f44 2428 | 4488 6310 
+
+  0x000001a907c3fae8: ;   {oop("no more data available"{0x000000070424d550})}
+  0x000001a907c3fae8: 488b d349 | b850 d524 | 0407 0000 | 0048 8b6c 
+
+  0x000001a907c3faf8: ;   {optimized virtual_call}
+  0x000001a907c3faf8: 2448 90e8 
+
+  0x000001a907c3fafc: ; ImmutableOopMap {rbp=Oop [40]=Oop [64]=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@36 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c3fafc: 80f3 93ff 
+
+  0x000001a907c3fb00: ;   {other}
+  0x000001a907c3fb00: 0f1f 8400 | 7006 0003 | 488b e848 | 8b54 2428 
+
+  0x000001a907c3fb10: ;   {optimized virtual_call}
+  0x000001a907c3fb10: 6666 90e8 
+
+  0x000001a907c3fb14: ; ImmutableOopMap {rbp=Oop [40]=Oop [64]=Oop }
+                      ;*invokevirtual getPositionDescription {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@40 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c3fb14: 68f3 93ff 
+
+  0x000001a907c3fb18: ;   {other}
+  0x000001a907c3fb18: 0f1f 8400 | 8806 0004 | 4c8b dd4d | 85db 0f84 | ee04 0000 | 498b d34c | 8bc0 488b 
+
+  0x000001a907c3fb34: ;   {optimized virtual_call}
+  0x000001a907c3fb34: 6c24 28e8 
+
+  0x000001a907c3fb38: ; ImmutableOopMap {rbp=Oop [40]=Oop [64]=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@43 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c3fb38: 44f3 93ff 
+
+  0x000001a907c3fb3c: ;   {other}
+  0x000001a907c3fb3c: 0f1f 8400 | ac06 0005 | 4885 c00f | 84ff 0400 | 0048 8bd0 
+
+  0x000001a907c3fb50: ;   {optimized virtual_call}
+  0x000001a907c3fb50: 6666 90e8 
+
+  0x000001a907c3fb54: ; ImmutableOopMap {rbp=Oop [40]=Oop [64]=Oop }
+                      ;*invokevirtual toString {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@46 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c3fb54: 28f3 93ff 
+
+  0x000001a907c3fb58: ;   {other}
+  0x000001a907c3fb58: 0f1f 8400 | c806 0006 | 8b6c 243c | 448b 4424 | 3844 8944 | 2420 488b | 5424 404c 
+
+  0x000001a907c3fb74: ;   {optimized virtual_call}
+  0x000001a907c3fb74: 8bc0 90e8 
+
+  0x000001a907c3fb78: ; ImmutableOopMap {[40]=Oop [64]=Oop }
+                      ;*invokespecial <init> {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@49 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c3fb78: 04f3 93ff 
+
+  0x000001a907c3fb7c: ;   {other}
+  0x000001a907c3fb7c: 0f1f 8400 | ec06 0007 | 488b 6c24 | 40ba 5900 | 0000 4c8b | 5424 284c | 8954 2420 
+
+  0x000001a907c3fb98: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c3fb98: 6666 90e8 
+
+  0x000001a907c3fb9c: ; ImmutableOopMap {rbp=Oop [32]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@508 (line 3104)
+  0x000001a907c3fb9c: 6081 94ff 
+
+  0x000001a907c3fba0: ;   {other}
+  0x000001a907c3fba0: 0f1f 8400 | 1007 0008 | 4c8b 5424 | 4841 c742 | 1001 0000 | 0041 ff42 | 0ce9 14fc | ffff 488b 
+  0x000001a907c3fbc0: 4c24 2044 | 8b44 2430 | 448b 4c24 | 3444 8b5c | 2438 8b7c | 243c e955 | fcff ff48 
+
+  0x000001a907c3fbdc: ;   {optimized virtual_call}
+  0x000001a907c3fbdc: 8bea 90e8 
+
+  0x000001a907c3fbe0: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokespecial fillBuf {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@12 (line 3980)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c3fbe0: 9cf2 93ff 
+
+  0x000001a907c3fbe4: ;   {other}
+  0x000001a907c3fbe4: 0f1f 8400 | 5407 0009 | 440f b65d | 5845 85db | 0f84 c402 | 0000 498b | 87b8 0100 | 004c 8bd0 
+  0x000001a907c3fc04: 4983 c228 | 4d3b 97c8 | 0100 000f | 834b 0400 | 004d 8997 | b801 0000 | 410f 0d8a | c000 0000 
+  0x000001a907c3fc24: 48c7 0001 | 0000 004c | 8bd0 4983 
+
+  0x000001a907c3fc30: ;   {metadata('java/io/EOFException')}
+  0x000001a907c3fc30: c210 c740 | 0888 9a06 | 0144 8960 | 0cc5 fdef | c041 bb07 | 0000 00c4 | c178 92fb | 62d1 fe2f 
+  0x000001a907c3fc50: 7f02 488b | e849 8b87 | b801 0000 | 4c8b d049 | 83c2 184d | 3b97 c801 | 0000 0f83 | 0d04 0000 
+  0x000001a907c3fc70: 4d89 97b8 | 0100 0041 | 0f0d 8ac0 | 0000 0048 | c700 0100 | 0000 4c8b | d049 83c2 
+
+  0x000001a907c3fc8c: ;   {metadata('java/lang/StringBuilder')}
+  0x000001a907c3fc8c: 10c7 4008 | 1880 0000 | 4489 600c | c5fd efc0 | c4c1 79d6 | 0248 8bd8 | 498b 87b8 | 0100 004c 
+  0x000001a907c3fcac: 8bd0 4983 | c220 4d3b | 97c8 0100 | 000f 83eb | 0300 004d | 8997 b801 | 0000 410f | 0d8a c000 
+  0x000001a907c3fccc: 0000 48c7 | 0001 0000 | 0041 0f0d | 8a00 0100 
+
+  0x000001a907c3fcdc: ;   {metadata({type array byte})}
+  0x000001a907c3fcdc: 00c7 4008 | 6822 0000 | 410f 0d8a | 4001 0000 | c740 0c10 | 0000 0041 | 0f0d 8a80 | 0100 004c 
+  0x000001a907c3fcfc: 8bd0 4983 | c210 c5fd | efc0 62d1 | fe08 7f02 | 4c8b d34c | 8bd8 49c1 | eb03 4489 | 5b14 4c8b 
+  0x000001a907c3fd1c: d84d 33da | 49c1 eb15 | 4d85 db74 | 1b49 c1ea | 0949 b800 | 00ed 78a9 | 0100 004d | 03c2 4180 
+  0x000001a907c3fd3c: 3802 0f85 | 8402 0000 | 4488 6310 
+
+  0x000001a907c3fd48: ;   {oop("no more data available"{0x000000070424d550})}
+  0x000001a907c3fd48: 488b d349 | b850 d524 | 0407 0000 
+
+  0x000001a907c3fd54: ;   {optimized virtual_call}
+  0x000001a907c3fd54: 0066 90e8 
+
+  0x000001a907c3fd58: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@36 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c3fd58: 24f1 93ff 
+
+  0x000001a907c3fd5c: ;   {other}
+  0x000001a907c3fd5c: 0f1f 8400 | cc08 000a | 4889 4424 | 2048 8b54 
+
+  0x000001a907c3fd6c: ;   {optimized virtual_call}
+  0x000001a907c3fd6c: 2448 90e8 
+
+  0x000001a907c3fd70: ; ImmutableOopMap {rbp=Oop [32]=Oop [72]=Oop }
+                      ;*invokevirtual getPositionDescription {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@40 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c3fd70: 0cf1 93ff 
+
+  0x000001a907c3fd74: ;   {other}
+  0x000001a907c3fd74: 0f1f 8400 | e408 000b | 4c8b 5c24 | 204d 85db | 0f84 6203 | 0000 498b | d34c 8bc0 
+
+  0x000001a907c3fd90: ;   {optimized virtual_call}
+  0x000001a907c3fd90: 6666 90e8 
+
+  0x000001a907c3fd94: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@43 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c3fd94: e8f0 93ff 
+
+  0x000001a907c3fd98: ;   {other}
+  0x000001a907c3fd98: 0f1f 8400 | 0809 000c | 4885 c00f | 845b 0300 | 0048 8bd0 
+
+  0x000001a907c3fdac: ;   {optimized virtual_call}
+  0x000001a907c3fdac: 6666 90e8 
+
+  0x000001a907c3fdb0: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokevirtual toString {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@46 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c3fdb0: ccf0 93ff 
+
+  0x000001a907c3fdb4: ;   {other}
+  0x000001a907c3fdb4: 0f1f 8400 | 2409 000d | 488b d54c 
+
+  0x000001a907c3fdc0: ;   {optimized virtual_call}
+  0x000001a907c3fdc0: 8bc0 90e8 
+
+  0x000001a907c3fdc4: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokespecial <init> {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@49 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c3fdc4: b8f0 93ff 
+
+  0x000001a907c3fdc8: ;   {other}
+  0x000001a907c3fdc8: 0f1f 8400 | 3809 000e | 488b d548 | 81c4 8000 
+
+  0x000001a907c3fdd8: ;   {runtime_call _rethrow_Java}
+  0x000001a907c3fdd8: 0000 5de9 | 20a9 a3ff | bae4 ffff | ff89 7c24 | 2844 895c | 242c 4489 | 4c24 3844 | 8944 243c 
+  0x000001a907c3fdf8: 4489 5424 
+
+  0x000001a907c3fdfc: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c3fdfc: 4066 90e8 
+
+  0x000001a907c3fe00: ; ImmutableOopMap {rbp=NarrowOop [72]=Oop }
+                      ;*caload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@68 (line 3985)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c3fe00: fc7e 94ff 
+
+  0x000001a907c3fe04: ;   {other}
+  0x000001a907c3fe04: 0f1f 8400 | 7409 000f | ba45 ffff | ff89 7c24 | 2844 895c | 242c 4489 | 4c24 3044 | 8944 2434 
+  0x000001a907c3fe24: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c3fe24: 6666 90e8 
+
+  0x000001a907c3fe28: ; ImmutableOopMap {[72]=Oop }
+                      ;*if_icmplt {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) java.lang.Character::isHighSurrogate@3 (line 9183)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@87 (line 3005)
+  0x000001a907c3fe28: d47e 94ff 
+
+  0x000001a907c3fe2c: ;   {other}
+  0x000001a907c3fe2c: 0f1f 8400 | 9c09 0010 | ba45 ffff | ff44 894c | 2428 4489 
+
+  0x000001a907c3fe40: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c3fe40: 4424 2ce8 
+
+  0x000001a907c3fe44: ; ImmutableOopMap {[72]=Oop }
+                      ;*if_icmpeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::isValidCodePoint@3 (line 2936)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@209 (line 3039)
+  0x000001a907c3fe44: b87e 94ff 
+
+  0x000001a907c3fe48: ;   {other}
+  0x000001a907c3fe48: 0f1f 8400 | b809 0011 | ba45 ffff | ff44 894c | 2428 4489 
+
+  0x000001a907c3fe5c: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c3fe5c: 4424 2ce8 
+
+  0x000001a907c3fe60: ; ImmutableOopMap {[72]=Oop }
+                      ;*if_icmpeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::isValidCodePoint@15 (line 2936)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@209 (line 3039)
+  0x000001a907c3fe60: 9c7e 94ff 
+
+  0x000001a907c3fe64: ;   {other}
+  0x000001a907c3fe64: 0f1f 8400 | d409 0012 | 4d8b 5748 | 4d8b 5f58 | f083 4424 | c000 4180 | 3800 0f84 | 51fc ffff 
+  0x000001a907c3fe84: 4588 204d | 85d2 7520 | 498b c849 | 8bd7 49ba | 70f1 2459 | fb7f 0000 
+
+  0x000001a907c3fe9c: ;   {other}
+  0x000001a907c3fe9c: 41ff d20f | 1f84 0000 | 0000 00e9 | 29fc ffff | 4f89 4413 | f849 83c2 | f84d 8957 | 48e9 17fc 
+  0x000001a907c3febc: ffff 448b | 4540 e9cd | f8ff ff48 | 895c 2440 | 488b ef48 | ff74 2448 | 488f 4424 
+
+  0x000001a907c3fed8: ;   {metadata({type array byte})}
+  0x000001a907c3fed8: 2848 ba68 | 2200 13a9 | 0100 0041 | b810 0000 
+
+  0x000001a907c3fee8: ;   {runtime_call _new_array_Java}
+  0x000001a907c3fee8: 0066 90e8 
+
+  0x000001a907c3feec: ; ImmutableOopMap {rbp=Oop [40]=Oop [64]=Oop [72]=Oop }
+                      ;*newarray {reexecute=0 rethrow=0 return_oop=1}
+                      ; - java.lang.AbstractStringBuilder::<init>@12 (line 101)
+                      ; - java.lang.StringBuilder::<init>@3 (line 106)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@30 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c3feec: 902b a3ff 
+
+  0x000001a907c3fef0: ;   {other}
+  0x000001a907c3fef0: 0f1f 8400 | 600a 0013 | 488b fd48 | 8b5c 2440 | e99d fbff | ff48 8bef 
+
+  0x000001a907c3ff08: ;   {metadata('java/lang/StringBuilder')}
+  0x000001a907c3ff08: 48ba 1880 | 0013 a901 
+
+  0x000001a907c3ff10: ;   {runtime_call _new_instance_Java}
+  0x000001a907c3ff10: 0000 90e8 
+
+  0x000001a907c3ff14: ; ImmutableOopMap {rbp=Oop [40]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@26 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c3ff14: e8f4 a2ff 
+
+  0x000001a907c3ff18: ;   {other}
+  0x000001a907c3ff18: 0f1f 8400 | 880a 0014 | 48ff 7424 | 2848 8f44 | 2448 488b | fd48 8bd8 | e905 fbff 
+
+  0x000001a907c3ff34: ;   {metadata('java/io/EOFException')}
+  0x000001a907c3ff34: ff48 ba88 | 9a06 14a9 
+
+  0x000001a907c3ff3c: ;   {runtime_call _new_instance_Java}
+  0x000001a907c3ff3c: 0100 00e8 
+
+  0x000001a907c3ff40: ; ImmutableOopMap {[40]=Oop [72]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@22 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c3ff40: bcf4 a2ff 
+
+  0x000001a907c3ff44: ;   {other}
+  0x000001a907c3ff44: 0f1f 8400 | b40a 0015 | e99a faff | ffba e4ff | ffff 4c89 | 5424 2844 | 8944 2430 
+
+  0x000001a907c3ff60: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c3ff60: 6666 90e8 
+
+  0x000001a907c3ff64: ; ImmutableOopMap {rbp=NarrowOop [40]=Oop [72]=Oop }
+                      ;*caload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@68 (line 3985)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c3ff64: 987d 94ff 
+
+  0x000001a907c3ff68: ;   {other}
+  0x000001a907c3ff68: 0f1f 8400 | d80a 0016 | ba45 ffff 
+
+  0x000001a907c3ff74: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c3ff74: ff66 90e8 
+
+  0x000001a907c3ff78: ; ImmutableOopMap {[72]=Oop }
+                      ;*if_icmpeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::parseComment@8 (line 2985)
+  0x000001a907c3ff78: 847d 94ff 
+
+  0x000001a907c3ff7c: ;   {other}
+  0x000001a907c3ff7c: 0f1f 8400 | ec0a 0017 | ba45 ffff 
+
+  0x000001a907c3ff88: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c3ff88: ff66 90e8 
+
+  0x000001a907c3ff8c: ; ImmutableOopMap {[72]=Oop }
+                      ;*ifeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::parseComment@28 (line 2987)
+  0x000001a907c3ff8c: 707d 94ff 
+
+  0x000001a907c3ff90: ;   {other}
+  0x000001a907c3ff90: 0f1f 8400 | 000b 0018 | ba45 ffff | ff44 894c | 2428 4489 
+
+  0x000001a907c3ffa4: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c3ffa4: 4424 2ce8 
+
+  0x000001a907c3ffa8: ; ImmutableOopMap {[72]=Oop }
+                      ;*if_icmpeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::parseComment@125 (line 3015)
+  0x000001a907c3ffa8: 547d 94ff 
+
+  0x000001a907c3ffac: ;   {other}
+  0x000001a907c3ffac: 0f1f 8400 | 1c0b 0019 | ba45 ffff 
+
+  0x000001a907c3ffb8: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c3ffb8: ff66 90e8 
+
+  0x000001a907c3ffbc: ; ImmutableOopMap {[72]=Oop }
+                      ;*ifeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::parseComment@559 (line 3107)
+  0x000001a907c3ffbc: 407d 94ff 
+
+  0x000001a907c3ffc0: ;   {other}
+  0x000001a907c3ffc0: 0f1f 8400 | 300b 001a | 4d8b 5758 | 4d8b 5f48 | f083 4424 | c000 4180 | 3800 0f84 | 64fd ffff 
+  0x000001a907c3ffe0: 4588 204d | 85db 7520 | 498b c849 | 8bd7 49ba | 70f1 2459 | fb7f 0000 
+
+  0x000001a907c3fff8: ;   {other}
+  0x000001a907c3fff8: 41ff d20f | 1f84 0000 | 0000 00e9 | 3cfd ffff | 4f89 441a | f849 83c3 | f84d 895f | 48e9 2afd 
+  0x000001a907c40018: ffff baf6 | ffff ff48 | 8b6c 2428 | 448b 5c24 | 3444 895c | 2428 448b | 4424 3044 | 8944 242c 
+  0x000001a907c40038: 4889 4424 
+
+  0x000001a907c4003c: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c4003c: 3066 90e8 
+
+  0x000001a907c40040: ; ImmutableOopMap {rbp=Oop [48]=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@43 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c40040: bc7c 94ff 
+
+  0x000001a907c40044: ;   {other}
+  0x000001a907c40044: 0f1f 8400 | b40b 001b | baf6 ffff 
+
+  0x000001a907c40050: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c40050: ff66 90e8 
+
+  0x000001a907c40054: ; ImmutableOopMap {rbp=Oop }
+                      ;*invokevirtual toString {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@46 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c40054: a87c 94ff 
+
+  0x000001a907c40058: ;   {other}
+  0x000001a907c40058: 0f1f 8400 | c80b 001c 
+
+  0x000001a907c40060: ;   {metadata('java/io/EOFException')}
+  0x000001a907c40060: 48ba 889a | 0614 a901 
+
+  0x000001a907c40068: ;   {runtime_call _new_instance_Java}
+  0x000001a907c40068: 0000 90e8 
+
+  0x000001a907c4006c: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@22 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c4006c: 90f3 a2ff 
+
+  0x000001a907c40070: ;   {other}
+  0x000001a907c40070: 0f1f 8400 | e00b 001d | e9d5 fbff | ff48 896c | 2420 488b 
+
+  0x000001a907c40084: ;   {metadata('java/lang/StringBuilder')}
+  0x000001a907c40084: 6c24 4848 | ba18 8000 | 13a9 0100 
+
+  0x000001a907c40090: ;   {runtime_call _new_instance_Java}
+  0x000001a907c40090: 0066 90e8 
+
+  0x000001a907c40094: ; ImmutableOopMap {rbp=Oop [32]=Oop [72]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@26 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c40094: 68f3 a2ff 
+
+  0x000001a907c40098: ;   {other}
+  0x000001a907c40098: 0f1f 8400 | 080c 001e | 488b 6c24 | 20e9 f7fb | ffff 4889 | 5c24 2848 | 896c 2420 | 488b 6c24 
+  0x000001a907c400b8: ;   {metadata({type array byte})}
+  0x000001a907c400b8: 4848 ba68 | 2200 13a9 | 0100 0041 | b810 0000 
+
+  0x000001a907c400c8: ;   {runtime_call _new_array_Java}
+  0x000001a907c400c8: 0066 90e8 
+
+  0x000001a907c400cc: ; ImmutableOopMap {rbp=Oop [32]=Oop [40]=Oop }
+                      ;*newarray {reexecute=0 rethrow=0 return_oop=1}
+                      ; - java.lang.AbstractStringBuilder::<init>@12 (line 101)
+                      ; - java.lang.StringBuilder::<init>@3 (line 106)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@30 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c400cc: b029 a3ff 
+
+  0x000001a907c400d0: ;   {other}
+  0x000001a907c400d0: 0f1f 8400 | 400c 001f | 4889 6c24 | 4848 8b6c | 2420 488b | 5c24 28e9 | 20fc ffff | baf6 ffff 
+  0x000001a907c400f0: ff48 8944 
+
+  0x000001a907c400f4: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c400f4: 2420 90e8 
+
+  0x000001a907c400f8: ; ImmutableOopMap {[32]=Oop [72]=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@43 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c400f8: 047c 94ff 
+
+  0x000001a907c400fc: ;   {other}
+  0x000001a907c400fc: 0f1f 8400 | 6c0c 0020 | baf6 ffff 
+
+  0x000001a907c40108: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c40108: ff66 90e8 
+
+  0x000001a907c4010c: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokevirtual toString {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@46 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c4010c: f07b 94ff 
+
+  0x000001a907c40110: ;   {other}
+  0x000001a907c40110: 0f1f 8400 | 800c 0021 | baf6 ffff | ff89 7c24 | 2044 895c | 2424 4489 | 4c24 2844 | 8944 242c 
+  0x000001a907c40130: 4489 5424 
+
+  0x000001a907c40134: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c40134: 3066 90e8 
+
+  0x000001a907c40138: ; ImmutableOopMap {[72]=Oop }
+                      ;*caload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@68 (line 3985)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@82 (line 3002)
+  0x000001a907c40138: c47b 94ff 
+
+  0x000001a907c4013c: ;   {other}
+  0x000001a907c4013c: 0f1f 8400 | ac0c 0022 | baf6 ffff | ff49 8bea | 4489 4424 
+
+  0x000001a907c40150: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c40150: 2066 90e8 
+
+  0x000001a907c40154: ; ImmutableOopMap {rbp=Oop }
+                      ;*caload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@68 (line 3985)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::parseComment@1 (line 2984)
+  0x000001a907c40154: a87b 94ff 
+
+  0x000001a907c40158: ;   {other}
+  0x000001a907c40158: 0f1f 8400 | c80c 0023 | eb64 eb62 | eb60 448b | 5808 eb3a | 448b 5808 | eb34 448b | 5808 eb2e 
+  0x000001a907c40178: eb4c eb4a | eb48 eb46 | eb44 eb42 | 448b 5808 | eb1c 448b | 5808 eb16 | 448b 5808 | eb10 448b 
+  0x000001a907c40198: 5808 eb0a | 448b 5808 | eb04 448b 
+
+  0x000001a907c401a4: ;   {metadata('java/io/EOFException')}
+  0x000001a907c401a4: 5808 49ba | 889a 0614 | a901 0000 | 49b8 0000 | 0013 a901 | 0000 4d03 | c34d 8b58 | 504d 3bda 
+  0x000001a907c401c4: 7408 488b | d0e9 05fc | ffff 488b | e8e9 b3f9 
+
+  0x000001a907c401d4: ;   {internal_word}
+  0x000001a907c401d4: ffff 49ba | 3cf9 c307 | a901 0000 | 4d89 9760 
+
+  0x000001a907c401e4: ;   {runtime_call SafepointBlob}
+  0x000001a907c401e4: 0400 00e9 | 9469 94ff 
+
+  0x000001a907c401ec: ;   {runtime_call StubRoutines (final stubs)}
+  0x000001a907c401ec: e88f 5b92 | ffe9 88f5 | ffff f4f4 
+[Stub Code]
+  0x000001a907c401f8: ;   {no_reloc}
+  0x000001a907c401f8: 48bb 0000 | 0000 0000 
+
+  0x000001a907c40200: ;   {runtime_call}
+  0x000001a907c40200: 0000 e9fb 
+
+  0x000001a907c40204: ;   {static_stub}
+  0x000001a907c40204: ffff ff48 | bb00 0000 | 0000 0000 
+
+  0x000001a907c40210: ;   {runtime_call}
+  0x000001a907c40210: 00e9 fbff 
+
+  0x000001a907c40214: ;   {static_stub}
+  0x000001a907c40214: ffff 48bb | 0000 0000 | 0000 0000 
+
+  0x000001a907c40220: ;   {runtime_call}
+  0x000001a907c40220: e9fb ffff 
+
+  0x000001a907c40224: ;   {static_stub}
+  0x000001a907c40224: ff48 bb00 | 0000 0000 
+
+  0x000001a907c4022c: ;   {runtime_call}
+  0x000001a907c4022c: 0000 00e9 | fbff ffff 
+
+  0x000001a907c40234: ;   {static_stub}
+  0x000001a907c40234: 48bb 0000 | 0000 0000 
+
+  0x000001a907c4023c: ;   {runtime_call}
+  0x000001a907c4023c: 0000 e9fb 
+
+  0x000001a907c40240: ;   {static_stub}
+  0x000001a907c40240: ffff ff48 | bb00 0000 | 0000 0000 
+
+  0x000001a907c4024c: ;   {runtime_call}
+  0x000001a907c4024c: 00e9 fbff 
+
+  0x000001a907c40250: ;   {runtime_call ExceptionBlob}
+  0x000001a907c40250: ffff e929 | fba2 ffe8 | 0000 0000 | 4883 2c24 
+
+  0x000001a907c40260: ;   {runtime_call DeoptimizationBlob}
+  0x000001a907c40260: 05e9 ba7d | 94ff f4f4 
+[/MachCode]
+
+
+Compiled method (c2)  125730 3116       4       org.codehaus.plexus.util.xml.pull.MXParser::nextImpl (1203 bytes)
+ total in heap  [0x000001a907c1c410,0x000001a907c1f4b0] = 12448
+ relocation     [0x000001a907c1c570,0x000001a907c1c850] = 736
+ main code      [0x000001a907c1c860,0x000001a907c1e1e0] = 6528
+ stub code      [0x000001a907c1e1e0,0x000001a907c1e330] = 336
+ oops           [0x000001a907c1e330,0x000001a907c1e340] = 16
+ metadata       [0x000001a907c1e340,0x000001a907c1e398] = 88
+ scopes data    [0x000001a907c1e398,0x000001a907c1eac8] = 1840
+ scopes pcs     [0x000001a907c1eac8,0x000001a907c1f048] = 1408
+ dependencies   [0x000001a907c1f048,0x000001a907c1f058] = 16
+ handler table  [0x000001a907c1f058,0x000001a907c1f460] = 1032
+ nul chk table  [0x000001a907c1f460,0x000001a907c1f4b0] = 80
+
+[Constant Pool (empty)]
+
+[MachCode]
+[Entry Point]
+  # {method} {0x000001a9554cdb20} 'nextImpl' '()I' in 'org/codehaus/plexus/util/xml/pull/MXParser'
+  #           [sp+0x90]  (sp of caller)
+  0x000001a907c1c860: 448b 5208 | 49bb 0000 | 0013 a901 | 0000 4d03 | d349 3bc2 
+
+  0x000001a907c1c874: ;   {runtime_call ic_miss_stub}
+  0x000001a907c1c874: 0f85 0621 | 96ff 6690 | 0f1f 4000 
+[Verified Entry Point]
+  0x000001a907c1c880: 8984 2400 | 80ff ff55 | 4881 ec80 | 0000 0090 | 4181 7f20 | 0100 0000 | 0f85 3419 | 0000 4180 
+  0x000001a907c1c8a0: 7f40 000f | 855c 0800 | 0048 8954 | 2448 4c8b | 5424 4845 | 8862 5b45 | 8b5a 4845 | 895a 3845 
+  0x000001a907c1c8c0: 8b42 1845 | 0fb6 525e | 4c8b 5c24 | 4845 89a3 | d000 0000 | 4589 6350 | 4589 634c | 4585 d274 
+  0x000001a907c1c8e0: 3645 8863 | 5e41 8bab | 8000 0000 | 418d 48ff | 4189 4b18 
+
+  0x000001a907c1c8f4: ; implicit exception: dispatches to 0x000001a907c1e0fc
+  0x000001a907c1c8f4: 458b 5cec | 0c41 3bcb | 0f83 9211 | 0000 4d8d | 14ec 478b | 5482 0c4c | 8b5c 2448 | 4589 5320 
+  0x000001a907c1c914: 448b c14c | 8b54 2448 | 450f b65a | 5945 85db | 0f85 7604 | 0000 4585 | c00f 8ea7 | 0700 0045 
+  0x000001a907c1c934: 0fb6 525c | 4585 d274 | 424c 8b54 | 2448 4588 | 625c 488b 
+
+  0x000001a907c1c948: ;   {optimized virtual_call}
+  0x000001a907c1c948: 5424 48e8 
+
+  0x000001a907c1c94c: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokevirtual parseStartTag {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@108 (line 1413)
+  0x000001a907c1c94c: f0d5 fdff 
+
+  0x000001a907c1c950: ;   {other}
+  0x000001a907c1c950: 0f1f 8400 | 4005 0000 | 8944 243c | 4c8b 5424 | 4841 8942 | 148b 4424 | 3c48 81c4 | 8000 0000 
+  0x000001a907c1c970: ;   {poll_return}
+  0x000001a907c1c970: 5d49 3ba7 | 4804 0000 | 0f87 3e18 | 0000 c34c | 8b54 2448 | 450f b652 | 5d45 85d2 | 742d 4c8b 
+  0x000001a907c1c990: 5424 4845 | 8862 5d48 | 8b54 2448 
+
+  0x000001a907c1c99c: ;   {optimized virtual_call}
+  0x000001a907c1c99c: 6666 90e8 
+
+  0x000001a907c1c9a0: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokevirtual parseEndTag {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@130 (line 1418)
+  0x000001a907c1c9a0: 1c54 f4ff 
+
+  0x000001a907c1c9a4: ;   {other}
+  0x000001a907c1c9a4: 0f1f 8400 | 9405 0001 | 8944 243c | 4c8b 5424 | 4841 8942 | 14eb aa4c | 8b54 2448 | 410f b66a 
+  0x000001a907c1c9c4: 6085 ed0f | 85e7 1000 | 0041 0fb6 | 6a5f 85ed | 0f85 ee10 | 0000 458b | 5a3c 458b | 5240 453b 
+  0x000001a907c1c9e4: d30f 8d65 | 0800 004c | 8b5c 2448 | 418b abc8 | 0000 0045 | 8d42 0145 | 8943 4045 | 8b44 ec0c 
+  0x000001a907c1ca04: 453b d00f | 830d 1000 | 004d 8d1c | ec47 0fb7 | 4453 1041 | 83f8 0a0f | 8453 0300 | 004c 8b5c 
+  0x000001a907c1ca24: 2448 41ff | 4310 4c8b | 5c24 4845 | 8953 4448 | b900 00ed | 78a9 0100 | 0033 ff41 | ba04 0000 
+  0x000001a907c1ca44: 0044 8954 | 243c eb23 | 41b8 3c00 | 0000 4c8b | 5424 4845 | 894a 484d | 8b8f 5004 
+
+  0x000001a907c1ca60: ; ImmutableOopMap {[72]=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1175 (line 1744)
+                      ;   {poll}
+  0x000001a907c1ca60: 0000 4185 | 01bf 0100 | 0000 488b | 4c24 6033 | db4c 8b54 | 2448 450f | b65a 6245 | 8b4a 4041 
+  0x000001a907c1ca80: 83f8 3c74 | 3441 83f8 | 260f 843f | 0c00 0085 | db0f 85fe | 0500 0045 | 85db 0f85 | 5910 0000 
+  0x000001a907c1caa0: 4533 ed45 | 33db 4533 | d248 894c | 2460 418b | f845 8bc2 | e979 0100 | 0085 ff0f | 8483 0600 
+  0x000001a907c1cac0: 0045 85db | 0f85 1210 | 0000 897c | 2438 458b | 523c 453b | ca0f 8d79 | 0900 004c | 8b54 2448 
+  0x000001a907c1cae0: 418b aac8 | 0000 0045 | 8d59 0145 | 895a 4045 | 8b5c ec0c | 453b cb0f | 8337 0f00 | 004d 8d14 
+  0x000001a907c1cb00: ec43 0fb7 | 6c4a 1083 | fd0a 0f84 | 7a02 0000 | 4c8b 5424 | 4841 ff42 | 1083 fd2f | 7532 4c8b 
+  0x000001a907c1cb20: 5424 4841 | 0fb6 6a62 | 85ed 0f85 | e811 0000 | 448b 5c24 | 3845 85db | 0f84 6b0b | 0000 41c6 
+  0x000001a907c1cb40: 425d 0141 | c742 1404 | 0000 00e9 | 15fe ffff | 83fd 210f | 84b9 0400 | 0083 fd3f | 0f84 ca11 
+  0x000001a907c1cb60: ;   {no_reloc}
+  0x000001a907c1cb60: 0000 8bd5 
+
+  0x000001a907c1cb64: ;   {static_call}
+  0x000001a907c1cb64: 6666 90e8 
+
+  0x000001a907c1cb68: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokestatic isNameStartChar {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@478 (line 1570)
+  0x000001a907c1cb68: 3460 0000 
+
+  0x000001a907c1cb6c: ;   {other}
+  0x000001a907c1cb6c: 0f1f 8400 | 5c07 0003 | 85c0 0f84 | c811 0000 | 4c8b 5424 | 4841 0fb6 | 6a62 85ed | 0f85 b710 
+  0x000001a907c1cb8c: 0000 448b | 5c24 3845 | 85db 0f84 | b505 0000 | 41c6 425c | 0141 c742 | 1404 0000 | 00e9 b7fd 
+  0x000001a907c1cbac: ffff 48c1 | e103 6642 | 897c 5110 | 0f1f 8400 | 0000 0000 | 4533 d248 | 8b4c 2448 | 8b59 3c44 
+  0x000001a907c1cbcc: 3bcb 0f8d | 2102 0000 | 488b 4c24 | 488b 99c8 | 0000 0041 | 8d51 0189 | 5140 418b | 4cdc 0c44 
+  0x000001a907c1cbec: 3bc9 0f83 | bb0b 0000 | 498d 0cdc | 420f b774 | 4910 83fe | 0a0f 84e0 | 0000 0048 | 8b4c 2448 
+  0x000001a907c1cc0c: ff41 1083 | fe3c 0f84 | 34fe ffff | 498b 9f50 
+
+  0x000001a907c1cc1c: ; ImmutableOopMap {[72]=Oop }
+                      ;*if_icmpne {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1162 (line 1742)
+                      ;   {poll}
+  0x000001a907c1cc1c: 0400 0085 | 0383 fe26 | 0f84 fd0a | 0000 448b | ca8b fe45 | 8bea 4c8b | 5424 4841 | 0fb6 5a5b 
+  0x000001a907c1cc3c: 418b 8acc | 0000 0045 | 8b52 5041 | 8d72 0183 | ff5d 0f84 | 9d0a 0000 | 4585 c00f | 8515 0c00 
+  0x000001a907c1cc5c: 0045 85db | 0f85 a40a | 0000 83ff | 0d0f 848c | 0000 0083 | ff0a 7458 | 4533 db45 | 33c0 85db 
+  0x000001a907c1cc7c: 0f84 3eff | ffff 418b | 6ccc 0c44 | 3bd5 0f8d | dd0d 0000 | 488b 5c24 | 4889 7350 | 443b d50f 
+  0x000001a907c1cc9c: 820d ffff | ffba e4ff | ffff 4489 | 5c24 2044 | 8944 2424 | 894c 2428 | 4489 5424 | 2c89 7c24 
+  0x000001a907c1ccbc: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1ccbc: 3066 90e8 
+
+  0x000001a907c1ccc0: ; ImmutableOopMap {[40]=NarrowOop [72]=Oop }
+                      ;*castore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1144 (line 1734)
+  0x000001a907c1ccc0: 3cb0 96ff 
+
+  0x000001a907c1ccc4: ;   {other}
+  0x000001a907c1ccc4: 0f1f 8400 | b408 0005 | 4585 ed75 | 0885 db0f | 85e8 0000 | 0045 33d2 | 4533 db45 | 33c0 e9dc 
+  0x000001a907c1cce4: feff ff48 | 8b4c 2448 | ff41 0cc7 | 4110 0100 | 0000 e914 | ffff ff45 | 8d59 ff4c | 8b54 2448 
+  0x000001a907c1cd04: 4589 5a48 | 85db 751a | 418b 6a44 | 443b dd0f | 8f9f 1000 | 0045 8962 | 4c45 8962 | 5041 c642 
+  0x000001a907c1cd24: 5b01 458b | 54cc 0c4c | 8b5c 2448 | 418b 6b50 | 413b ea0f | 8d63 1000 | 0044 8d5d | 014c 8b44 
+  0x000001a907c1cd44: 2448 4589 | 5850 413b | ea0f 8336 | 1000 004d | 8d14 cc41 | bb0a 0000 | 0066 4589 | 5c6a 1041 
+  0x000001a907c1cd64: ba01 0000 | 0045 33db | 4533 c0e9 | 4ffe ffff | 4c8b 5c24 | 4841 c743 | 1001 0000 | 0041 ff43 
+  0x000001a907c1cd84: 0ce9 a0fc | ffff 4c8b | 5424 4841 | c742 1001 | 0000 0041 | ff42 0ce9 | 79fd ffff | 41c6 425e 
+  0x000001a907c1cda4: 0141 c742 | 1403 0000 | 0045 8862 | 5941 bb03 | 0000 0044 | 895c 243c | e9a4 fbff 
+
+  0x000001a907c1cdc0: ;   {no_reloc}
+  0x000001a907c1cdc0: ff41 8b6c | cc0c 443b | d50f 8d85 | 1100 004c | 8b5c 2448 | 4189 7350 | 443b d50f | 8313 1100 
+  0x000001a907c1cde0: 004d 8d1c | ccb9 0a00 | 0000 6643 | 894c 5310 | e9e4 feff | ff44 8944 | 2428 4489 | 5c24 2444 
+  0x000001a907c1ce00: 8954 2420 | 488b 5424 
+
+  0x000001a907c1ce08: ;   {optimized virtual_call}
+  0x000001a907c1ce08: 4866 90e8 
+
+  0x000001a907c1ce0c: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokespecial fillBuf {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@12 (line 3980)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1ce0c: 904b b0f8 
+
+  0x000001a907c1ce10: ;   {other}
+  0x000001a907c1ce10: 0f1f 8400 | 000a 0006 | 4c8b 5424 | 4845 0fb6 | 5a58 4585 | db0f 844b | 0300 0049 | 8b87 b801 
+  0x000001a907c1ce30: 0000 4c8b | d049 83c2 | 284d 3b97 | c801 0000 | 0f83 3e0d | 0000 4d89 | 97b8 0100 | 0041 0f0d 
+  0x000001a907c1ce50: 8ac0 0000 | 0048 c700 | 0100 0000 | 4c8b d049 
+
+  0x000001a907c1ce60: ;   {metadata('java/io/EOFException')}
+  0x000001a907c1ce60: 83c2 10c7 | 4008 889a | 0601 4489 | 600c c5fd | efc0 41bb | 0700 0000 | c4c1 7892 | fb62 d1fe 
+  0x000001a907c1ce80: 2f7f 0248 | 8bf8 498b | 9fb8 0100 | 004c 8bd3 | 4983 c218 | 4d3b 97c8 | 0100 000f | 8377 0c00 
+  0x000001a907c1cea0: 004d 8997 | b801 0000 | 410f 0d8a | c000 0000 | 48c7 0301 | 0000 004c | 8bd3 4983 
+
+  0x000001a907c1cebc: ;   {metadata('java/lang/StringBuilder')}
+  0x000001a907c1cebc: c210 c743 | 0818 8000 | 0044 8963 | 0cc5 fdef | c0c4 c179 | d602 498b | 87b8 0100 | 004c 8bd0 
+  0x000001a907c1cedc: 4983 c220 | 4d3b 97c8 | 0100 000f | 8354 0c00 | 004d 8997 | b801 0000 | 410f 0d8a | c000 0000 
+  0x000001a907c1cefc: 48c7 0001 | 0000 0041 | 0f0d 8a00 
+
+  0x000001a907c1cf08: ;   {metadata({type array byte})}
+  0x000001a907c1cf08: 0100 00c7 | 4008 6822 | 0000 410f | 0d8a 4001 | 0000 c740 | 0c10 0000 | 0041 0f0d | 8a80 0100 
+  0x000001a907c1cf28: 004c 8bd0 | 4983 c210 | c5fd efc0 | 62d1 fe08 | 7f02 4c8b | d34c 8bd8 | 49c1 eb03 | 4489 5b14 
+  0x000001a907c1cf48: 4c8b d84d | 33da 49c1 | eb15 4d85 | db74 1649 | c1ea 094c | 8b44 2460 | 4d03 c241 | 8038 020f 
+  0x000001a907c1cf68: 8543 0900 | 0048 897c | 2430 4488 | 6310 488b 
+
+  0x000001a907c1cf78: ;   {oop("no more data available"{0x000000070424d550})}
+  0x000001a907c1cf78: d349 b850 | d524 0407 
+
+  0x000001a907c1cf80: ;   {optimized virtual_call}
+  0x000001a907c1cf80: 0000 00e8 
+
+  0x000001a907c1cf84: ; ImmutableOopMap {[48]=Oop [72]=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@36 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1cf84: f81e 96ff 
+
+  0x000001a907c1cf88: ;   {other}
+  0x000001a907c1cf88: 0f1f 8400 | 780b 0007 | 4889 4424 | 3848 8b54 
+
+  0x000001a907c1cf98: ;   {optimized virtual_call}
+  0x000001a907c1cf98: 2448 90e8 
+
+  0x000001a907c1cf9c: ; ImmutableOopMap {[48]=Oop [56]=Oop [72]=Oop }
+                      ;*invokevirtual getPositionDescription {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@40 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1cf9c: e01e 96ff 
+
+  0x000001a907c1cfa0: ;   {other}
+  0x000001a907c1cfa0: 0f1f 8400 | 900b 0008 | 4c8b 5c24 | 384d 85db | 0f84 5a0f | 0000 498b | d34c 8bc0 
+
+  0x000001a907c1cfbc: ;   {optimized virtual_call}
+  0x000001a907c1cfbc: 6666 90e8 
+
+  0x000001a907c1cfc0: ; ImmutableOopMap {[48]=Oop [72]=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@43 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1cfc0: bc1e 96ff 
+
+  0x000001a907c1cfc4: ;   {other}
+  0x000001a907c1cfc4: 0f1f 8400 | b40b 0009 | 4885 c00f | 8453 0f00 | 0048 8bd0 
+
+  0x000001a907c1cfd8: ;   {optimized virtual_call}
+  0x000001a907c1cfd8: 6666 90e8 
+
+  0x000001a907c1cfdc: ; ImmutableOopMap {[48]=Oop [72]=Oop }
+                      ;*invokevirtual toString {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@46 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1cfdc: a01e 96ff 
+
+  0x000001a907c1cfe0: ;   {other}
+  0x000001a907c1cfe0: 0f1f 8400 | d00b 000a | 488b 5424 | 304c 8bc0 
+
+  0x000001a907c1cff0: ;   {optimized virtual_call}
+  0x000001a907c1cff0: 6666 90e8 
+
+  0x000001a907c1cff4: ; ImmutableOopMap {[48]=Oop [72]=Oop }
+                      ;*invokespecial <init> {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@49 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1cff4: 881e 96ff 
+
+  0x000001a907c1cff8: ;   {other}
+  0x000001a907c1cff8: 0f1f 8400 | e80b 000b | 488b 5424 | 3048 81c4 | 8000 0000 
+
+  0x000001a907c1d00c: ;   {runtime_call _rethrow_Java}
+  0x000001a907c1d00c: 5de9 eed6 | a5ff 895c | 242c 4889 | 4424 f88b | 4424 3c89 | 4424 2848 | 8b44 24f8 | 4889 4c24 
+  0x000001a907c1d02c: 2048 8b6c | 2448 488b 
+
+  0x000001a907c1d034: ;   {optimized virtual_call}
+  0x000001a907c1d034: 5424 48e8 
+
+  0x000001a907c1d038: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokespecial more {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@273 (line 1473)
+  0x000001a907c1d038: 0424 fdff 
+
+  0x000001a907c1d03c: ;   {other}
+  0x000001a907c1d03c: 0f1f 8400 | 2c0c 000c | 83f8 2d0f | 8441 0100 | 0083 f85b | 0f85 e60e | 0000 488b | 5424 4844 
+  0x000001a907c1d05c: 8b44 2438 
+
+  0x000001a907c1d060: ;   {optimized virtual_call}
+  0x000001a907c1d060: 6666 90e8 
+
+  0x000001a907c1d064: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokespecial parseCDSect {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@337 (line 1495)
+  0x000001a907c1d064: 181e 96ff 
+
+  0x000001a907c1d068: ;   {other}
+  0x000001a907c1d068: 0f1f 8400 | 580c 000d | 440f b65d | 6245 85db | 0f84 4701 | 0000 c745 | 1405 0000 | 0041 bb05 
+  0x000001a907c1d088: 0000 0044 | 895c 243c | e9d0 f8ff | ff44 8944 | 2428 4889 | 4c24 2048 | 8b54 2448 
+
+  0x000001a907c1d0a4: ;   {optimized virtual_call}
+  0x000001a907c1d0a4: 6666 90e8 
+
+  0x000001a907c1d0a8: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokespecial joinPC {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@840 (line 1649)
+  0x000001a907c1d0a8: d440 b2f8 
+
+  0x000001a907c1d0ac: ;   {other}
+  0x000001a907c1d0ac: 0f1f 8400 | 9c0c 000e | 4c8b 5424 | 4845 0fb6 | 5a62 4585 | db0f 852d | 0a00 0045 | 8b4a 4048 
+  0x000001a907c1d0cc: 8b4c 2420 | 448b 4424 | 28e9 c6f9 | ffff 450f | b65a 5745 | 85db 0f84 | a405 0000 | 488b 5424 
+  0x000001a907c1d0ec: ;   {optimized virtual_call}
+  0x000001a907c1d0ec: 4866 90e8 
+
+  0x000001a907c1d0f0: ; ImmutableOopMap {}
+                      ;*invokespecial parseEpilog {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1194 (line 1753)
+  0x000001a907c1d0f0: 8211 0000 
+
+  0x000001a907c1d0f4: ;   {other}
+  0x000001a907c1d0f4: 0f1f 8400 | e40c 000f | 8944 243c | e960 f8ff | ff48 8954 | 2448 448b | 92d0 0000 | 0045 85d2 
+  0x000001a907c1d114: 0f84 94f7 | ffff 4d8b | 5f28 498b | ca48 c1e1 | 034d 85db | 0f84 2209 | 0000 4d8b | 5738 4b89 
+  0x000001a907c1d134: 4c1a f849 | 83c3 f84d | 895f 28e9 | 6af7 ffff | 4533 db44 | 895c 2438 | e97d f9ff | ff48 8b54 
+  0x000001a907c1d154: ;   {optimized virtual_call}
+  0x000001a907c1d154: 2448 90e8 
+
+  0x000001a907c1d158: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokevirtual parseStartTag {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@509 (line 1578)
+  0x000001a907c1d158: e4cd fdff 
+
+  0x000001a907c1d15c: ;   {other}
+  0x000001a907c1d15c: 0f1f 8400 | 4c0d 0010 | 8944 243c | 4c8b 5424 | 4841 8942 | 14e9 eff7 | ffff 458b | 4a40 448b 
+  0x000001a907c1d17c: 5424 2044 | 8b5c 2424 | 448b 4424 | 28e9 46fa | ffff 488b 
+
+  0x000001a907c1d190: ;   {optimized virtual_call}
+  0x000001a907c1d190: 5424 48e8 
+
+  0x000001a907c1d194: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokespecial parseComment {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@284 (line 1477)
+  0x000001a907c1d194: c825 0200 
+
+  0x000001a907c1d198: ;   {other}
+  0x000001a907c1d198: 0f1f 8400 | 880d 0011 | 440f b655 | 6245 85d2 | 0f84 8405 | 0000 c745 | 1409 0000 | 0041 ba09 
+  0x000001a907c1d1b8: 0000 0044 | 8954 243c | e9a0 f7ff | ff44 8b5d | 4844 2b5d | 4445 85db | 7e1a 440f | b655 5b45 
+  0x000001a907c1d1d8: 85d2 0f84 | bf05 0000 | 41ba 0100 | 0000 8b44 | 242c eb09 | 448b 5424 | 388b 4424 | 2c89 4424 
+  0x000001a907c1d1f8: 3044 8954 | 242c 488b 
+
+  0x000001a907c1d200: ;   {optimized virtual_call}
+  0x000001a907c1d200: d566 90e8 
+
+  0x000001a907c1d204: ; ImmutableOopMap {rbp=Oop }
+                      ;*invokespecial more {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1179 (line 1746)
+  0x000001a907c1d204: 3822 fdff 
+
+  0x000001a907c1d208: ;   {other}
+  0x000001a907c1d208: 0f1f 8400 | f80d 0012 | 4d8b 8f50 | 0400 0044 | 8b44 242c | 448b 5424 
+
+  0x000001a907c1d220: ; ImmutableOopMap {rbp=Oop }
+                      ;*goto {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1183 (line 1746)
+                      ;   {poll}
+  0x000001a907c1d220: 3041 8501 | 4889 6c24 | 4848 8b4c | 2420 448b | c048 8944 | 24f8 8b44 | 2428 8944 | 243c 488b 
+  0x000001a907c1d240: 4424 f88b | 7c24 2c8b | 5c24 30e9 | 21f8 ffff | 488b 5424 
+
+  0x000001a907c1d254: ;   {optimized virtual_call}
+  0x000001a907c1d254: 4866 90e8 
+
+  0x000001a907c1d258: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokespecial fillBuf {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@12 (line 3980)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1d258: 241c 96ff 
+
+  0x000001a907c1d25c: ;   {other}
+  0x000001a907c1d25c: 0f1f 8400 | 4c0e 0014 | 4c8b 5424 | 4845 0fb6 | 5258 4585 | d20f 84df | 0400 0049 | 8b87 b801 
+  0x000001a907c1d27c: 0000 4c8b | d049 83c2 | 284d 3b97 | c801 0000 | 0f83 7e0b | 0000 4d89 | 97b8 0100 | 004c 8bd8 
+  0x000001a907c1d29c: 4983 c310 | 48c7 0001 | 0000 0041 | 0f0d 8ac0 
+
+  0x000001a907c1d2ac: ;   {metadata('java/io/EOFException')}
+  0x000001a907c1d2ac: 0000 00c7 | 4008 889a | 0601 4489 | 600c c5fd | efc0 41b8 | 0700 0000 | c4c1 7892 | f862 d1fe 
+  0x000001a907c1d2cc: 2f7f 0348 | 8be8 498b | 87b8 0100 | 004c 8bd0 | 4983 c218 | 4d3b 97c8 | 0100 000f | 8340 0b00 
+  0x000001a907c1d2ec: 004d 8997 | b801 0000 | 410f 0d8a | c000 0000 | 48c7 0001 | 0000 004c | 8bd0 4983 
+
+  0x000001a907c1d308: ;   {metadata('java/lang/StringBuilder')}
+  0x000001a907c1d308: c210 c740 | 0818 8000 | 0044 8960 | 0cc5 fdef | c0c4 c179 | d602 488b | d849 8b87 | b801 0000 
+  0x000001a907c1d328: 4c8b d049 | 83c2 204d | 3b97 c801 | 0000 0f83 | 940a 0000 | 4d89 97b8 | 0100 0041 | 0f0d 8ac0 
+  0x000001a907c1d348: 0000 0048 | c700 0100 | 0000 410f | 0d8a 0001 
+
+  0x000001a907c1d358: ;   {metadata({type array byte})}
+  0x000001a907c1d358: 0000 c740 | 0868 2200 | 0041 0f0d | 8a40 0100 | 00c7 400c | 1000 0000 | 410f 0d8a | 8001 0000 
+  0x000001a907c1d378: 4c8b d049 | 83c2 10c5 | fdef c062 | d1fe 087f | 024c 8bd3 | 4c8b c049 | c1e8 0344 | 8943 144c 
+  0x000001a907c1d398: 8bd8 4d33 | da49 c1eb | 154d 85db | 741b 49c1 | ea09 49b8 | 0000 ed78 | a901 0000 | 4d03 c241 
+  0x000001a907c1d3b8: 8038 020f | 85e0 0700 | 0044 8863 | 1048 8bd3 
+
+  0x000001a907c1d3c8: ;   {oop("no more data available"{0x000000070424d550})}
+  0x000001a907c1d3c8: 49b8 50d5 | 2404 0700 
+
+  0x000001a907c1d3d0: ;   {optimized virtual_call}
+  0x000001a907c1d3d0: 0000 90e8 
+
+  0x000001a907c1d3d4: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@36 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1d3d4: a81a 96ff 
+
+  0x000001a907c1d3d8: ;   {other}
+  0x000001a907c1d3d8: 0f1f 8400 | c80f 0015 | 4889 4424 | 2048 8b54 
+
+  0x000001a907c1d3e8: ;   {optimized virtual_call}
+  0x000001a907c1d3e8: 2448 90e8 
+
+  0x000001a907c1d3ec: ; ImmutableOopMap {rbp=Oop [32]=Oop [72]=Oop }
+                      ;*invokevirtual getPositionDescription {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@40 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1d3ec: 901a 96ff 
+
+  0x000001a907c1d3f0: ;   {other}
+  0x000001a907c1d3f0: 0f1f 8400 | e00f 0016 | 4c8b 5c24 | 204d 85db | 0f84 660b | 0000 498b | d34c 8bc0 
+
+  0x000001a907c1d40c: ;   {optimized virtual_call}
+  0x000001a907c1d40c: 6666 90e8 
+
+  0x000001a907c1d410: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@43 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1d410: 6c1a 96ff 
+
+  0x000001a907c1d414: ;   {other}
+  0x000001a907c1d414: 0f1f 8400 | 0410 0017 | 4885 c00f | 845f 0b00 | 0048 8bd0 
+
+  0x000001a907c1d428: ;   {optimized virtual_call}
+  0x000001a907c1d428: 6666 90e8 
+
+  0x000001a907c1d42c: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokevirtual toString {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@46 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1d42c: 501a 96ff 
+
+  0x000001a907c1d430: ;   {other}
+  0x000001a907c1d430: 0f1f 8400 | 2010 0018 | 488b d54c 
+
+  0x000001a907c1d43c: ;   {optimized virtual_call}
+  0x000001a907c1d43c: 8bc0 90e8 
+
+  0x000001a907c1d440: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokespecial <init> {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@49 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1d440: 3c1a 96ff 
+
+  0x000001a907c1d444: ;   {other}
+  0x000001a907c1d444: 0f1f 8400 | 3410 0019 | 488b d5e9 | b1fb ffff | 4889 4424 | f88b 4424 | 3889 4424 | 3048 8b44 
+  0x000001a907c1d464: 24f8 895c | 242c 4889 | 4424 f88b | 4424 3c89 | 4424 2848 | 8b44 24f8 | 4889 4c24 | 2048 8b54 
+  0x000001a907c1d484: ;   {optimized virtual_call}
+  0x000001a907c1d484: 2448 90e8 
+
+  0x000001a907c1d488: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokespecial fillBuf {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@12 (line 3980)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1d488: 1445 b0f8 
+
+  0x000001a907c1d48c: ;   {other}
+  0x000001a907c1d48c: 0f1f 8400 | 7c10 001a | 4c8b 5424 | 4845 0fb6 | 5258 4585 | d20f 84bd | 0200 0049 | 8b87 b801 
+  0x000001a907c1d4ac: 0000 4c8b | d049 83c2 | 284d 3b97 | c801 0000 | 0f83 cd09 | 0000 4d89 | 97b8 0100 | 004c 8bd8 
+  0x000001a907c1d4cc: 4983 c310 | 48c7 0001 | 0000 0041 | 0f0d 8ac0 
+
+  0x000001a907c1d4dc: ;   {metadata('java/io/EOFException')}
+  0x000001a907c1d4dc: 0000 00c7 | 4008 889a | 0601 4489 | 600c c5fd | efc0 41b8 | 0700 0000 | c4c1 7892 | f862 d1fe 
+  0x000001a907c1d4fc: 2f7f 0348 | 8be8 498b | 87b8 0100 | 004c 8bd0 | 4983 c218 | 4d3b 97c8 | 0100 000f | 8390 0900 
+  0x000001a907c1d51c: 004d 8997 | b801 0000 | 4c8b d849 | 83c3 1048 | c700 0100 | 0000 410f | 0d8a c000 
+
+  0x000001a907c1d538: ;   {metadata('java/lang/StringBuilder')}
+  0x000001a907c1d538: 0000 c740 | 0818 8000 | 0044 8960 | 0cc5 fdef | c0c4 c179 | d603 488b | d849 8b87 | b801 0000 
+  0x000001a907c1d558: 4c8b d049 | 83c2 204d | 3b97 c801 | 0000 0f83 | ea08 0000 | 4d89 97b8 | 0100 0041 | 0f0d 8ac0 
+  0x000001a907c1d578: 0000 0048 | c700 0100 | 0000 410f | 0d8a 0001 
+
+  0x000001a907c1d588: ;   {metadata({type array byte})}
+  0x000001a907c1d588: 0000 c740 | 0868 2200 | 0041 0f0d | 8a40 0100 | 00c7 400c | 1000 0000 | 410f 0d8a | 8001 0000 
+  0x000001a907c1d5a8: 4c8b d049 | 83c2 10c5 | fdef c062 | d1fe 087f | 024c 8bd3 | 4c8b c049 | c1e8 0344 | 8943 144c 
+  0x000001a907c1d5c8: 8bd8 4d33 | da49 c1eb | 154d 85db | 7416 49c1 | ea09 4c8b | 4424 204d | 03c2 4180 | 3802 0f85 
+  0x000001a907c1d5e8: 0706 0000 | 4488 6310 
+
+  0x000001a907c1d5f0: ;   {oop("no more data available"{0x000000070424d550})}
+  0x000001a907c1d5f0: 488b d349 | b850 d524 | 0407 0000 
+
+  0x000001a907c1d5fc: ;   {optimized virtual_call}
+  0x000001a907c1d5fc: 0066 90e8 
+
+  0x000001a907c1d600: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@36 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1d600: 7c18 96ff 
+
+  0x000001a907c1d604: ;   {other}
+  0x000001a907c1d604: 0f1f 8400 | f411 001b | 4889 4424 | 2048 8b54 
+
+  0x000001a907c1d614: ;   {optimized virtual_call}
+  0x000001a907c1d614: 2448 90e8 
+
+  0x000001a907c1d618: ; ImmutableOopMap {rbp=Oop [32]=Oop [72]=Oop }
+                      ;*invokevirtual getPositionDescription {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@40 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1d618: 6418 96ff 
+
+  0x000001a907c1d61c: ;   {other}
+  0x000001a907c1d61c: 0f1f 8400 | 0c12 001c | 4c8b 5c24 | 204d 85db | 0f84 6609 | 0000 498b | d34c 8bc0 
+
+  0x000001a907c1d638: ;   {optimized virtual_call}
+  0x000001a907c1d638: 6666 90e8 
+
+  0x000001a907c1d63c: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@43 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1d63c: 4018 96ff 
+
+  0x000001a907c1d640: ;   {other}
+  0x000001a907c1d640: 0f1f 8400 | 3012 001d | 4885 c00f | 845f 0900 | 0048 8bd0 
+
+  0x000001a907c1d654: ;   {optimized virtual_call}
+  0x000001a907c1d654: 6666 90e8 
+
+  0x000001a907c1d658: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokevirtual toString {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@46 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1d658: 2418 96ff 
+
+  0x000001a907c1d65c: ;   {other}
+  0x000001a907c1d65c: 0f1f 8400 | 4c12 001e | 448b 4424 | 2c44 8944 | 2428 488b | d54c 8bc0 
+
+  0x000001a907c1d674: ;   {optimized virtual_call}
+  0x000001a907c1d674: 6666 90e8 
+
+  0x000001a907c1d678: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokespecial <init> {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@49 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1d678: 0418 96ff 
+
+  0x000001a907c1d67c: ;   {other}
+  0x000001a907c1d67c: 0f1f 8400 | 6c12 001f | 488b d5e9 | 79f9 ffff | 488b 5424 
+
+  0x000001a907c1d690: ;   {optimized virtual_call}
+  0x000001a907c1d690: 4866 90e8 
+
+  0x000001a907c1d694: ; ImmutableOopMap {}
+                      ;*invokespecial parseProlog {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1199 (line 1757)
+  0x000001a907c1d694: cf0b 0000 
+
+  0x000001a907c1d698: ;   {other}
+  0x000001a907c1d698: 0f1f 8400 | 8812 0020 | 8944 243c | e9bc f2ff | ff48 8b54 
+
+  0x000001a907c1d6ac: ;   {optimized virtual_call}
+  0x000001a907c1d6ac: 2448 90e8 
+
+  0x000001a907c1d6b0: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokevirtual parseEndTag {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@258 (line 1469)
+  0x000001a907c1d6b0: 0c47 f4ff 
+
+  0x000001a907c1d6b4: ;   {other}
+  0x000001a907c1d6b4: 0f1f 8400 | a412 0021 | 8944 243c | 4c8b 5424 | 4841 8942 | 14e9 97f2 | ffff 4585 | db0f 8405 
+  0x000001a907c1d6d4: 0100 0085 | ff0f 8403 | 0100 0041 | c742 1404 | 0000 0041 | c642 5f01 | e974 f2ff | ff45 85db 
+  0x000001a907c1d6f4: 0f84 6801 | 0000 bf5d | 0000 0041 | b801 0000 | 00e9 70f5 | ffff 83ff | 0d0f 84e8 | f5ff ff83 
+  0x000001a907c1d714: ff0a 0f84 | b0f5 ffff | 4533 db45 | 33c0 e953 | f5ff ff41 | b826 0000 | 00e9 20f3 | ffff 440f 
+  0x000001a907c1d734: b655 5b45 | 85d2 0f84 | 5801 0000 | 448b 5424 | 3844 8b5d | 4044 895d | 448b 4424 | 2ce9 9ffa 
+  0x000001a907c1d754: ffff 4c8b | 5424 4845 | 8b52 40e9 | 87f2 ffff | 4c8b 5424 | 4845 8b4a | 4048 8b4c | 2420 4889 
+  0x000001a907c1d774: 4424 f88b | 4424 2889 | 4424 3c48 | 8b44 24f8 | 8b5c 242c | 4889 4424 | f88b 4424 | 3089 4424 
+  0x000001a907c1d794: 3848 8b44 | 24f8 e93c | f3ff ff41 | ba01 0000 | 00b8 0100 | 0000 e946 | faff ffba 
+
+  0x000001a907c1d7b0: ;   {no_reloc}
+  0x000001a907c1d7b0: e4ff ffff | 4489 5424 | 2044 895c | 2424 4489 | 4424 2889 | 5c24 2c44 | 894c 2438 
+
+  0x000001a907c1d7cc: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1d7cc: 6666 90e8 
+
+  0x000001a907c1d7d0: ; ImmutableOopMap {[44]=NarrowOop [72]=Oop }
+                      ;*caload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@68 (line 3985)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1d7d0: 2ca5 96ff 
+
+  0x000001a907c1d7d4: ;   {other}
+  0x000001a907c1d7d4: 0f1f 8400 | c413 0022 | 897c 2438 | eb08 4533 | d244 8954 | 2438 895c | 242c 4889 | 4424 f88b 
+  0x000001a907c1d7f4: 4424 3c89 | 4424 2848 | 8b44 24f8 | 4889 4c24 | 204c 8b54 | 2448 458b | 4234 458b | d845 035a 
+  0x000001a907c1d814: 4844 895c | 2430 458b | 5a44 4503 | d844 895c | 2434 488b 
+
+  0x000001a907c1d828: ;   {optimized virtual_call}
+  0x000001a907c1d828: 5424 48e8 
+
+  0x000001a907c1d82c: ; ImmutableOopMap {[72]=Oop }
+                      ;*invokespecial parseEntityRef {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@601 (line 1599)
+  0x000001a907c1d82c: 820a 0000 
+
+  0x000001a907c1d830: ;   {other}
+  0x000001a907c1d830: 0f1f 8400 | 2014 0023 | 488b 6c24 | 4844 0fb6 | 5562 4585 | d20f 84b7 | 0000 00c7 | 4514 0600 
+  0x000001a907c1d850: 0000 41ba | 0600 0000 | 4489 5424 | 3ce9 03f1 | ffff bf5d | 0000 0041 | bb01 0000 | 00e9 08f4 
+  0x000001a907c1d870: ffff ba45 | ffff ff89 | 7c24 2044 | 896c 2424 | 4489 5c24 | 2844 8944 
+
+  0x000001a907c1d888: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1d888: 2430 90e8 
+
+  0x000001a907c1d88c: ; ImmutableOopMap {[72]=Oop }
+                      ;*ifeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@902 (line 1680)
+  0x000001a907c1d88c: 70a4 96ff 
+
+  0x000001a907c1d890: ;   {other}
+  0x000001a907c1d890: 0f1f 8400 | 8014 0024 | 448b 5424 | 3845 85d2 | 0f84 0602 | 0000 b801 | 0000 00e9 | 45f9 ffff 
+  0x000001a907c1d8b0: 4d8b 5748 | 4d8b 5f58 | f083 4424 | c000 4180 | 3800 0f84 | a5f6 ffff | 4588 204d | 85d2 7520 
+  0x000001a907c1d8d0: 498b c849 | 8bd7 49ba | 70f1 2459 | fb7f 0000 
+
+  0x000001a907c1d8e0: ;   {other}
+  0x000001a907c1d8e0: 41ff d20f | 1f84 0000 | 0000 00e9 | 7df6 ffff | 4f89 4413 | f849 83c2 | f84d 8957 | 48e9 6bf6 
+  0x000001a907c1d900: ffff 8b9d | e400 0000 
+
+  0x000001a907c1d908: ;   {oop([C{0x0000000704254530})}
+  0x000001a907c1d908: 81fb a6a8 | 84e0 0f84 | 4403 0000 | 448b 4534 | 440f b65d | 5b44 8b54 | 2434 452b | d044 8955 
+  0x000001a907c1d928: 4444 8b4c | 2430 452b | c844 894d | 4845 85db | 0f84 1e04 | 0000 8b44 | 242c 418b | 4cdc 0c85 
+  0x000001a907c1d948: c976 1544 | 8d51 ff44 | 3bd1 0f83 | ec06 0000 | 498d 14dc | 33f6 eb36 | 41ba 0100 | 0000 e98a 
+  0x000001a907c1d968: f8ff ff0f | 1f44 0000 | 448d 5f01 | 4489 5d50 | 478b 54cc | 0c41 3bfa | 0f83 7806 | 0000 4f8d 
+  0x000001a907c1d988: 14cc 6645 | 8944 7a10 | ffc6 3bf1 | 7dca 448b | 8dcc 0000 | 0047 8b54 | cc0c 440f | b744 7210 
+  0x000001a907c1d9a8: 8b7d 5041 | 3bfa 7cc0 | 4489 4424 | 4489 7424 | 4048 8954 | 2438 894c | 2434 895c | 2430 8944 
+  0x000001a907c1d9c8: 242c 488b | d544 8bc7 
+
+  0x000001a907c1d9d0: ;   {optimized virtual_call}
+  0x000001a907c1d9d0: 6666 90e8 
+
+  0x000001a907c1d9d4: ; ImmutableOopMap {rbp=Oop [48]=NarrowOop [56]=Oop }
+                      ;*invokespecial ensurePC {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@803 (line 1635)
+  0x000001a907c1d9d4: a814 96ff 
+
+  0x000001a907c1d9d8: ;   {other}
+  0x000001a907c1d9d8: 0f1f 8400 | c815 0025 | 8b7d 5044 | 8b8d cc00 | 0000 448d | 5f01 4489 | 5d50 4585 | c90f 8435 
+  0x000001a907c1d9f8: 0600 008b | 4424 2c8b | 5c24 308b | 4c24 3448 | 8b54 2438 | 8b74 2440 | 448b 4424 | 44e9 5eff 
+  0x000001a907c1da18: ffff bae4 | ffff ff44 | 8954 2430 
+
+  0x000001a907c1da24: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1da24: 6666 90e8 
+
+  0x000001a907c1da28: ; ImmutableOopMap {rbp=NarrowOop [72]=Oop }
+                      ;*caload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@68 (line 3985)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1da28: d4a2 96ff 
+
+  0x000001a907c1da2c: ;   {other}
+  0x000001a907c1da2c: 0f1f 8400 | 1c16 0026 | bae4 ffff | ff89 5c24 | 2844 894c 
+
+  0x000001a907c1da40: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1da40: 242c 90e8 
+
+  0x000001a907c1da44: ; ImmutableOopMap {rbp=NarrowOop [72]=Oop }
+                      ;*caload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@68 (line 3985)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1da44: b8a2 96ff 
+
+  0x000001a907c1da48: ;   {other}
+  0x000001a907c1da48: 0f1f 8400 | 3816 0027 | 498b d749 | ba90 f124 | 59fb 7f00 | 0041 ffd2 
+
+  0x000001a907c1da60: ;   {other}
+  0x000001a907c1da60: 0f1f 8400 | 0000 0000 | e941 eeff | ffba 45ff | ffff 897c | 2428 4489 | 5c24 2c44 | 8944 2430 
+  0x000001a907c1da80: 4489 5424 
+
+  0x000001a907c1da84: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1da84: 3466 90e8 
+
+  0x000001a907c1da88: ; ImmutableOopMap {[72]=Oop }
+                      ;*if_icmplt {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1117 (line 1732)
+  0x000001a907c1da88: 74a2 96ff 
+
+  0x000001a907c1da8c: ;   {other}
+  0x000001a907c1da8c: 0f1f 8400 | 7c16 0028 | bae4 ffff | ff89 4c24 
+
+  0x000001a907c1da9c: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1da9c: 3066 90e8 
+
+  0x000001a907c1daa0: ; ImmutableOopMap {rbp=NarrowOop [72]=Oop }
+                      ;*iaload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@59 (line 1397)
+  0x000001a907c1daa0: 5ca2 96ff 
+
+  0x000001a907c1daa4: ;   {other}
+  0x000001a907c1daa4: 0f1f 8400 | 9416 0029 | 4533 d2e9 | 91fc ffff | ba45 ffff 
+
+  0x000001a907c1dab8: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1dab8: ff66 90e8 
+
+  0x000001a907c1dabc: ; ImmutableOopMap {[72]=Oop }
+                      ;*ifeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@142 (line 1424)
+  0x000001a907c1dabc: 40a2 96ff 
+
+  0x000001a907c1dac0: ;   {other}
+  0x000001a907c1dac0: 0f1f 8400 | b016 002a | ba45 ffff 
+
+  0x000001a907c1dacc: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1dacc: ff66 90e8 
+
+  0x000001a907c1dad0: ; ImmutableOopMap {[72]=Oop }
+                      ;*ifeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@160 (line 1429)
+  0x000001a907c1dad0: 2ca2 96ff 
+
+  0x000001a907c1dad4: ;   {other}
+  0x000001a907c1dad4: 0f1f 8400 | c416 002b | ba45 ffff | ff44 895c 
+
+  0x000001a907c1dae4: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1dae4: 2420 90e8 
+
+  0x000001a907c1dae8: ; ImmutableOopMap {[72]=Oop }
+                      ;*ifeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@207 (line 1454)
+  0x000001a907c1dae8: 14a2 96ff 
+
+  0x000001a907c1daec: ;   {other}
+  0x000001a907c1daec: 0f1f 8400 | dc16 002c | 448b 4424 | 28ba 45ff | ffff 4489 | 4424 2044 | 895c 2424 
+
+  0x000001a907c1db08: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1db08: 6666 90e8 
+
+  0x000001a907c1db0c: ; ImmutableOopMap {[72]=Oop }
+                      ;*ifeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@854 (line 1661)
+  0x000001a907c1db0c: f0a1 96ff 
+
+  0x000001a907c1db10: ;   {other}
+  0x000001a907c1db10: 0f1f 8400 | 0017 002d | 4889 7c24 
+
+  0x000001a907c1db1c: ;   {metadata('java/lang/StringBuilder')}
+  0x000001a907c1db1c: 3048 ba18 | 8000 13a9 
+
+  0x000001a907c1db24: ;   {runtime_call _new_instance_Java}
+  0x000001a907c1db24: 0100 00e8 
+
+  0x000001a907c1db28: ; ImmutableOopMap {[48]=Oop [72]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@26 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1db28: d418 a5ff 
+
+  0x000001a907c1db2c: ;   {other}
+  0x000001a907c1db2c: 0f1f 8400 | 1c17 002e | 488b 7c24 | 3048 8bd8 | e991 f3ff | ff48 895c | 2438 4889 | 7c24 3048 
+  0x000001a907c1db4c: 8b6c 2448 
+
+  0x000001a907c1db50: ;   {metadata({type array byte})}
+  0x000001a907c1db50: 48ba 6822 | 0013 a901 | 0000 41b8 | 1000 0000 
+
+  0x000001a907c1db60: ;   {runtime_call _new_array_Java}
+  0x000001a907c1db60: 6666 90e8 
+
+  0x000001a907c1db64: ; ImmutableOopMap {rbp=Oop [48]=Oop [56]=Oop }
+                      ;*newarray {reexecute=0 rethrow=0 return_oop=1}
+                      ; - java.lang.AbstractStringBuilder::<init>@12 (line 101)
+                      ; - java.lang.StringBuilder::<init>@3 (line 106)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@30 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1db64: 184f a5ff 
+
+  0x000001a907c1db68: ;   {other}
+  0x000001a907c1db68: 0f1f 8400 | 5817 002f | 4889 6c24 | 4848 8b7c | 2430 488b | 5c24 38e9 | b6f3 ffff 
+
+  0x000001a907c1db84: ;   {metadata('java/io/EOFException')}
+  0x000001a907c1db84: 48ba 889a | 0614 a901 
+
+  0x000001a907c1db8c: ;   {runtime_call _new_instance_Java}
+  0x000001a907c1db8c: 0000 90e8 
+
+  0x000001a907c1db90: ; ImmutableOopMap {[72]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@22 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1db90: 6c18 a5ff 
+
+  0x000001a907c1db94: ;   {other}
+  0x000001a907c1db94: 0f1f 8400 | 8417 0030 | e9e2 f2ff | ff4d 8b57 | 484d 8b5f | 58f0 8344 | 24c0 0041 | 8038 000f 
+  0x000001a907c1dbb4: 8408 f8ff | ff45 8820 | 4d85 d275 | 2049 8bc8 | 498b d749 | ba70 f124 | 59fb 7f00 | 0041 ffd2 
+  0x000001a907c1dbd4: ;   {other}
+  0x000001a907c1dbd4: 0f1f 8400 | 0000 0000 | e9e0 f7ff | ff4f 8944 | 13f8 4983 | c2f8 4d89 | 5748 e9ce | f7ff ff4d 
+  0x000001a907c1dbf4: 8b57 484d | 8b5f 58f0 | 8344 24c0 | 0041 8038 | 000f 84e1 | f9ff ff45 | 8820 4d85 | d275 2049 
+  0x000001a907c1dc14: 8bc8 498b | d749 ba70 | f124 59fb | 7f00 0041 
+
+  0x000001a907c1dc24: ;   {other}
+  0x000001a907c1dc24: ffd2 0f1f | 8400 0000 | 0000 e9b9 | f9ff ff4f | 8944 13f8 | 4983 c2f8 | 4d89 5748 | e9a7 f9ff 
+  0x000001a907c1dc44: ffba 45ff 
+
+  0x000001a907c1dc48: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1dc48: ffff 90e8 
+
+  0x000001a907c1dc4c: ; ImmutableOopMap {[72]=Oop }
+                      ;*ifne {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@488 (line 1572)
+  0x000001a907c1dc4c: b0a0 96ff 
+
+  0x000001a907c1dc50: ;   {other}
+  0x000001a907c1dc50: 0f1f 8400 | 4018 0031 | 443b a5d4 | 0000 000f | 85a0 0000 | 008b 7d48 | 448b 9dc8 | 0000 0044 
+  0x000001a907c1dc70: 8b4d 4441 | 2bf9 4d8b | c349 c1e0 | 0348 8b54 
+
+  0x000001a907c1dc80: ;   {optimized virtual_call}
+  0x000001a907c1dc80: 2448 90e8 
+
+  0x000001a907c1dc84: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokespecial newString {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@655 (line 1607)
+  0x000001a907c1dc84: f811 96ff 
+
+  0x000001a907c1dc88: ;   {other}
+  0x000001a907c1dc88: 0f1f 8400 | 7818 0032 | 488b d841 | 807f 4000 | 0f85 2603 | 0000 4c8b | c34d 8bd8 | 49c1 eb03 
+  0x000001a907c1dca8: 4489 9dd4 | 0000 004c | 8bd5 4d8b | d84d 33da | 49c1 eb15 | 4d85 db74 | 444d 85c0 | 743f 49c1 
+  0x000001a907c1dcc8: ea09 4c8b | 4424 204d | 03c2 4180 | 3802 742d | 4d8b 5758 | 4d8b 5f48 | f083 4424 | c000 4180 
+  0x000001a907c1dce8: 3800 7419 | 4588 204d | 85db 0f84 | 6c03 0000 | 4f89 441a | f849 83c3 | f84d 895f | 48ba 5900 
+  0x000001a907c1dd08: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1dd08: 0000 90e8 
+
+  0x000001a907c1dd0c: ; ImmutableOopMap {[72]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@661 (line 1609)
+  0x000001a907c1dd0c: f09f 96ff 
+
+  0x000001a907c1dd10: ;   {other}
+  0x000001a907c1dd10: 0f1f 8400 | 0019 0033 | ba45 ffff 
+
+  0x000001a907c1dd1c: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1dd1c: ff66 90e8 
+
+  0x000001a907c1dd20: ; ImmutableOopMap {[72]=Oop }
+                      ;*ifne {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@237 (line 1463)
+  0x000001a907c1dd20: dc9f 96ff 
+
+  0x000001a907c1dd24: ;   {other}
+  0x000001a907c1dd24: 0f1f 8400 | 1419 0034 | ba45 ffff | ff89 5c24 
+
+  0x000001a907c1dd34: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1dd34: 2866 90e8 
+
+  0x000001a907c1dd38: ; ImmutableOopMap {[72]=Oop }
+                      ;*if_icmpne {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@427 (line 1555)
+  0x000001a907c1dd38: c49f 96ff 
+
+  0x000001a907c1dd3c: ;   {other}
+  0x000001a907c1dd3c: 0f1f 8400 | 2c19 0035 | ba45 ffff | ff89 4424 
+
+  0x000001a907c1dd4c: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1dd4c: 2866 90e8 
+
+  0x000001a907c1dd50: ; ImmutableOopMap {[72]=Oop }
+                      ;*ifeq {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@481 (line 1570)
+  0x000001a907c1dd50: ac9f 96ff 
+
+  0x000001a907c1dd54: ;   {other}
+  0x000001a907c1dd54: 0f1f 8400 | 4419 0036 | 448b 5424 | 3845 85d2 | 0f84 7501 | 0000 488b 
+
+  0x000001a907c1dd6c: ;   {optimized virtual_call}
+  0x000001a907c1dd6c: 5424 48e8 
+
+  0x000001a907c1dd70: ; ImmutableOopMap {rbp=Oop [72]=Oop }
+                      ;*invokespecial joinPC {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@735 (line 1620)
+  0x000001a907c1dd70: 0c34 b2f8 
+
+  0x000001a907c1dd74: ;   {other}
+  0x000001a907c1dd74: 0f1f 8400 | 6419 0037 | 8b9d e400 | 0000 33c0 | e9b9 fbff | ffba e4ff | ffff 894c 
+
+  0x000001a907c1dd90: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1dd90: 2428 90e8 
+
+  0x000001a907c1dd94: ; ImmutableOopMap {[40]=NarrowOop [72]=Oop }
+                      ;*castore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1035 (line 1715)
+  0x000001a907c1dd94: 689f 96ff 
+
+  0x000001a907c1dd98: ;   {other}
+  0x000001a907c1dd98: 0f1f 8400 | 8819 0038 | ba45 ffff | ff44 8954 
+
+  0x000001a907c1dda8: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1dda8: 2428 90e8 
+
+  0x000001a907c1ddac: ; ImmutableOopMap {[72]=Oop }
+                      ;*if_icmplt {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1007 (line 1713)
+  0x000001a907c1ddac: 509f 96ff 
+
+  0x000001a907c1ddb0: ;   {other}
+  0x000001a907c1ddb0: 0f1f 8400 | a019 0039 | ba45 ffff | ff44 895c 
+
+  0x000001a907c1ddc0: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1ddc0: 2428 90e8 
+
+  0x000001a907c1ddc4: ; ImmutableOopMap {[72]=Oop }
+                      ;*if_icmple {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@973 (line 1702)
+  0x000001a907c1ddc4: 389f 96ff 
+
+  0x000001a907c1ddc8: ;   {other}
+  0x000001a907c1ddc8: 0f1f 8400 | b819 003a | 4889 5c24 | 2848 896c | 2420 488b 
+
+  0x000001a907c1dddc: ;   {metadata({type array byte})}
+  0x000001a907c1dddc: 6c24 4848 | ba68 2200 | 13a9 0100 | 0041 b810 
+
+  0x000001a907c1ddec: ;   {runtime_call _new_array_Java}
+  0x000001a907c1ddec: 0000 00e8 
+
+  0x000001a907c1ddf0: ; ImmutableOopMap {rbp=Oop [32]=Oop [40]=Oop }
+                      ;*newarray {reexecute=0 rethrow=0 return_oop=1}
+                      ; - java.lang.AbstractStringBuilder::<init>@12 (line 101)
+                      ; - java.lang.StringBuilder::<init>@3 (line 106)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@30 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1ddf0: 8c4c a5ff 
+
+  0x000001a907c1ddf4: ;   {other}
+  0x000001a907c1ddf4: 0f1f 8400 | e419 003b | 4889 6c24 | 4848 8b6c | 2420 488b | 5c24 28e9 | 79f5 ffff 
+
+  0x000001a907c1de10: ;   {metadata('java/io/EOFException')}
+  0x000001a907c1de10: 48ba 889a | 0614 a901 
+
+  0x000001a907c1de18: ;   {runtime_call _new_instance_Java}
+  0x000001a907c1de18: 0000 90e8 
+
+  0x000001a907c1de1c: ; ImmutableOopMap {[72]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@22 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1de1c: e015 a5ff 
+
+  0x000001a907c1de20: ;   {other}
+  0x000001a907c1de20: 0f1f 8400 | 101a 003c | e9a2 f4ff | ff48 896c 
+
+  0x000001a907c1de30: ;   {metadata('java/lang/StringBuilder')}
+  0x000001a907c1de30: 2420 48ba | 1880 0013 | a901 0000 
+
+  0x000001a907c1de3c: ;   {runtime_call _new_instance_Java}
+  0x000001a907c1de3c: 6666 90e8 
+
+  0x000001a907c1de40: ; ImmutableOopMap {[32]=Oop [72]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@26 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1de40: bc15 a5ff 
+
+  0x000001a907c1de44: ;   {other}
+  0x000001a907c1de44: 0f1f 8400 | 341a 003d | 488b 6c24 | 20e9 c8f4 | ffff 4889 | 5c24 4048 | 896c 2438 
+
+  0x000001a907c1de60: ;   {metadata({type array byte})}
+  0x000001a907c1de60: 48ba 6822 | 0013 a901 | 0000 41b8 | 1000 0000 
+
+  0x000001a907c1de70: ;   {runtime_call _new_array_Java}
+  0x000001a907c1de70: 6666 90e8 
+
+  0x000001a907c1de74: ; ImmutableOopMap {[56]=Oop [64]=Oop [72]=Oop }
+                      ;*newarray {reexecute=0 rethrow=0 return_oop=1}
+                      ; - java.lang.AbstractStringBuilder::<init>@12 (line 101)
+                      ; - java.lang.StringBuilder::<init>@3 (line 106)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@30 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1de74: 084c a5ff 
+
+  0x000001a907c1de78: ;   {other}
+  0x000001a907c1de78: 0f1f 8400 | 681a 003e | 488b 6c24 | 3848 8b5c | 2440 e92a 
+
+  0x000001a907c1de8c: ;   {metadata('java/io/EOFException')}
+  0x000001a907c1de8c: f7ff ff48 | ba88 9a06 | 14a9 0100 
+
+  0x000001a907c1de98: ;   {runtime_call _new_instance_Java}
+  0x000001a907c1de98: 0066 90e8 
+
+  0x000001a907c1de9c: ; ImmutableOopMap {[72]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@22 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1de9c: 6015 a5ff 
+
+  0x000001a907c1dea0: ;   {other}
+  0x000001a907c1dea0: 0f1f 8400 | 901a 003f | e952 f6ff | ff48 896c | 2438 488b 
+
+  0x000001a907c1deb4: ;   {metadata('java/lang/StringBuilder')}
+  0x000001a907c1deb4: 6c24 4848 | ba18 8000 | 13a9 0100 
+
+  0x000001a907c1dec0: ;   {runtime_call _new_instance_Java}
+  0x000001a907c1dec0: 0066 90e8 
+
+  0x000001a907c1dec4: ; ImmutableOopMap {rbp=Oop [56]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=1}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@26 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1dec4: 3815 a5ff 
+
+  0x000001a907c1dec8: ;   {other}
+  0x000001a907c1dec8: 0f1f 8400 | b81a 0040 | 4889 6c24 | 4848 8b6c | 2438 e96f | f6ff ff44 | 8965 4cc6 | 455b 0144 
+  0x000001a907c1dee8: 8965 508b | 4424 2ce9 | 4efa ffff | bae4 ffff | ff89 4c24 | 2044 8954 
+
+  0x000001a907c1df00: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1df00: 2424 90e8 
+
+  0x000001a907c1df04: ; ImmutableOopMap {[32]=NarrowOop [72]=Oop }
+                      ;*castore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1094 (line 1724)
+  0x000001a907c1df04: f89d 96ff 
+
+  0x000001a907c1df08: ;   {other}
+  0x000001a907c1df08: 0f1f 8400 | f81a 0041 | baf6 ffff | ff48 8be8 
+
+  0x000001a907c1df18: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1df18: 6666 90e8 
+
+  0x000001a907c1df1c: ; ImmutableOopMap {rbp=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@43 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1df1c: e09d 96ff 
+
+  0x000001a907c1df20: ;   {other}
+  0x000001a907c1df20: 0f1f 8400 | 101b 0042 | baf6 ffff 
+
+  0x000001a907c1df2c: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1df2c: ff66 90e8 
+
+  0x000001a907c1df30: ; ImmutableOopMap {}
+                      ;*invokevirtual toString {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@46 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1df30: cc9d 96ff 
+
+  0x000001a907c1df34: ;   {other}
+  0x000001a907c1df34: 0f1f 8400 | 241b 0043 | ba59 0000 | 0089 4424 
+
+  0x000001a907c1df44: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1df44: 2066 90e8 
+
+  0x000001a907c1df48: ; ImmutableOopMap {[72]=Oop }
+                      ;*new {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@392 (line 1551)
+  0x000001a907c1df48: b49d 96ff 
+
+  0x000001a907c1df4c: ;   {other}
+  0x000001a907c1df4c: 0f1f 8400 | 3c1b 0044 | ba45 ffff | ff44 8954 
+
+  0x000001a907c1df5c: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1df5c: 2428 90e8 
+
+  0x000001a907c1df60: ; ImmutableOopMap {[72]=Oop }
+                      ;*if_icmplt {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1066 (line 1722)
+  0x000001a907c1df60: 9c9d 96ff 
+
+  0x000001a907c1df64: ;   {other}
+  0x000001a907c1df64: 0f1f 8400 | 541b 0045 | baf6 ffff | ff48 8be8 
+
+  0x000001a907c1df74: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1df74: 6666 90e8 
+
+  0x000001a907c1df78: ; ImmutableOopMap {rbp=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@43 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1df78: 849d 96ff 
+
+  0x000001a907c1df7c: ;   {other}
+  0x000001a907c1df7c: 0f1f 8400 | 6c1b 0046 | baf6 ffff 
+
+  0x000001a907c1df88: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1df88: ff66 90e8 
+
+  0x000001a907c1df8c: ; ImmutableOopMap {}
+                      ;*invokevirtual toString {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@46 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1df8c: 709d 96ff 
+
+  0x000001a907c1df90: ;   {other}
+  0x000001a907c1df90: 0f1f 8400 | 801b 0047 | baf6 ffff | ff48 8be8 
+
+  0x000001a907c1dfa0: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1dfa0: 6666 90e8 
+
+  0x000001a907c1dfa4: ; ImmutableOopMap {rbp=Oop }
+                      ;*invokevirtual append {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@43 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1dfa4: 589d 96ff 
+
+  0x000001a907c1dfa8: ;   {other}
+  0x000001a907c1dfa8: 0f1f 8400 | 981b 0048 | baf6 ffff 
+
+  0x000001a907c1dfb4: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1dfb4: ff66 90e8 
+
+  0x000001a907c1dfb8: ; ImmutableOopMap {}
+                      ;*invokevirtual toString {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@46 (line 3983)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1dfb8: 449d 96ff 
+
+  0x000001a907c1dfbc: ;   {other}
+  0x000001a907c1dfbc: 0f1f 8400 | ac1b 0049 | 448b 95d4 | 0000 0045 | 85d2 0f84 | cafc ffff | 4d8b 5f28 | 498b ca48 
+  0x000001a907c1dfdc: c1e1 034d | 85db 0f84 | 9c00 0000 | 4d8b 5738 | 4b89 4c1a | f849 83c3 | f84d 895f | 28e9 a0fc 
+  0x000001a907c1dffc: ffff bae4 | ffff ff89 | 4424 2089 | 5c24 2489 | 4c24 2889 | 7424 2c44 | 894c 2430 | 897c 2434 
+  0x000001a907c1e01c: 4489 4424 
+
+  0x000001a907c1e020: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1e020: 3866 90e8 
+
+  0x000001a907c1e024: ; ImmutableOopMap {rbp=Oop [36]=NarrowOop [48]=NarrowOop }
+                      ;*castore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@823 (line 1637)
+  0x000001a907c1e024: d89c 96ff 
+
+  0x000001a907c1e028: ;   {other}
+  0x000001a907c1e028: 0f1f 8400 | 181c 004a | baf6 ffff 
+
+  0x000001a907c1e034: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1e034: ff8b efe8 
+
+  0x000001a907c1e038: ; ImmutableOopMap {}
+                      ;*castore {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@823 (line 1637)
+  0x000001a907c1e038: c49c 96ff 
+
+  0x000001a907c1e03c: ;   {other}
+  0x000001a907c1e03c: 0f1f 8400 | 2c1c 004b | ba76 ffff | ff89 4424 | 2089 5c24 | 2489 4c24 
+
+  0x000001a907c1e054: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1e054: 2c66 90e8 
+
+  0x000001a907c1e058: ; ImmutableOopMap {[36]=NarrowOop [72]=Oop }
+                      ;*if_icmpge {reexecute=1 rethrow=0 return_oop=0}
+                      ; - (reexecute) org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@776 (line 1631)
+  0x000001a907c1e058: a49c 96ff 
+
+  0x000001a907c1e05c: ;   {other}
+  0x000001a907c1e05c: 0f1f 8400 | 4c1c 004c | 498b c849 | 8bd7 49ba | 70f1 2459 | fb7f 0000 
+
+  0x000001a907c1e074: ;   {other}
+  0x000001a907c1e074: 41ff d20f | 1f84 0000 | 0000 00e9 | 81fc ffff | 498b d749 | ba90 f124 | 59fb 7f00 | 0041 ffd2 
+  0x000001a907c1e094: ;   {other}
+  0x000001a907c1e094: 0f1f 8400 | 0000 0000 | e9fd fbff | ffba f6ff | ffff 418b 
+
+  0x000001a907c1e0a8: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1e0a8: e966 90e8 
+
+  0x000001a907c1e0ac: ; ImmutableOopMap {}
+                      ;*caload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@68 (line 3985)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1149 (line 1740)
+  0x000001a907c1e0ac: 509c 96ff 
+
+  0x000001a907c1e0b0: ;   {other}
+  0x000001a907c1e0b0: 0f1f 8400 | a01c 004d | baf6 ffff 
+
+  0x000001a907c1e0bc: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1e0bc: ff66 90e8 
+
+  0x000001a907c1e0c0: ; ImmutableOopMap {}
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1116 (line 1732)
+  0x000001a907c1e0c0: 3c9c 96ff 
+
+  0x000001a907c1e0c4: ;   {other}
+  0x000001a907c1e0c4: 0f1f 8400 | b41c 004e | baf6 ffff | ff41 8bea 
+
+  0x000001a907c1e0d4: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1e0d4: 6666 90e8 
+
+  0x000001a907c1e0d8: ; ImmutableOopMap {}
+                      ;*caload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@68 (line 3985)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@175 (line 1436)
+  0x000001a907c1e0d8: 249c 96ff 
+
+  0x000001a907c1e0dc: ;   {other}
+  0x000001a907c1e0dc: 0f1f 8400 | cc1c 004f | baf6 ffff | ff41 8be9 
+
+  0x000001a907c1e0ec: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1e0ec: 6666 90e8 
+
+  0x000001a907c1e0f0: ; ImmutableOopMap {}
+                      ;*caload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::more@68 (line 3985)
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@223 (line 1460)
+  0x000001a907c1e0f0: 0c9c 96ff 
+
+  0x000001a907c1e0f4: ;   {other}
+  0x000001a907c1e0f4: 0f1f 8400 | e41c 0050 | baf6 ffff 
+
+  0x000001a907c1e100: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1e100: ff8b e9e8 
+
+  0x000001a907c1e104: ; ImmutableOopMap {}
+                      ;*iaload {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@59 (line 1397)
+  0x000001a907c1e104: f89b 96ff 
+
+  0x000001a907c1e108: ;   {other}
+  0x000001a907c1e108: 0f1f 8400 | f81c 0051 | baf6 ffff 
+
+  0x000001a907c1e114: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1e114: ff66 90e8 
+
+  0x000001a907c1e118: ; ImmutableOopMap {}
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1006 (line 1713)
+  0x000001a907c1e118: e49b 96ff 
+
+  0x000001a907c1e11c: ;   {other}
+  0x000001a907c1e11c: 0f1f 8400 | 0c1d 0052 | baf6 ffff 
+
+  0x000001a907c1e128: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1e128: ff66 90e8 
+
+  0x000001a907c1e12c: ; ImmutableOopMap {}
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@1065 (line 1722)
+  0x000001a907c1e12c: d09b 96ff 
+
+  0x000001a907c1e130: ;   {other}
+  0x000001a907c1e130: 0f1f 8400 | 201d 0053 | baf6 ffff 
+
+  0x000001a907c1e13c: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1e13c: ff66 90e8 
+
+  0x000001a907c1e140: ; ImmutableOopMap {}
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@794 (line 1633)
+  0x000001a907c1e140: bc9b 96ff 
+
+  0x000001a907c1e144: ;   {other}
+  0x000001a907c1e144: 0f1f 8400 | 341d 0054 | baf6 ffff 
+
+  0x000001a907c1e150: ;   {runtime_call UncommonTrapBlob}
+  0x000001a907c1e150: ff66 90e8 
+
+  0x000001a907c1e154: ; ImmutableOopMap {}
+                      ;*arraylength {reexecute=0 rethrow=0 return_oop=0}
+                      ; - org.codehaus.plexus.util.xml.pull.MXParser::nextImpl@766 (line 1631)
+  0x000001a907c1e154: a89b 96ff 
+
+  0x000001a907c1e158: ;   {other}
+  0x000001a907c1e158: 0f1f 8400 | 481d 0055 | eb52 eb50 | eb4e eb4c | eb4a eb48 | eb46 eb44 | eb42 eb40 | eb3e eb3c 
+  0x000001a907c1e178: eb3a eb38 | eb36 eb34 | eb32 eb30 | eb2e eb2c | eb2a eb28 | eb26 eb24 | eb22 eb20 | eb1e eb1c 
+  0x000001a907c1e198: eb1a eb18 | eb16 eb14 | eb12 eb10 | eb0e eb0c | eb0a eb08 | eb06 eb04 | eb02 eb00 | 488b d0e9 
+  0x000001a907c1e1b8: 49ee ffff 
+
+  0x000001a907c1e1bc: ;   {internal_word}
+  0x000001a907c1e1bc: 49ba 71c9 | c107 a901 | 0000 4d89 | 9760 0400 
+
+  0x000001a907c1e1cc: ;   {runtime_call SafepointBlob}
+  0x000001a907c1e1cc: 00e9 ae89 
+
+  0x000001a907c1e1d0: ;   {runtime_call StubRoutines (final stubs)}
+  0x000001a907c1e1d0: 96ff e8a9 | 7b94 ffe9 | c2e6 ffff | f4f4 f4f4 
+[Stub Code]
+  0x000001a907c1e1e0: ;   {no_reloc}
+  0x000001a907c1e1e0: 48bb 0000 | 0000 0000 
+
+  0x000001a907c1e1e8: ;   {runtime_call}
+  0x000001a907c1e1e8: 0000 e9fb 
+
+  0x000001a907c1e1ec: ;   {static_stub}
+  0x000001a907c1e1ec: ffff ff48 | bb00 0000 | 0000 0000 
+
+  0x000001a907c1e1f8: ;   {runtime_call}
+  0x000001a907c1e1f8: 00e9 fbff 
+
+  0x000001a907c1e1fc: ;   {static_stub}
+  0x000001a907c1e1fc: ffff 48bb | 0000 0000 | 0000 0000 
+
+  0x000001a907c1e208: ;   {runtime_call}
+  0x000001a907c1e208: e9fb ffff 
+
+  0x000001a907c1e20c: ;   {static_stub}
+  0x000001a907c1e20c: ff48 bb00 | 0000 0000 
+
+  0x000001a907c1e214: ;   {runtime_call}
+  0x000001a907c1e214: 0000 00e9 | fbff ffff 
+
+  0x000001a907c1e21c: ;   {static_stub}
+  0x000001a907c1e21c: 48bb 0000 | 0000 0000 
+
+  0x000001a907c1e224: ;   {runtime_call}
+  0x000001a907c1e224: 0000 e9fb 
+
+  0x000001a907c1e228: ;   {static_stub}
+  0x000001a907c1e228: ffff ff48 | bb00 0000 | 0000 0000 
+
+  0x000001a907c1e234: ;   {runtime_call}
+  0x000001a907c1e234: 00e9 fbff 
+
+  0x000001a907c1e238: ;   {static_stub}
+  0x000001a907c1e238: ffff 48bb | 0000 0000 | 0000 0000 
+
+  0x000001a907c1e244: ;   {runtime_call}
+  0x000001a907c1e244: e9fb ffff 
+
+  0x000001a907c1e248: ;   {static_stub}
+  0x000001a907c1e248: ff48 bb00 | 0000 0000 
+
+  0x000001a907c1e250: ;   {runtime_call}
+  0x000001a907c1e250: 0000 00e9 | fbff ffff 
+
+  0x000001a907c1e258: ;   {static_stub}
+  0x000001a907c1e258: 48bb 0000 | 0000 0000 
+
+  0x000001a907c1e260: ;   {runtime_call}
+  0x000001a907c1e260: 0000 e9fb 
+
+  0x000001a907c1e264: ;   {static_stub}
+  0x000001a907c1e264: ffff ff48 | bb90 df4c | 55a9 0100 
+
+  0x000001a907c1e270: ;   {runtime_call I2C/C2I adapters}
+  0x000001a907c1e270: 00e9 0d5c 
+
+  0x000001a907c1e274: ;   {static_stub}
+  0x000001a907c1e274: 96ff 48bb | 18e4 4c55 | a901 0000 
+
+  0x000001a907c1e280: ;   {runtime_call I2C/C2I adapters}
+  0x000001a907c1e280: e9fe 5b96 
+
+  0x000001a907c1e284: ;   {static_stub}
+  0x000001a907c1e284: ff48 bb00 | 0000 0000 
+
+  0x000001a907c1e28c: ;   {runtime_call}
+  0x000001a907c1e28c: 0000 00e9 | fbff ffff 
+
+  0x000001a907c1e294: ;   {static_stub}
+  0x000001a907c1e294: 48bb 0000 | 0000 0000 
+
+  0x000001a907c1e29c: ;   {runtime_call}
+  0x000001a907c1e29c: 0000 e9fb 
+
+  0x000001a907c1e2a0: ;   {static_stub}
+  0x000001a907c1e2a0: ffff ff48 | bba8 234d | 55a9 0100 
+
+  0x000001a907c1e2ac: ;   {runtime_call I2C/C2I adapters}
+  0x000001a907c1e2ac: 00e9 d15b 
+
+  0x000001a907c1e2b0: ;   {static_stub}
+  0x000001a907c1e2b0: 96ff 48bb | a0fe 4c55 | a901 0000 
+
+  0x000001a907c1e2bc: ;   {runtime_call I2C/C2I adapters}
+  0x000001a907c1e2bc: e9c2 5b96 
+
+  0x000001a907c1e2c0: ;   {static_stub}
+  0x000001a907c1e2c0: ff48 bb00 | 0000 0000 
+
+  0x000001a907c1e2c8: ;   {runtime_call}
+  0x000001a907c1e2c8: 0000 00e9 | fbff ffff 
+
+  0x000001a907c1e2d0: ;   {static_stub}
+  0x000001a907c1e2d0: 48bb 0000 | 0000 0000 
+
+  0x000001a907c1e2d8: ;   {runtime_call}
+  0x000001a907c1e2d8: 0000 e9fb 
+
+  0x000001a907c1e2dc: ;   {static_stub}
+  0x000001a907c1e2dc: ffff ff48 | bb00 0000 | 0000 0000 
+
+  0x000001a907c1e2e8: ;   {runtime_call}
+  0x000001a907c1e2e8: 00e9 fbff 
+
+  0x000001a907c1e2ec: ;   {static_stub}
+  0x000001a907c1e2ec: ffff 48bb | 0000 0000 | 0000 0000 
+
+  0x000001a907c1e2f8: ;   {runtime_call}
+  0x000001a907c1e2f8: e9fb ffff 
+
+  0x000001a907c1e2fc: ;   {static_stub}
+  0x000001a907c1e2fc: ff48 bb20 | 204d 55a9 
+
+  0x000001a907c1e304: ;   {runtime_call I2C/C2I adapters}
+  0x000001a907c1e304: 0100 00e9 | 775b 96ff 
+
+  0x000001a907c1e30c: ;   {static_stub}
+  0x000001a907c1e30c: 48bb 0000 | 0000 0000 
+
+  0x000001a907c1e314: ;   {runtime_call}
+  0x000001a907c1e314: 0000 e9fb 
+
+  0x000001a907c1e318: ;   {runtime_call ExceptionBlob}
+  0x000001a907c1e318: ffff ffe9 | 601a a5ff 
+[Deopt Handler Code]
+  0x000001a907c1e320: e800 0000 | 0048 832c 
+
+  0x000001a907c1e328: ;   {runtime_call DeoptimizationBlob}
+  0x000001a907c1e328: 2405 e9f1 | 9c96 fff4 
+[/MachCode]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x000001a954aecce0, length=13, elements={
+0x000001a9715d2570, 0x000001a97f9030d0, 0x000001a97f907de0, 0x000001a97f90cb00,
+0x000001a97f90d550, 0x000001a97f90e150, 0x000001a97f90eba0, 0x000001a97f911ae0,
+0x000001a97f9135b0, 0x000001a9541a2780, 0x000001a954474f60, 0x000001a9544cef50,
+0x000001a954b014d0
+}
+
+Java Threads: ( => current thread )
+=>0x000001a9715d2570 JavaThread "main"                              [_thread_in_Java, id=13012, stack(0x0000000fafb00000,0x0000000fafc00000) (1024K)]
+  0x000001a97f9030d0 JavaThread "Reference Handler"          daemon [_thread_blocked, id=19700, stack(0x0000000fb0300000,0x0000000fb0400000) (1024K)]
+  0x000001a97f907de0 JavaThread "Finalizer"                  daemon [_thread_blocked, id=14264, stack(0x0000000fb0400000,0x0000000fb0500000) (1024K)]
+  0x000001a97f90cb00 JavaThread "Signal Dispatcher"          daemon [_thread_blocked, id=8768, stack(0x0000000fb0500000,0x0000000fb0600000) (1024K)]
+  0x000001a97f90d550 JavaThread "Attach Listener"            daemon [_thread_blocked, id=20896, stack(0x0000000fb0600000,0x0000000fb0700000) (1024K)]
+  0x000001a97f90e150 JavaThread "Service Thread"             daemon [_thread_blocked, id=5208, stack(0x0000000fb0700000,0x0000000fb0800000) (1024K)]
+  0x000001a97f90eba0 JavaThread "Monitor Deflation Thread"   daemon [_thread_blocked, id=23296, stack(0x0000000fb0800000,0x0000000fb0900000) (1024K)]
+  0x000001a97f911ae0 JavaThread "C2 CompilerThread0"         daemon [_thread_blocked, id=15368, stack(0x0000000fb0900000,0x0000000fb0a00000) (1024K)]
+  0x000001a97f9135b0 JavaThread "C1 CompilerThread0"         daemon [_thread_blocked, id=19544, stack(0x0000000fb0a00000,0x0000000fb0b00000) (1024K)]
+  0x000001a9541a2780 JavaThread "Common-Cleaner"             daemon [_thread_blocked, id=8188, stack(0x0000000fb0b00000,0x0000000fb0c00000) (1024K)]
+  0x000001a954474f60 JavaThread "Monitor Ctrl-Break"         daemon [_thread_in_native, id=14400, stack(0x0000000fb0c00000,0x0000000fb0d00000) (1024K)]
+  0x000001a9544cef50 JavaThread "Notification Thread"        daemon [_thread_blocked, id=9120, stack(0x0000000fb0d00000,0x0000000fb0e00000) (1024K)]
+  0x000001a954b014d0 JavaThread "Thread-1"                   daemon [_thread_blocked, id=37740, stack(0x0000000fb0f00000,0x0000000fb1000000) (1024K)]
+Total: 13
+
+Other Threads:
+  0x000001a97f8e71b0 VMThread "VM Thread"                           [id=23336, stack(0x0000000fb0200000,0x0000000fb0300000) (1024K)]
+  0x000001a97f8d82a0 WatcherThread "VM Periodic Task Thread"        [id=20824, stack(0x0000000fb0100000,0x0000000fb0200000) (1024K)]
+  0x000001a97163a190 WorkerThread "GC Thread#0"                     [id=17396, stack(0x0000000fafc00000,0x0000000fafd00000) (1024K)]
+  0x000001a95444b6b0 WorkerThread "GC Thread#1"                     [id=23968, stack(0x0000000fb1000000,0x0000000fb1100000) (1024K)]
+  0x000001a954beee50 WorkerThread "GC Thread#2"                     [id=23972, stack(0x0000000fb1100000,0x0000000fb1200000) (1024K)]
+  0x000001a954bef1f0 WorkerThread "GC Thread#3"                     [id=23976, stack(0x0000000fb1200000,0x0000000fb1300000) (1024K)]
+  0x000001a954a892c0 WorkerThread "GC Thread#4"                     [id=23980, stack(0x0000000fb1300000,0x0000000fb1400000) (1024K)]
+  0x000001a954a89660 WorkerThread "GC Thread#5"                     [id=23984, stack(0x0000000fb1400000,0x0000000fb1500000) (1024K)]
+  0x000001a954f3ebb0 WorkerThread "GC Thread#6"                     [id=24312, stack(0x0000000fb1500000,0x0000000fb1600000) (1024K)]
+  0x000001a954177f80 WorkerThread "GC Thread#7"                     [id=24316, stack(0x0000000fb1600000,0x0000000fb1700000) (1024K)]
+  0x000001a97164b7a0 ConcurrentGCThread "G1 Main Marker"            [id=9548, stack(0x0000000fafd00000,0x0000000fafe00000) (1024K)]
+  0x000001a97164c1b0 WorkerThread "G1 Conc#0"                       [id=1284, stack(0x0000000fafe00000,0x0000000faff00000) (1024K)]
+  0x000001a97167e5a0 ConcurrentGCThread "G1 Refine#0"               [id=23068, stack(0x0000000faff00000,0x0000000fb0000000) (1024K)]
+  0x000001a97f885370 ConcurrentGCThread "G1 Service"                [id=14216, stack(0x0000000fb0000000,0x0000000fb0100000) (1024K)]
+Total: 14
+
+Threads with active compile tasks:
+Total: 0
+
+VM state: not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap address: 0x0000000704000000, size: 4032 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x000001a913000000-0x000001a913c90000-0x000001a913c90000), size 13172736, SharedBaseAddress: 0x000001a913000000, ArchiveRelocationMode: 1.
+Compressed class space mapped at: 0x000001a914000000-0x000001a954000000, reserved size: 1073741824
+Narrow klass base: 0x000001a913000000, Narrow klass shift: 0, Narrow klass range: 0x100000000
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 4 size 8 Array Of Cards #cards 16 size 48 Howl #buckets 8 coarsen threshold 3686 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 4096
+ CPUs: 8 total, 8 available
+ Memory: 16126M
+ Large Page Support: Disabled
+ NUMA Support: Disabled
+ Compressed Oops: Enabled (Zero based)
+ Heap Region Size: 2M
+ Heap Min Capacity: 8M
+ Heap Initial Capacity: 252M
+ Heap Max Capacity: 4032M
+ Pre-touch: Disabled
+ Parallel Workers: 8
+ Concurrent Workers: 2
+ Concurrent Refinement Workers: 8
+ Periodic GC: Disabled
+
+Heap:
+ garbage-first heap   total 258048K, used 65250K [0x0000000704000000, 0x0000000800000000)
+  region size 2048K, 31 young (63488K), 1 survivors (2048K)
+ Metaspace       used 16477K, committed 16704K, reserved 1114112K
+  class space    used 1890K, committed 1984K, reserved 1048576K
+
+Heap Regions: E=young(eden), S=young(survivor), O=old, HS=humongous(starts), HC=humongous(continues), CS=collection set, F=free, TAMS=top-at-mark-start, PB=parsable bottom
+|   0|0x0000000704000000, 0x0000000704200000, 0x0000000704200000|100%| O|  |TAMS 0x0000000704000000| PB 0x0000000704000000| Untracked 
+|   1|0x0000000704200000, 0x0000000704400000, 0x0000000704400000|100%| O|  |TAMS 0x0000000704200000| PB 0x0000000704200000| Untracked 
+|   2|0x0000000704400000, 0x0000000704430900, 0x0000000704600000|  9%| O|  |TAMS 0x0000000704400000| PB 0x0000000704400000| Untracked 
+|   3|0x0000000704600000, 0x0000000704600000, 0x0000000704800000|  0%| F|  |TAMS 0x0000000704600000| PB 0x0000000704600000| Untracked 
+|   4|0x0000000704800000, 0x0000000704800000, 0x0000000704a00000|  0%| F|  |TAMS 0x0000000704800000| PB 0x0000000704800000| Untracked 
+|   5|0x0000000704a00000, 0x0000000704a00000, 0x0000000704c00000|  0%| F|  |TAMS 0x0000000704a00000| PB 0x0000000704a00000| Untracked 
+|   6|0x0000000704c00000, 0x0000000704c00000, 0x0000000704e00000|  0%| F|  |TAMS 0x0000000704c00000| PB 0x0000000704c00000| Untracked 
+|   7|0x0000000704e00000, 0x0000000704e00000, 0x0000000705000000|  0%| F|  |TAMS 0x0000000704e00000| PB 0x0000000704e00000| Untracked 
+|   8|0x0000000705000000, 0x0000000705000000, 0x0000000705200000|  0%| F|  |TAMS 0x0000000705000000| PB 0x0000000705000000| Untracked 
+|   9|0x0000000705200000, 0x0000000705200000, 0x0000000705400000|  0%| F|  |TAMS 0x0000000705200000| PB 0x0000000705200000| Untracked 
+|  10|0x0000000705400000, 0x0000000705400000, 0x0000000705600000|  0%| F|  |TAMS 0x0000000705400000| PB 0x0000000705400000| Untracked 
+|  11|0x0000000705600000, 0x0000000705600000, 0x0000000705800000|  0%| F|  |TAMS 0x0000000705600000| PB 0x0000000705600000| Untracked 
+|  12|0x0000000705800000, 0x0000000705800000, 0x0000000705a00000|  0%| F|  |TAMS 0x0000000705800000| PB 0x0000000705800000| Untracked 
+|  13|0x0000000705a00000, 0x0000000705a00000, 0x0000000705c00000|  0%| F|  |TAMS 0x0000000705a00000| PB 0x0000000705a00000| Untracked 
+|  14|0x0000000705c00000, 0x0000000705c00000, 0x0000000705e00000|  0%| F|  |TAMS 0x0000000705c00000| PB 0x0000000705c00000| Untracked 
+|  15|0x0000000705e00000, 0x0000000705e00000, 0x0000000706000000|  0%| F|  |TAMS 0x0000000705e00000| PB 0x0000000705e00000| Untracked 
+|  16|0x0000000706000000, 0x0000000706000000, 0x0000000706200000|  0%| F|  |TAMS 0x0000000706000000| PB 0x0000000706000000| Untracked 
+|  17|0x0000000706200000, 0x0000000706200000, 0x0000000706400000|  0%| F|  |TAMS 0x0000000706200000| PB 0x0000000706200000| Untracked 
+|  18|0x0000000706400000, 0x0000000706400000, 0x0000000706600000|  0%| F|  |TAMS 0x0000000706400000| PB 0x0000000706400000| Untracked 
+|  19|0x0000000706600000, 0x0000000706600000, 0x0000000706800000|  0%| F|  |TAMS 0x0000000706600000| PB 0x0000000706600000| Untracked 
+|  20|0x0000000706800000, 0x0000000706800000, 0x0000000706a00000|  0%| F|  |TAMS 0x0000000706800000| PB 0x0000000706800000| Untracked 
+|  21|0x0000000706a00000, 0x0000000706a00000, 0x0000000706c00000|  0%| F|  |TAMS 0x0000000706a00000| PB 0x0000000706a00000| Untracked 
+|  22|0x0000000706c00000, 0x0000000706c00000, 0x0000000706e00000|  0%| F|  |TAMS 0x0000000706c00000| PB 0x0000000706c00000| Untracked 
+|  23|0x0000000706e00000, 0x0000000706e00000, 0x0000000707000000|  0%| F|  |TAMS 0x0000000706e00000| PB 0x0000000706e00000| Untracked 
+|  24|0x0000000707000000, 0x0000000707000000, 0x0000000707200000|  0%| F|  |TAMS 0x0000000707000000| PB 0x0000000707000000| Untracked 
+|  25|0x0000000707200000, 0x0000000707200000, 0x0000000707400000|  0%| F|  |TAMS 0x0000000707200000| PB 0x0000000707200000| Untracked 
+|  26|0x0000000707400000, 0x0000000707400000, 0x0000000707600000|  0%| F|  |TAMS 0x0000000707400000| PB 0x0000000707400000| Untracked 
+|  27|0x0000000707600000, 0x0000000707600000, 0x0000000707800000|  0%| F|  |TAMS 0x0000000707600000| PB 0x0000000707600000| Untracked 
+|  28|0x0000000707800000, 0x0000000707800000, 0x0000000707a00000|  0%| F|  |TAMS 0x0000000707800000| PB 0x0000000707800000| Untracked 
+|  29|0x0000000707a00000, 0x0000000707a00000, 0x0000000707c00000|  0%| F|  |TAMS 0x0000000707a00000| PB 0x0000000707a00000| Untracked 
+|  30|0x0000000707c00000, 0x0000000707c00000, 0x0000000707e00000|  0%| F|  |TAMS 0x0000000707c00000| PB 0x0000000707c00000| Untracked 
+|  31|0x0000000707e00000, 0x0000000707e00000, 0x0000000708000000|  0%| F|  |TAMS 0x0000000707e00000| PB 0x0000000707e00000| Untracked 
+|  32|0x0000000708000000, 0x0000000708000000, 0x0000000708200000|  0%| F|  |TAMS 0x0000000708000000| PB 0x0000000708000000| Untracked 
+|  33|0x0000000708200000, 0x0000000708200000, 0x0000000708400000|  0%| F|  |TAMS 0x0000000708200000| PB 0x0000000708200000| Untracked 
+|  34|0x0000000708400000, 0x0000000708400000, 0x0000000708600000|  0%| F|  |TAMS 0x0000000708400000| PB 0x0000000708400000| Untracked 
+|  35|0x0000000708600000, 0x0000000708600000, 0x0000000708800000|  0%| F|  |TAMS 0x0000000708600000| PB 0x0000000708600000| Untracked 
+|  36|0x0000000708800000, 0x0000000708800000, 0x0000000708a00000|  0%| F|  |TAMS 0x0000000708800000| PB 0x0000000708800000| Untracked 
+|  37|0x0000000708a00000, 0x0000000708a00000, 0x0000000708c00000|  0%| F|  |TAMS 0x0000000708a00000| PB 0x0000000708a00000| Untracked 
+|  38|0x0000000708c00000, 0x0000000708c00000, 0x0000000708e00000|  0%| F|  |TAMS 0x0000000708c00000| PB 0x0000000708c00000| Untracked 
+|  39|0x0000000708e00000, 0x0000000708e00000, 0x0000000709000000|  0%| F|  |TAMS 0x0000000708e00000| PB 0x0000000708e00000| Untracked 
+|  40|0x0000000709000000, 0x0000000709000000, 0x0000000709200000|  0%| F|  |TAMS 0x0000000709000000| PB 0x0000000709000000| Untracked 
+|  41|0x0000000709200000, 0x0000000709200000, 0x0000000709400000|  0%| F|  |TAMS 0x0000000709200000| PB 0x0000000709200000| Untracked 
+|  42|0x0000000709400000, 0x0000000709400000, 0x0000000709600000|  0%| F|  |TAMS 0x0000000709400000| PB 0x0000000709400000| Untracked 
+|  43|0x0000000709600000, 0x0000000709600000, 0x0000000709800000|  0%| F|  |TAMS 0x0000000709600000| PB 0x0000000709600000| Untracked 
+|  44|0x0000000709800000, 0x0000000709800000, 0x0000000709a00000|  0%| F|  |TAMS 0x0000000709800000| PB 0x0000000709800000| Untracked 
+|  45|0x0000000709a00000, 0x0000000709a00000, 0x0000000709c00000|  0%| F|  |TAMS 0x0000000709a00000| PB 0x0000000709a00000| Untracked 
+|  46|0x0000000709c00000, 0x0000000709c00000, 0x0000000709e00000|  0%| F|  |TAMS 0x0000000709c00000| PB 0x0000000709c00000| Untracked 
+|  47|0x0000000709e00000, 0x0000000709e00000, 0x000000070a000000|  0%| F|  |TAMS 0x0000000709e00000| PB 0x0000000709e00000| Untracked 
+|  48|0x000000070a000000, 0x000000070a000000, 0x000000070a200000|  0%| F|  |TAMS 0x000000070a000000| PB 0x000000070a000000| Untracked 
+|  49|0x000000070a200000, 0x000000070a200000, 0x000000070a400000|  0%| F|  |TAMS 0x000000070a200000| PB 0x000000070a200000| Untracked 
+|  50|0x000000070a400000, 0x000000070a400000, 0x000000070a600000|  0%| F|  |TAMS 0x000000070a400000| PB 0x000000070a400000| Untracked 
+|  51|0x000000070a600000, 0x000000070a600000, 0x000000070a800000|  0%| F|  |TAMS 0x000000070a600000| PB 0x000000070a600000| Untracked 
+|  52|0x000000070a800000, 0x000000070a800000, 0x000000070aa00000|  0%| F|  |TAMS 0x000000070a800000| PB 0x000000070a800000| Untracked 
+|  53|0x000000070aa00000, 0x000000070aa00000, 0x000000070ac00000|  0%| F|  |TAMS 0x000000070aa00000| PB 0x000000070aa00000| Untracked 
+|  54|0x000000070ac00000, 0x000000070ac00000, 0x000000070ae00000|  0%| F|  |TAMS 0x000000070ac00000| PB 0x000000070ac00000| Untracked 
+|  55|0x000000070ae00000, 0x000000070ae00000, 0x000000070b000000|  0%| F|  |TAMS 0x000000070ae00000| PB 0x000000070ae00000| Untracked 
+|  56|0x000000070b000000, 0x000000070b000000, 0x000000070b200000|  0%| F|  |TAMS 0x000000070b000000| PB 0x000000070b000000| Untracked 
+|  57|0x000000070b200000, 0x000000070b200000, 0x000000070b400000|  0%| F|  |TAMS 0x000000070b200000| PB 0x000000070b200000| Untracked 
+|  58|0x000000070b400000, 0x000000070b400000, 0x000000070b600000|  0%| F|  |TAMS 0x000000070b400000| PB 0x000000070b400000| Untracked 
+|  59|0x000000070b600000, 0x000000070b600000, 0x000000070b800000|  0%| F|  |TAMS 0x000000070b600000| PB 0x000000070b600000| Untracked 
+|  60|0x000000070b800000, 0x000000070b800000, 0x000000070ba00000|  0%| F|  |TAMS 0x000000070b800000| PB 0x000000070b800000| Untracked 
+|  61|0x000000070ba00000, 0x000000070ba00000, 0x000000070bc00000|  0%| F|  |TAMS 0x000000070ba00000| PB 0x000000070ba00000| Untracked 
+|  62|0x000000070bc00000, 0x000000070bc00000, 0x000000070be00000|  0%| F|  |TAMS 0x000000070bc00000| PB 0x000000070bc00000| Untracked 
+|  63|0x000000070be00000, 0x000000070be00000, 0x000000070c000000|  0%| F|  |TAMS 0x000000070be00000| PB 0x000000070be00000| Untracked 
+|  64|0x000000070c000000, 0x000000070c000000, 0x000000070c200000|  0%| F|  |TAMS 0x000000070c000000| PB 0x000000070c000000| Untracked 
+|  65|0x000000070c200000, 0x000000070c200000, 0x000000070c400000|  0%| F|  |TAMS 0x000000070c200000| PB 0x000000070c200000| Untracked 
+|  66|0x000000070c400000, 0x000000070c400000, 0x000000070c600000|  0%| F|  |TAMS 0x000000070c400000| PB 0x000000070c400000| Untracked 
+|  67|0x000000070c600000, 0x000000070c600000, 0x000000070c800000|  0%| F|  |TAMS 0x000000070c600000| PB 0x000000070c600000| Untracked 
+|  68|0x000000070c800000, 0x000000070c800000, 0x000000070ca00000|  0%| F|  |TAMS 0x000000070c800000| PB 0x000000070c800000| Untracked 
+|  69|0x000000070ca00000, 0x000000070ca00000, 0x000000070cc00000|  0%| F|  |TAMS 0x000000070ca00000| PB 0x000000070ca00000| Untracked 
+|  70|0x000000070cc00000, 0x000000070cc00000, 0x000000070ce00000|  0%| F|  |TAMS 0x000000070cc00000| PB 0x000000070cc00000| Untracked 
+|  71|0x000000070ce00000, 0x000000070ce00000, 0x000000070d000000|  0%| F|  |TAMS 0x000000070ce00000| PB 0x000000070ce00000| Untracked 
+|  72|0x000000070d000000, 0x000000070d000000, 0x000000070d200000|  0%| F|  |TAMS 0x000000070d000000| PB 0x000000070d000000| Untracked 
+|  73|0x000000070d200000, 0x000000070d200000, 0x000000070d400000|  0%| F|  |TAMS 0x000000070d200000| PB 0x000000070d200000| Untracked 
+|  74|0x000000070d400000, 0x000000070d400000, 0x000000070d600000|  0%| F|  |TAMS 0x000000070d400000| PB 0x000000070d400000| Untracked 
+|  75|0x000000070d600000, 0x000000070d600000, 0x000000070d800000|  0%| F|  |TAMS 0x000000070d600000| PB 0x000000070d600000| Untracked 
+|  76|0x000000070d800000, 0x000000070d800000, 0x000000070da00000|  0%| F|  |TAMS 0x000000070d800000| PB 0x000000070d800000| Untracked 
+|  77|0x000000070da00000, 0x000000070da00000, 0x000000070dc00000|  0%| F|  |TAMS 0x000000070da00000| PB 0x000000070da00000| Untracked 
+|  78|0x000000070dc00000, 0x000000070dc00000, 0x000000070de00000|  0%| F|  |TAMS 0x000000070dc00000| PB 0x000000070dc00000| Untracked 
+|  79|0x000000070de00000, 0x000000070de00000, 0x000000070e000000|  0%| F|  |TAMS 0x000000070de00000| PB 0x000000070de00000| Untracked 
+|  80|0x000000070e000000, 0x000000070e000000, 0x000000070e200000|  0%| F|  |TAMS 0x000000070e000000| PB 0x000000070e000000| Untracked 
+|  81|0x000000070e200000, 0x000000070e200000, 0x000000070e400000|  0%| F|  |TAMS 0x000000070e200000| PB 0x000000070e200000| Untracked 
+|  82|0x000000070e400000, 0x000000070e400000, 0x000000070e600000|  0%| F|  |TAMS 0x000000070e400000| PB 0x000000070e400000| Untracked 
+|  83|0x000000070e600000, 0x000000070e600000, 0x000000070e800000|  0%| F|  |TAMS 0x000000070e600000| PB 0x000000070e600000| Untracked 
+|  84|0x000000070e800000, 0x000000070e800000, 0x000000070ea00000|  0%| F|  |TAMS 0x000000070e800000| PB 0x000000070e800000| Untracked 
+|  85|0x000000070ea00000, 0x000000070ea00000, 0x000000070ec00000|  0%| F|  |TAMS 0x000000070ea00000| PB 0x000000070ea00000| Untracked 
+|  86|0x000000070ec00000, 0x000000070ec00000, 0x000000070ee00000|  0%| F|  |TAMS 0x000000070ec00000| PB 0x000000070ec00000| Untracked 
+|  87|0x000000070ee00000, 0x000000070ee00000, 0x000000070f000000|  0%| F|  |TAMS 0x000000070ee00000| PB 0x000000070ee00000| Untracked 
+|  88|0x000000070f000000, 0x000000070f000000, 0x000000070f200000|  0%| F|  |TAMS 0x000000070f000000| PB 0x000000070f000000| Untracked 
+|  89|0x000000070f200000, 0x000000070f200000, 0x000000070f400000|  0%| F|  |TAMS 0x000000070f200000| PB 0x000000070f200000| Untracked 
+|  90|0x000000070f400000, 0x000000070f400000, 0x000000070f600000|  0%| F|  |TAMS 0x000000070f400000| PB 0x000000070f400000| Untracked 
+|  91|0x000000070f600000, 0x000000070f600000, 0x000000070f800000|  0%| F|  |TAMS 0x000000070f600000| PB 0x000000070f600000| Untracked 
+|  92|0x000000070f800000, 0x000000070f800000, 0x000000070fa00000|  0%| F|  |TAMS 0x000000070f800000| PB 0x000000070f800000| Untracked 
+|  93|0x000000070fa00000, 0x000000070fa00000, 0x000000070fc00000|  0%| F|  |TAMS 0x000000070fa00000| PB 0x000000070fa00000| Untracked 
+|  94|0x000000070fc00000, 0x000000070fc00000, 0x000000070fe00000|  0%| F|  |TAMS 0x000000070fc00000| PB 0x000000070fc00000| Untracked 
+|  95|0x000000070fe00000, 0x000000070fe996d0, 0x0000000710000000| 29%| E|  |TAMS 0x000000070fe00000| PB 0x000000070fe00000| Complete 
+|  96|0x0000000710000000, 0x0000000710200000, 0x0000000710200000|100%| E|CS|TAMS 0x0000000710000000| PB 0x0000000710000000| Complete 
+|  97|0x0000000710200000, 0x0000000710400000, 0x0000000710400000|100%| E|CS|TAMS 0x0000000710200000| PB 0x0000000710200000| Complete 
+|  98|0x0000000710400000, 0x0000000710600000, 0x0000000710600000|100%| E|CS|TAMS 0x0000000710400000| PB 0x0000000710400000| Complete 
+|  99|0x0000000710600000, 0x0000000710800000, 0x0000000710800000|100%| E|CS|TAMS 0x0000000710600000| PB 0x0000000710600000| Complete 
+| 100|0x0000000710800000, 0x0000000710a00000, 0x0000000710a00000|100%| E|CS|TAMS 0x0000000710800000| PB 0x0000000710800000| Complete 
+| 101|0x0000000710a00000, 0x0000000710c00000, 0x0000000710c00000|100%| E|CS|TAMS 0x0000000710a00000| PB 0x0000000710a00000| Complete 
+| 102|0x0000000710c00000, 0x0000000710e00000, 0x0000000710e00000|100%| E|CS|TAMS 0x0000000710c00000| PB 0x0000000710c00000| Complete 
+| 103|0x0000000710e00000, 0x0000000711000000, 0x0000000711000000|100%| E|CS|TAMS 0x0000000710e00000| PB 0x0000000710e00000| Complete 
+| 104|0x0000000711000000, 0x0000000711200000, 0x0000000711200000|100%| E|CS|TAMS 0x0000000711000000| PB 0x0000000711000000| Complete 
+| 105|0x0000000711200000, 0x0000000711400000, 0x0000000711400000|100%| E|CS|TAMS 0x0000000711200000| PB 0x0000000711200000| Complete 
+| 106|0x0000000711400000, 0x0000000711600000, 0x0000000711600000|100%| E|CS|TAMS 0x0000000711400000| PB 0x0000000711400000| Complete 
+| 107|0x0000000711600000, 0x0000000711800000, 0x0000000711800000|100%| E|CS|TAMS 0x0000000711600000| PB 0x0000000711600000| Complete 
+| 108|0x0000000711800000, 0x0000000711988220, 0x0000000711a00000| 76%| S|CS|TAMS 0x0000000711800000| PB 0x0000000711800000| Complete 
+| 109|0x0000000711a00000, 0x0000000711c00000, 0x0000000711c00000|100%| E|CS|TAMS 0x0000000711a00000| PB 0x0000000711a00000| Complete 
+| 110|0x0000000711c00000, 0x0000000711e00000, 0x0000000711e00000|100%| E|CS|TAMS 0x0000000711c00000| PB 0x0000000711c00000| Complete 
+| 111|0x0000000711e00000, 0x0000000712000000, 0x0000000712000000|100%| E|CS|TAMS 0x0000000711e00000| PB 0x0000000711e00000| Complete 
+| 112|0x0000000712000000, 0x0000000712200000, 0x0000000712200000|100%| E|CS|TAMS 0x0000000712000000| PB 0x0000000712000000| Complete 
+| 113|0x0000000712200000, 0x0000000712400000, 0x0000000712400000|100%| E|CS|TAMS 0x0000000712200000| PB 0x0000000712200000| Complete 
+| 114|0x0000000712400000, 0x0000000712600000, 0x0000000712600000|100%| E|CS|TAMS 0x0000000712400000| PB 0x0000000712400000| Complete 
+| 115|0x0000000712600000, 0x0000000712800000, 0x0000000712800000|100%| E|CS|TAMS 0x0000000712600000| PB 0x0000000712600000| Complete 
+| 116|0x0000000712800000, 0x0000000712a00000, 0x0000000712a00000|100%| E|CS|TAMS 0x0000000712800000| PB 0x0000000712800000| Complete 
+| 117|0x0000000712a00000, 0x0000000712c00000, 0x0000000712c00000|100%| E|CS|TAMS 0x0000000712a00000| PB 0x0000000712a00000| Complete 
+| 118|0x0000000712c00000, 0x0000000712e00000, 0x0000000712e00000|100%| E|CS|TAMS 0x0000000712c00000| PB 0x0000000712c00000| Complete 
+| 119|0x0000000712e00000, 0x0000000713000000, 0x0000000713000000|100%| E|CS|TAMS 0x0000000712e00000| PB 0x0000000712e00000| Complete 
+| 120|0x0000000713000000, 0x0000000713200000, 0x0000000713200000|100%| E|CS|TAMS 0x0000000713000000| PB 0x0000000713000000| Complete 
+| 121|0x0000000713200000, 0x0000000713400000, 0x0000000713400000|100%| E|CS|TAMS 0x0000000713200000| PB 0x0000000713200000| Complete 
+| 122|0x0000000713400000, 0x0000000713600000, 0x0000000713600000|100%| E|CS|TAMS 0x0000000713400000| PB 0x0000000713400000| Complete 
+| 123|0x0000000713600000, 0x0000000713800000, 0x0000000713800000|100%| E|CS|TAMS 0x0000000713600000| PB 0x0000000713600000| Complete 
+| 124|0x0000000713800000, 0x0000000713a00000, 0x0000000713a00000|100%| E|CS|TAMS 0x0000000713800000| PB 0x0000000713800000| Complete 
+| 125|0x0000000713a00000, 0x0000000713c00000, 0x0000000713c00000|100%| E|CS|TAMS 0x0000000713a00000| PB 0x0000000713a00000| Complete 
+
+Card table byte_map: [0x000001a97c6f0000,0x000001a97ced0000] _byte_map_base: 0x000001a978ed0000
+
+Marking Bits: (CMBitMap*) 0x000001a97163afb0
+ Bits: [0x000001a90f000000, 0x000001a912f00000)
+
+Polling page: 0x000001a971570000
+
+Metaspace:
+
+Usage:
+  Non-class:     14.24 MB used.
+      Class:      1.85 MB used.
+       Both:     16.09 MB used.
+
+Virtual space:
+  Non-class space:       64.00 MB reserved,      14.38 MB ( 22%) committed,  1 nodes.
+      Class space:        1.00 GB reserved,       1.94 MB ( <1%) committed,  1 nodes.
+             Both:        1.06 GB reserved,      16.31 MB (  1%) committed. 
+
+Chunk freelists:
+   Non-Class:  704.00 KB
+       Class:  13.94 MB
+        Both:  14.62 MB
+
+MaxMetaspaceSize: unlimited
+CompressedClassSpaceSize: 1.00 GB
+Initial GC threshold: 21.00 MB
+Current GC threshold: 21.00 MB
+CDS: on
+ - commit_granule_bytes: 65536.
+ - commit_granule_words: 8192.
+ - virtual_space_node_default_size: 8388608.
+ - enlarge_chunks_in_place: 1.
+ - use_allocation_guard: 0.
+
+
+Internal statistics:
+
+num_allocs_failed_limit: 0.
+num_arena_births: 174.
+num_arena_deaths: 0.
+num_vsnodes_births: 2.
+num_vsnodes_deaths: 0.
+num_space_committed: 261.
+num_space_uncommitted: 0.
+num_chunks_returned_to_freelist: 0.
+num_chunks_taken_from_freelist: 702.
+num_chunk_merges: 0.
+num_chunk_splits: 488.
+num_chunks_enlarged: 398.
+num_inconsistent_stats: 0.
+
+CodeHeap 'non-profiled nmethods': size=120000Kb used=1666Kb max_used=1666Kb free=118333Kb
+ bounds [0x000001a907ad0000, 0x000001a907d40000, 0x000001a90f000000]
+CodeHeap 'profiled nmethods': size=120000Kb used=7515Kb max_used=7515Kb free=112484Kb
+ bounds [0x000001a900000000, 0x000001a900760000, 0x000001a907530000]
+CodeHeap 'non-nmethods': size=5760Kb used=1563Kb max_used=1591Kb free=4196Kb
+ bounds [0x000001a907530000, 0x000001a9077a0000, 0x000001a907ad0000]
+ total_blobs=4218 nmethods=3712 adapters=409
+ compilation: enabled
+              stopped_count=0, restarted_count=0
+ full_count=0
+
+Compilation events (20 events):
+Event: 120.786 Thread 0x000001a97f9135b0 3712       3       org.codehaus.plexus.util.StringUtils::isEmpty (17 bytes)
+Event: 120.786 Thread 0x000001a97f9135b0 nmethod 3712 0x000001a900753710 code [0x000001a9007538c0, 0x000001a900753b00]
+Event: 120.786 Thread 0x000001a97f9135b0 3713       1       org.apache.maven.plugin.descriptor.Parameter::getAlias (5 bytes)
+Event: 120.786 Thread 0x000001a97f9135b0 nmethod 3713 0x000001a907c70090 code [0x000001a907c70220, 0x000001a907c702f0]
+Event: 120.786 Thread 0x000001a97f9135b0 3715       3       org.codehaus.plexus.util.xml.Xpp3Dom::getChild (60 bytes)
+Event: 120.787 Thread 0x000001a97f9135b0 nmethod 3715 0x000001a900753c10 code [0x000001a900753e40, 0x000001a900754540]
+Event: 120.787 Thread 0x000001a97f9135b0 3714       3       java.util.ArrayList$ListItr::<init> (16 bytes)
+Event: 120.787 Thread 0x000001a97f9135b0 nmethod 3714 0x000001a900754710 code [0x000001a9007548c0, 0x000001a900754b68]
+Event: 120.789 Thread 0x000001a97f9135b0 3716       1       java.util.stream.Streams$AbstractStreamBuilderImpl::characteristics (4 bytes)
+Event: 120.789 Thread 0x000001a97f9135b0 nmethod 3716 0x000001a907c70390 code [0x000001a907c70520, 0x000001a907c705e8]
+Event: 120.795 Thread 0x000001a97f9135b0 3717       3       java.util.ArrayList::listIterator (15 bytes)
+Event: 120.795 Thread 0x000001a97f9135b0 nmethod 3717 0x000001a900754c90 code [0x000001a900754e80, 0x000001a9007553e8]
+Event: 120.796 Thread 0x000001a97f9135b0 3718       1       org.apache.maven.plugin.descriptor.Parameter::getImplementation (5 bytes)
+Event: 120.796 Thread 0x000001a97f9135b0 nmethod 3718 0x000001a907c70690 code [0x000001a907c70820, 0x000001a907c708f0]
+Event: 120.796 Thread 0x000001a97f9135b0 3719       3       java.io.PrintStream::ensureOpen (18 bytes)
+Event: 120.796 Thread 0x000001a97f9135b0 nmethod 3719 0x000001a900755610 code [0x000001a9007557c0, 0x000001a9007559d8]
+Event: 121.983 Thread 0x000001a97f9135b0 3720   !   3       java.io.StringReader::read (105 bytes)
+Event: 121.983 Thread 0x000001a97f9135b0 nmethod 3720 0x000001a900755a90 code [0x000001a900755cc0, 0x000001a900756488]
+Event: 121.983 Thread 0x000001a97f9135b0 3721       3       java.io.StringReader::ensureOpen (18 bytes)
+Event: 121.983 Thread 0x000001a97f9135b0 nmethod 3721 0x000001a900756890 code [0x000001a900756a40, 0x000001a900756c58]
+
+GC Heap History (4 events):
+Event: 18.749 GC heap before
+{Heap before GC invocations=0 (full 0):
+ garbage-first heap   total 258048K, used 22528K [0x0000000704000000, 0x0000000800000000)
+  region size 2048K, 11 young (22528K), 0 survivors (0K)
+ Metaspace       used 6252K, committed 6464K, reserved 1114112K
+  class space    used 699K, committed 832K, reserved 1048576K
+}
+Event: 19.455 GC heap after
+{Heap after GC invocations=1 (full 0):
+ garbage-first heap   total 258048K, used 4191K [0x0000000704000000, 0x0000000800000000)
+  region size 2048K, 2 young (4096K), 2 survivors (4096K)
+ Metaspace       used 6252K, committed 6464K, reserved 1114112K
+  class space    used 699K, committed 832K, reserved 1048576K
+}
+Event: 29.735 GC heap before
+{Heap before GC invocations=1 (full 0):
+ garbage-first heap   total 258048K, used 34911K [0x0000000704000000, 0x0000000800000000)
+  region size 2048K, 17 young (34816K), 2 survivors (4096K)
+ Metaspace       used 9789K, committed 9984K, reserved 1114112K
+  class space    used 1124K, committed 1216K, reserved 1048576K
+}
+Event: 29.741 GC heap after
+{Heap after GC invocations=2 (full 0):
+ garbage-first heap   total 258048K, used 5858K [0x0000000704000000, 0x0000000800000000)
+  region size 2048K, 1 young (2048K), 1 survivors (2048K)
+ Metaspace       used 9789K, committed 9984K, reserved 1114112K
+  class space    used 1124K, committed 1216K, reserved 1048576K
+}
+
+Dll operation events (12 events):
+Event: 0.029 Loaded shared library C:\Program Files\Java\jdk-21.0.6\bin\java.dll
+Event: 0.180 Loaded shared library C:\Program Files\Java\jdk-21.0.6\bin\jsvml.dll
+Event: 0.286 Loaded shared library C:\Program Files\Java\jdk-21.0.6\bin\zip.dll
+Event: 0.292 Loaded shared library C:\Program Files\Java\jdk-21.0.6\bin\instrument.dll
+Event: 0.320 Loaded shared library C:\Program Files\Java\jdk-21.0.6\bin\net.dll
+Event: 0.334 Loaded shared library C:\Program Files\Java\jdk-21.0.6\bin\nio.dll
+Event: 0.384 Loaded shared library C:\Program Files\Java\jdk-21.0.6\bin\zip.dll
+Event: 0.412 Loaded shared library C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin\breakgen64.dll
+Event: 0.467 Loaded shared library C:\Program Files\Java\jdk-21.0.6\bin\extnet.dll
+Event: 1.136 Loaded shared library C:\Program Files\Java\jdk-21.0.6\bin\jimage.dll
+Event: 11.493 Loaded shared library C:\Users\DELL\AppData\Local\Temp\jansi-2.4.1-b96db14f5ade6a01-jansi.dll
+Event: 11.541 Loaded shared library C:\Program Files\Java\jdk-21.0.6\bin\verify.dll
+
+Deoptimization events (20 events):
+Event: 107.201 Thread 0x000001a9715d2570 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001a907c3ea34 method=org.apache.maven.model.validation.DefaultModelValidator.isValidIdCharacter(C)Z @ 51 c2
+Event: 107.201 Thread 0x000001a9715d2570 DEOPT PACKING pc=0x000001a907c3ea34 sp=0x0000000fafbfde30
+Event: 107.201 Thread 0x000001a9715d2570 DEOPT UNPACKING pc=0x000001a907587da2 sp=0x0000000fafbfddc8 mode 2
+Event: 107.228 Thread 0x000001a9715d2570 DEOPT PACKING pc=0x000001a90002a8f8 sp=0x0000000fafbfd3c0
+Event: 107.228 Thread 0x000001a9715d2570 DEOPT UNPACKING pc=0x000001a9075888e2 sp=0x0000000fafbfc7e0 mode 0
+Event: 108.560 Thread 0x000001a9715d2570 Uncommon trap: trap_request=0xffffff45 fr.pc=0x000001a907c43970 relative=0x0000000000000130
+Event: 108.560 Thread 0x000001a9715d2570 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001a907c43970 method=org.fusesource.jansi.io.AnsiOutputStream.write(I)V @ 63 c2
+Event: 108.560 Thread 0x000001a9715d2570 DEOPT PACKING pc=0x000001a907c43970 sp=0x0000000fafbfde20
+Event: 108.560 Thread 0x000001a9715d2570 DEOPT UNPACKING pc=0x000001a907587da2 sp=0x0000000fafbfdda8 mode 2
+Event: 108.583 Thread 0x000001a9715d2570 DEOPT PACKING pc=0x000001a90000bb58 sp=0x0000000fafbfd580
+Event: 108.583 Thread 0x000001a9715d2570 DEOPT UNPACKING pc=0x000001a9075888e2 sp=0x0000000fafbfc9e8 mode 0
+Event: 117.854 Thread 0x000001a9715d2570 Uncommon trap: trap_request=0xffffffcc fr.pc=0x000001a907c58d4c relative=0x000000000000020c
+Event: 117.854 Thread 0x000001a9715d2570 Uncommon trap: reason=intrinsic_or_type_checked_inlining action=make_not_entrant pc=0x000001a907c58d4c method=java.util.Arrays.copyOf([Ljava/lang/Object;ILjava/lang/Class;)[Ljava/lang/Object; @ 35 c2
+Event: 117.854 Thread 0x000001a9715d2570 DEOPT PACKING pc=0x000001a907c58d4c sp=0x0000000fafbfd9a0
+Event: 117.854 Thread 0x000001a9715d2570 DEOPT UNPACKING pc=0x000001a907587da2 sp=0x0000000fafbfd930 mode 2
+Event: 117.875 Thread 0x000001a9715d2570 DEOPT PACKING pc=0x000001a9005f58b4 sp=0x0000000fafbfccc0
+Event: 117.875 Thread 0x000001a9715d2570 DEOPT UNPACKING pc=0x000001a9075888e2 sp=0x0000000fafbfc218 mode 0
+Event: 121.983 Thread 0x000001a9715d2570 Uncommon trap: trap_request=0xffffff45 fr.pc=0x000001a907c3fe64 relative=0x0000000000000724
+Event: 121.983 Thread 0x000001a9715d2570 Uncommon trap: reason=unstable_if action=reinterpret pc=0x000001a907c3fe64 method=org.codehaus.plexus.util.xml.pull.MXParser.isValidCodePoint(I)Z @ 15 c2
+Event: 121.983 Thread 0x000001a9715d2570 DEOPT PACKING pc=0x000001a907c3fe64 sp=0x0000000fafbfd4a0
+
+Classes loaded (20 events):
+Event: 56.660 Loading class sun/util/resources/LocaleData$CommonResourceBundleProvider
+Event: 56.660 Loading class sun/util/resources/LocaleData$LocaleDataResourceBundleProvider
+Event: 56.660 Loading class java/util/spi/ResourceBundleProvider
+Event: 56.660 Loading class java/util/spi/ResourceBundleProvider done
+Event: 56.660 Loading class sun/util/resources/LocaleData$LocaleDataResourceBundleProvider done
+Event: 56.660 Loading class sun/util/resources/LocaleData$CommonResourceBundleProvider done
+Event: 56.660 Loading class sun/util/resources/Bundles$2
+Event: 56.660 Loading class sun/util/resources/Bundles$2 done
+Event: 68.780 Loading class java/util/stream/Streams$RangeIntSpliterator
+Event: 68.780 Loading class java/util/stream/Streams$RangeIntSpliterator done
+Event: 111.262 Loading class java/util/stream/MatchOps$MatchKind
+Event: 111.262 Loading class java/util/stream/MatchOps$MatchKind done
+Event: 111.262 Loading class java/util/stream/MatchOps
+Event: 111.262 Loading class java/util/stream/MatchOps done
+Event: 111.262 Loading class java/util/stream/MatchOps$MatchOp
+Event: 111.262 Loading class java/util/stream/MatchOps$MatchOp done
+Event: 111.262 Loading class java/util/stream/MatchOps$BooleanTerminalSink
+Event: 111.262 Loading class java/util/stream/MatchOps$BooleanTerminalSink done
+Event: 111.263 Loading class java/util/stream/MatchOps$1MatchSink
+Event: 111.263 Loading class java/util/stream/MatchOps$1MatchSink done
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (20 events):
+Event: 34.379 Thread 0x000001a9715d2570 Exception <a 'java/lang/ExceptionInInitializerError'{0x00000007132d5620}> (0x00000007132d5620) 
+thrown [s\open\src\hotspot\share\oops\instanceKlass.cpp, line 1192]
+Event: 35.598 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x00000007133e71a8}: 'long java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, int)'> (0x00000007133e71a8) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 35.621 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x00000007133fa280}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStatic(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, int)'> (0x00000007133fa280) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 35.622 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x0000000713002648}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, long)'> (0x0000000713002648) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 35.623 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x000000071300e168}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, int, java.lang.Object)'> (0x000000071300e168) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 35.625 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x00000007130162a8}: 'int java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, int)'> (0x00000007130162a8) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 35.630 Thread 0x000001a9715d2570 Implicit null exception at 0x000001a907b6795a to 0x000001a907b67b54
+Event: 35.633 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x000000071303ae20}: 'java.lang.Object java.lang.invoke.Invokers$Holder.invokeExact_MT(java.lang.Object, int, java.lang.Object)'> (0x000000071303ae20) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 44.347 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x00000007128520f8}: 'void java.lang.invoke.Invokers$Holder.invokeExact_MT(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x00000007128520f8) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 44.387 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoClassDefFoundError'{0x00000007128e8298}: com/google/inject/servlet/ServletModuleTargetVisitor> (0x00000007128e8298) 
+thrown [s\open\src\hotspot\share\classfile\systemDictionary.cpp, line 301]
+Event: 47.402 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x00000007127980e0}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(java.lang.Object, java.lang.Object)'> (0x00000007127980e0) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 48.557 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x0000000712425970}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeStaticInit(java.lang.Object, int, int, int, int)'> (0x0000000712425970) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 53.784 Thread 0x000001a9715d2570 Implicit null exception at 0x000001a907b0e724 to 0x000001a907b0ee04
+Event: 53.784 Thread 0x000001a9715d2570 Implicit null exception at 0x000001a907b0f4a0 to 0x000001a907b0fb74
+Event: 56.072 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x0000000711e65f48}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x0000000711e65f48) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 56.079 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x0000000711e7be98}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object, java.lang.Object)'> (0x0000000711e7be98) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 56.149 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x0000000711f73c60}: 'java.lang.Object java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(java.lang.Object, java.lang.Object, java.lang.Object)'> (0x0000000711f73c60) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 60.896 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x0000000711d515d0}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeVirtual(java.lang.Object, java.lang.Object, int)'> (0x0000000711d515d0) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 60.898 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x0000000711d55380}: 'void java.lang.invoke.DirectMethodHandle$Holder.invokeSpecial(java.lang.Object, java.lang.Object, java.lang.Object, int)'> (0x0000000711d55380) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+Event: 60.898 Thread 0x000001a9715d2570 Exception <a 'java/lang/NoSuchMethodError'{0x0000000711d58a50}: 'void java.lang.invoke.DelegatingMethodHandle$Holder.reinvoke_L(java.lang.Object, java.lang.Object, int)'> (0x0000000711d58a50) 
+thrown [s\open\src\hotspot\share\interpreter\linkResolver.cpp, line 773]
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (20 events):
+Event: 91.151 Executing VM operation: Cleanup
+Event: 91.151 Executing VM operation: Cleanup done
+Event: 94.197 Executing VM operation: Cleanup
+Event: 94.197 Executing VM operation: Cleanup done
+Event: 107.311 Executing VM operation: Cleanup
+Event: 107.311 Executing VM operation: Cleanup done
+Event: 109.336 Executing VM operation: Cleanup
+Event: 109.507 Executing VM operation: Cleanup done
+Event: 110.510 Executing VM operation: Cleanup
+Event: 111.265 Executing VM operation: Cleanup done
+Event: 116.310 Executing VM operation: Cleanup
+Event: 117.166 Executing VM operation: Cleanup done
+Event: 118.169 Executing VM operation: Cleanup
+Event: 118.169 Executing VM operation: Cleanup done
+Event: 119.177 Executing VM operation: Cleanup
+Event: 119.177 Executing VM operation: Cleanup done
+Event: 120.190 Executing VM operation: Cleanup
+Event: 120.784 Executing VM operation: Cleanup done
+Event: 121.784 Executing VM operation: Cleanup
+Event: 121.784 Executing VM operation: Cleanup done
+
+Events (20 events):
+Event: 18.448 Thread 0x000001a95440da50 Thread added: 0x000001a95440da50
+Event: 19.527 Thread 0x000001a954815690 Thread added: 0x000001a954815690
+Event: 20.019 Thread 0x000001a954815690 Thread exited: 0x000001a954815690
+Event: 20.793 Thread 0x000001a95440da50 Thread exited: 0x000001a95440da50
+Event: 26.628 Thread 0x000001a954c658c0 Thread added: 0x000001a954c658c0
+Event: 27.001 Thread 0x000001a954c658c0 Thread exited: 0x000001a954c658c0
+Event: 46.171 Thread 0x000001a954ca6590 Thread added: 0x000001a954ca6590
+Event: 46.809 Thread 0x000001a954ca6590 Thread exited: 0x000001a954ca6590
+Event: 47.403 Thread 0x000001a954ca6590 Thread added: 0x000001a954ca6590
+Event: 48.129 Thread 0x000001a954ca6590 Thread exited: 0x000001a954ca6590
+Event: 51.669 Thread 0x000001a954b014d0 Thread added: 0x000001a954b014d0
+Event: 56.103 Thread 0x000001a9591b9f20 Thread added: 0x000001a9591b9f20
+Event: 57.670 Thread 0x000001a9591b9f20 Thread exited: 0x000001a9591b9f20
+Event: 67.928 Thread 0x000001a9593c4570 Thread added: 0x000001a9593c4570
+Event: 68.398 Thread 0x000001a9593c4570 Thread exited: 0x000001a9593c4570
+Event: 68.400 Thread 0x000001a9546e9fe0 Thread exited: 0x000001a9546e9fe0
+Event: 71.849 Thread 0x000001a9541f5c40 Thread added: 0x000001a9541f5c40
+Event: 72.750 Thread 0x000001a9541f5c40 Thread exited: 0x000001a9541f5c40
+Event: 86.648 Thread 0x000001a954cf0970 Thread added: 0x000001a954cf0970
+Event: 88.232 Thread 0x000001a954cf0970 Thread exited: 0x000001a954cf0970
+
+
+Dynamic libraries:
+0x00007ff7e26f0000 - 0x00007ff7e2700000 	C:\Program Files\Java\jdk-21.0.6\bin\java.exe
+0x00007ffbc1e40000 - 0x00007ffbc20a0000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffbc0980000 - 0x00007ffbc0a47000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffbbf020000 - 0x00007ffbbf3ea000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffbbf810000 - 0x00007ffbbf95b000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffb815c0000 - 0x00007ffb815d9000 	C:\Program Files\Java\jdk-21.0.6\bin\jli.dll
+0x00007ffbc0450000 - 0x00007ffbc0502000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffbc02c0000 - 0x00007ffbc0369000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffbbff10000 - 0x00007ffbbffb6000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffbc0860000 - 0x00007ffbc0976000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffbbfc40000 - 0x00007ffbbfe0c000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffbbf3f0000 - 0x00007ffbbf417000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffbc18f0000 - 0x00007ffbc191a000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffbbf620000 - 0x00007ffbbf751000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffbbf760000 - 0x00007ffbbf803000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffba5240000 - 0x00007ffba54d7000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.3624_none_3e086962e3345f24\COMCTL32.dll
+0x00007ffbaee60000 - 0x00007ffbaee6b000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffba0ac0000 - 0x00007ffba0adb000 	C:\Program Files\Java\jdk-21.0.6\bin\VCRUNTIME140.dll
+0x00007ffbc0820000 - 0x00007ffbc084f000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffbb0a50000 - 0x00007ffbb0a5c000 	C:\Program Files\Java\jdk-21.0.6\bin\vcruntime140_1.dll
+0x00007ffb77ad0000 - 0x00007ffb77b5e000 	C:\Program Files\Java\jdk-21.0.6\bin\msvcp140.dll
+0x00007ffb58f30000 - 0x00007ffb59c4a000 	C:\Program Files\Java\jdk-21.0.6\bin\server\jvm.dll
+0x00007ffbc0b30000 - 0x00007ffbc0ba4000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffbbe6d0000 - 0x00007ffbbe72e000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffbb7340000 - 0x00007ffbb7376000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffbbe6b0000 - 0x00007ffbbe6c4000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffbbdd90000 - 0x00007ffbbddaa000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffba0c80000 - 0x00007ffba0c8a000 	C:\Program Files\Java\jdk-21.0.6\bin\jimage.dll
+0x000000005fc40000 - 0x000000005fdd6000 	C:\Program Files\Microsoft SQL Server\110\Shared\DBGHELP.DLL
+0x00007ffbb9d50000 - 0x00007ffbb9d5f000 	C:\Program Files\Java\jdk-21.0.6\bin\instrument.dll
+0x00007ffb815a0000 - 0x00007ffb815bf000 	C:\Program Files\Java\jdk-21.0.6\bin\java.dll
+0x00007ffbc1080000 - 0x00007ffbc17a9000 	C:\WINDOWS\System32\SHELL32.dll
+0x00007ffbbf4b0000 - 0x00007ffbbf618000 	C:\WINDOWS\System32\wintypes.dll
+0x00007ffbc1920000 - 0x00007ffbc1ca2000 	C:\WINDOWS\System32\combase.dll
+0x00007ffbbcc80000 - 0x00007ffbbd4d2000 	C:\WINDOWS\SYSTEM32\windows.storage.dll
+0x00007ffbc1800000 - 0x00007ffbc18ed000 	C:\WINDOWS\System32\SHCORE.dll
+0x00007ffbc1cb0000 - 0x00007ffbc1d14000 	C:\WINDOWS\System32\shlwapi.dll
+0x00007ffbbef30000 - 0x00007ffbbef5f000 	C:\WINDOWS\SYSTEM32\profapi.dll
+0x00007ffb6cb30000 - 0x00007ffb6cc07000 	C:\Program Files\Java\jdk-21.0.6\bin\jsvml.dll
+0x00007ffb81440000 - 0x00007ffb81458000 	C:\Program Files\Java\jdk-21.0.6\bin\zip.dll
+0x00007ffb96630000 - 0x00007ffb96640000 	C:\Program Files\Java\jdk-21.0.6\bin\net.dll
+0x00007ffbb9120000 - 0x00007ffbb923d000 	C:\WINDOWS\SYSTEM32\WINHTTP.dll
+0x00007ffbbe2f0000 - 0x00007ffbbe35a000 	C:\WINDOWS\system32\mswsock.dll
+0x00007ffb81530000 - 0x00007ffb81546000 	C:\Program Files\Java\jdk-21.0.6\bin\nio.dll
+0x00007ffbb9990000 - 0x00007ffbb99aa000 	C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin\breakgen64.dll
+0x00007ffb8f2e0000 - 0x00007ffb8f2e9000 	C:\Program Files\Java\jdk-21.0.6\bin\extnet.dll
+0x00007ffb80780000 - 0x00007ffb807a4000 	C:\Users\DELL\AppData\Local\Temp\jansi-2.4.1-b96db14f5ade6a01-jansi.dll
+0x00007ffb81fe0000 - 0x00007ffb81ff0000 	C:\Program Files\Java\jdk-21.0.6\bin\verify.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-21.0.6\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.3624_none_3e086962e3345f24;C:\Program Files\Java\jdk-21.0.6\bin\server;C:\Program Files\Microsoft SQL Server\110\Shared;C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin;C:\Users\DELL\AppData\Local\Temp
+
+VM Arguments:
+jvm_args: -Dmaven.multiModuleProjectDirectory=C:\Users\DELL\Desktop\angular Project\backEnd\carsAgence -Djansi.passthrough=true -Dmaven.home=C:\Users\DELL\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9 -Dclassworlds.conf=C:\Users\DELL\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9\bin\m2.conf -Dmaven.ext.class.path=C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\plugins\maven\lib\maven-event-listener.jar -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\lib\idea_rt.jar=52287:C:\Program Files\JetBrains\IntelliJ IDEA 2023.3.4\bin -Dfile.encoding=UTF-8 -Dsun.stdout.encoding=UTF-8 -Dsun.stderr.encoding=UTF-8 
+java_command: org.codehaus.classworlds.Launcher -Didea.version=2023.3.4 clean install
+java_class_path (initial): C:\Users\DELL\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9\boot\plexus-classworlds-2.8.0.jar;C:\Users\DELL\.m2\wrapper\dists\apache-maven-3.9.9-bin\4nf9hui3q3djbarqar9g711ggc\apache-maven-3.9.9\boot\plexus-classworlds.license
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 264241152                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4227858432                                {product} {ergonomic}
+   size_t MaxNewSize                               = 2535456768                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4227858432                             {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+PATH=C:\PySchool\3.10-32-bit\Scripts;C:\PySchool\3.10-32-bit;C:\oraclexe\app\oracle\product\11.2.0\server\bin;C:\Program Files (x86)\VMware\VMware Workstation\bin\;C:\Program Files\Common Files\Siemens\Automation\Simatic OAM\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Microchip\MPLAB C32 Suite\bin;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Users\DELL\AppData\Local\Programs\Python\Python311;C:\Users\DELL\AppData\Local\Programs\Python\Python311\Scripts;C:\wamp64\bin\php\php8.2.0;C:\wamp64\bin;C:\Program Files\Git\cmd;C:\Program Files\dotnet\;C:\Program Files\Docker\Docker\resources\bin;C:\Users\DELL\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files\Microsoft SQL Server\110\Tools\Binn\;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio\;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Common7\IDE\PrivateAssemblies\;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn\;C:\Program Files\Java\jdk-21.0.6\bin;C:\Users\DELL\scoop\shims;C:\Users\DELL\AppData\Local\Microsoft\WindowsApps;C:\phpm\php-8.2.3 (1);C:\Program Files\JetBrains\PhpStorm 2023.1\bin;;C:\wamp64\bin;C:\Users\DELL\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\DELL\AppData\Roaming\npm;C:\Users\DELL\AppData\Local\nvm;C:\nvm4w\nodejs;C:\Users\DELL\.dotnet\tools;C:\Users\DELL\AppData\Local\Programs\cursor\resources\app\bin
+USERNAME=DELL
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
+TMP=C:\Users\DELL\AppData\Local\Temp
+TEMP=C:\Users\DELL\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.3775)
+OS uptime: 1 days 17:54 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 140 stepping 1 microcode 0xba, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, avx512f, avx512dq, avx512cd, avx512bw, avx512vl, sha, fma, vzeroupper, avx512_vpopcntdq, avx512_vpclmulqdq, avx512_vaes, avx512_vnni, clflush, clflushopt, clwb, avx512_vbmi2, avx512_vbmi, hv, rdtscp, rdpid, fsrm, gfni, avx512_bitalg, f16c, cet_ibt, cet_ss, avx512_ifma
+Processor Information for all 8 processors :
+  Max Mhz: 2419, Current Mhz: 2419, Mhz Limit: 2419
+
+Memory: 4k page, system-wide physical 16126M (3389M free)
+TotalPageFile size 60432M (AvailPageFile size 13106M)
+current process WorkingSet (physical memory assigned to process): 68M, peak: 120M
+current process commit charge ("private bytes"): 367M, peak: 375M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (21.0.6+8-LTS-188) for windows-amd64 JRE (21.0.6+8-LTS-188), built on 2024-12-03T10:50:54Z by "mach5one" with MS VC++ 17.6 (VS2022)
+
+END.
