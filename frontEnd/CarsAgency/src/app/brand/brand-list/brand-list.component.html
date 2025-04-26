@@ -1,0 +1,19 @@
+<section class="bg-black min-h-screen text-white py-10 px-6">
+    <h2 class="text-4xl font-bold text-center mb-10">Our Brands</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div *ngFor="let brand of brands" class="bg-gray-900 rounded-lg overflow-hidden shadow-lg flex flex-col items-center p-6 hover:shadow-2xl transition">
+        
+        <!-- Brand Logo -->
+        <img [src]="brand.image" alt="{{ brand.name }}" class="h-50 w-50 object-contain mb-6 hover:scale-105 transition-transform duration-300" />
+  
+        <!-- Brand Name -->
+        <h3 class="text-2xl font-semibold mb-2">{{ brand.name }}</h3>
+  
+        <!-- View Cars Link -->
+        <a [routerLink]="['/brands', brand.id]" class="text-blue-400 hover:underline">View Cars</a>
+        
+      </div>
+    </div>
+  </section>
+  

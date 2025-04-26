@@ -6,13 +6,21 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
+import { BrandListComponent } from './brand/brand-list/brand-list.component';
+import { CarListComponent } from './car/car-list/car-list.component';
+import { CarDetailComponent } from './car/car-detail/car-detail.component';
+import { CarCardComponent } from './car/car-card/car-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent
+    HomeComponent,
+    BrandListComponent,
+    CarListComponent,
+    CarDetailComponent,
+    CarCardComponent
   ],
   imports: [
     BrowserModule,
