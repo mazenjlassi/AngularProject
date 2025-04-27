@@ -13,6 +13,7 @@ import { CarDetailComponent } from './car/car-detail/car-detail.component';
 import { CarCardComponent } from './car/car-card/car-card.component';
 import { BrandManagementComponent } from './admin/components/brand-management/brand-management.component';
 import { BrandFormComponent } from './admin/components/brand-form/brand-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BrandFormComponent } from './admin/components/brand-form/brand-form.com
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

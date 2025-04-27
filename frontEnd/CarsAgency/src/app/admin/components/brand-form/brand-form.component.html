@@ -1,26 +1,27 @@
 <div class="page-container">
     <div class="form-container">
       <form [formGroup]="brandForm" (ngSubmit)="onSubmit()">
-        
-  
+
+
         <div class="form-group">
           <label for="name">Name:</label>
           <input id="name" type="text" formControlName="name">
         </div>
-  
+
+
         <div class="form-group">
           <label>Image:</label>
           <button type="button" (click)="triggerFileInput(fileInput)">Select Image</button>
           <input #fileInput type="file" (change)="onFileSelected($event)" hidden>
         </div>
-  
-        <!-- Preview the image -->
-        <div *ngIf="selectedImageUrl" class="image-preview">
-          <img [src]="selectedImageUrl" alt="Selected Image">
+
+        <div *ngIf="previewUrl" class="image-preview">
+          <img [src]="previewUrl" alt="Selected Image" style="max-width: 200px;">
         </div>
-  
-        <button type="submit" [disabled]="brandForm.invalid">Submit</button>
+
+        <button type="submit" >Submit</button>
       </form>
+
     </div>
   </div>
   
