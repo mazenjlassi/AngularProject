@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { CarCardComponent } from './car/car-card/car-card.component';
 import { BrandManagementComponent } from './admin/components/brand-management/brand-management.component';
 import { BrandFormComponent } from './admin/components/brand-form/brand-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { BrandListAdminComponent } from './admin/components/brand-list-admin/brand-list-admin.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +27,12 @@ import { HttpClientModule } from '@angular/common/http';
     CarDetailComponent,
     CarCardComponent,
     BrandManagementComponent,
-    BrandFormComponent
+    BrandFormComponent,
+    BrandListAdminComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule

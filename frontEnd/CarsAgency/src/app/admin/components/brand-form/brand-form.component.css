@@ -1,63 +1,113 @@
-/* Make the whole page black */
+/* Full page background */
 .page-container {
-    background-color: black;
+    background-color: #000; /* pure black */
     min-height: 100vh;
-    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
   }
   
-  /* Style the form */
+  /* Form Card */
   .form-container {
-    background-color: #1f03439a;
-    padding: 20px;
-    border-radius: 8px;
-    width: 350px;
-    margin: 0 auto;
-    color: white;
-    box-shadow: 0 0 15px #222;
+    background: linear-gradient(145deg, #0d0d2b, #1d1d3b); /* dark blue gradient */
+    padding: 30px;
+    border-radius: 14px;
+    width: 100%;
+    max-width: 360px;
+    color: #eee;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7); /* SOFT BIG SHADOW */
+    border: 1px solid rgba(255, 255, 255, 0.05);
   }
   
-  /* Form groups spacing */
+  /* Form groups */
   .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Labels */
+  label {
+    margin-bottom: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #ccc;
   }
   
   /* Inputs */
-  input[type="number"],
-  input[type="text"] {
+  input[type="text"],
+  input[type="number"] {
     width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    background-color: #f5f5f5; /* light input background */
-    border: none;
-    border-radius: 4px;
-    color: black;
+    padding: 10px 12px;
+    background-color: #222;
+    border: 1px solid #333;
+    border-radius: 8px;
+    color: #eee;
+    font-size: 14px;
+    transition: background-color 0.3s, border 0.3s;
   }
   
-  /* Normal buttons */
+  input[type="text"]:focus,
+  input[type="number"]:focus {
+    background-color: #333;
+    border: 1px solid #555;
+    outline: none;
+  }
+  
+  /* Buttons */
   button[type="submit"],
   button[type="button"] {
     width: 100%;
-    padding: 10px;
-    background-color: #444;
+    padding: 12px;
+    background: linear-gradient(135deg, #4a00e0, #8e2de2);
     border: none;
-    border-radius: 4px;
+    border-radius: 8px;
     color: white;
+    font-size: 14px;
+    font-weight: 600;
     cursor: pointer;
     margin-top: 10px;
-    transition: background-color 0.3s ease;
+    transition: transform 0.2s, box-shadow 0.2s;
   }
   
-  /* Button hover effect */
-  button:hover {
-    background-color: #666;
+  button[type="submit"]:hover,
+  button[type="button"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(142, 45, 226, 0.5);
+  }
+  
+  /* 📷 Add a camera icon before "Select Image" button */
+  button[type="button"]::before {
+    content: "📷 ";
   }
   
   /* Image preview */
+  .image-preview {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Animate the uploaded image */
   .image-preview img {
-    margin-top: 10px;
-    max-width: 100%;
+    max-width: 180px;
     height: auto;
-    border-radius: 8px;
-    border: 1px solid #555;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
+    
+    /* Animation */
+    opacity: 0;
+    transform: scale(0.95);
+    animation: fadeInZoom 0.5s ease forwards;
+  }
+  
+  /* Keyframes for fade-in zoom effect */
+  @keyframes fadeInZoom {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
   }
   

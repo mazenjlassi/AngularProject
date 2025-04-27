@@ -5,6 +5,8 @@ import { BrandListComponent } from './brand/brand-list/brand-list.component';
 import { CarListComponent } from './car/car-list/car-list.component';
 import { CarDetailComponent } from './car/car-detail/car-detail.component';
 import { BrandFormComponent } from './admin/components/brand-form/brand-form.component';
+import { BrandListAdminComponent } from './admin/components/brand-list-admin/brand-list-admin.component';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -12,6 +14,7 @@ const routes: Routes = [
   {path: 'cars', component: CarListComponent},
   {path: 'cars/:id', component: CarDetailComponent},
   {path: 'admin/brands/new', component: BrandFormComponent},
+  {path: 'admin/brands',component:BrandListAdminComponent}
 ];
 
 @NgModule({

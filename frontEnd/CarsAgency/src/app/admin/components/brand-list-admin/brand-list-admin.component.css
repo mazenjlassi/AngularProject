@@ -1,0 +1,98 @@
+/* Background */
+.page-container {
+    background-color: #000;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 20px;
+    font-family: 'Poppins', sans-serif;
+    color: #eee;
+  }
+  
+  /* Brand List Container */
+  .brand-list-container {
+    width: 100%;
+    max-width: 900px;
+  }
+  
+  /* Title */
+  .brand-list-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+  }
+  
+  /* Brand Card */
+  .brand-card {
+    background: linear-gradient(145deg, #0d0d2b, #1d1d3b);
+    padding: 20px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Brand Image */
+  .brand-image {
+    width: 120px;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
+  }
+  
+  /* Brand Name */
+  .brand-card h3 {
+    margin-bottom: 15px;
+  }
+  
+  /* Button Group */
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* Buttons */
+  .edit-button, .delete-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .edit-button {
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    color: #fff;
+  }
+  
+  .edit-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #0099cc, #0055cc);
+  }
+  
+  .delete-button {
+    background: linear-gradient(135deg, #ff416c, #ff4b2b);
+    color: #fff;
+  }
+  
+  .delete-button:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #cc3355, #cc3311);
+  }
+  
+  /* No Data */
+  .no-data {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 18px;
+    color: #aaa;
+  }
+  

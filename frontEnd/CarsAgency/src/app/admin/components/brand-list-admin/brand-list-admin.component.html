@@ -1,0 +1,18 @@
+<div class="page-container">
+    <div class="brand-list-container">
+      <h2>Brand List</h2>
+  
+      <div *ngFor="let brand of brands" class="brand-card">
+        <img [src]="brand.image" alt="{{ brand.name }}" class="brand-image">
+        <h3>{{ brand.name }}</h3>
+  
+        <div class="button-group">
+          <button class="edit-button" (click)="editBrand(brand)">✏️ Edit</button>
+          <button class="delete-button" (click)="deleteBrand(brand.id!)">🗑️ Delete</button>
+        </div>
+      </div>
+  
+      
+    </div>
+  </div>
+  
