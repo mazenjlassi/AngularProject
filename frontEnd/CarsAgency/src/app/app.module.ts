@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +11,8 @@ import { BrandListComponent } from './brand/brand-list/brand-list.component';
 import { CarListComponent } from './car/car-list/car-list.component';
 import { CarDetailComponent } from './car/car-detail/car-detail.component';
 import { CarCardComponent } from './car/car-card/car-card.component';
+import { BrandManagementComponent } from './admin/components/brand-management/brand-management.component';
+import { BrandFormComponent } from './admin/components/brand-form/brand-form.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,14 @@ import { CarCardComponent } from './car/car-card/car-card.component';
     BrandListComponent,
     CarListComponent,
     CarDetailComponent,
-    CarCardComponent
+    CarCardComponent,
+    BrandManagementComponent,
+    BrandFormComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
