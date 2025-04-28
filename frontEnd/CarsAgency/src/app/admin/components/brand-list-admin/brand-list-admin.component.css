@@ -7,7 +7,7 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .brand-list-container {
     background-color: #1e1e1e;
     border-radius: 10px;
@@ -19,12 +19,12 @@
     transition: all 0.3s ease-in-out;
     position: relative; /* Added relative positioning to contain the absolute button */
   }
-  
+
   /* Hover effect for the brand list container */
   .brand-list-container:hover {
     transform: scale(1.02);
   }
-  
+
   /* Heading Style */
   h2 {
     text-align: center;
@@ -33,7 +33,7 @@
     margin-bottom: 20px;
     font-family: 'Arial', sans-serif;
   }
-  
+
   /* Style for individual brand cards */
   .brand-card {
     display: flex;
@@ -45,20 +45,19 @@
     border-radius: 8px;
     transition: all 0.3s ease-in-out;
   }
-  
+
   .brand-card:hover {
     transform: scale(1.03);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   }
-  
+
   /* Image styling inside brand card */
   .brand-image {
-    width: 50px;
+    width: 70px;
     height: auto;
-    border-radius: 50%;
     margin-right: 20px;
   }
-  
+
   /* Brand name styling */
   h3 {
     font-size: 1.5rem;
@@ -66,13 +65,13 @@
     color: #fff;
     flex-grow: 1;
   }
-  
+
   /* Button group for Edit/Delete buttons */
   .button-group {
     display: flex;
     gap: 10px;
   }
-  
+
   /* Edit and Delete buttons */
   .edit-button,
   .delete-button {
@@ -84,25 +83,25 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
-  
+
   /* Edit button */
   .edit-button {
     background-color: #350753;
   }
-  
+
   .edit-button:hover {
     background-color: #e68900;
   }
-  
+
   /* Delete button */
   .delete-button {
     background-color: #000649;
   }
-  
+
   .delete-button:hover {
     background-color: #e53935;
   }
-  
+
   /* "Add Brand" button at the top right */
   .add-brand-button {
     position: absolute;
@@ -117,30 +116,29 @@
     font-size: 1rem;
     transition: background-color 0.3s ease;
   }
-  
+
   /* Add button hover effect */
   .add-brand-button:hover {
     background-color: #0056b3;
   }
-  
+
   /* Responsive design for mobile */
   @media (max-width: 768px) {
     .brand-list-container {
       padding: 20px;
       width: 90%;
     }
-  
+
     .brand-card {
       flex-direction: column;
       align-items: flex-start;
     }
-  
+
     .brand-image {
       width: 40px;
     }
-  
+
     h3 {
       font-size: 1.2rem;
     }
   }
-  

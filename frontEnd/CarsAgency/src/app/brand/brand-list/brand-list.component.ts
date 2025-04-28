@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Brand } from '../../models/brand';
+import { BrandService } from '../../services/brand.service';
 
 
 @Component({
@@ -10,20 +11,15 @@ import { Brand } from '../../models/brand';
 })
 export class BrandListComponent implements OnInit {
 
-  brands: Brand[] = [
-    { id: 1, name: 'BMW', image: 'images/bmw2.png', cars: [] },
-    { id: 2, name: 'Audi', image: 'images/audi.png', cars: [] },
-    { id: 3, name: 'Mercedes', image: 'images/mercedes.png', cars: [] },
-    { id: 4, name: 'Volkswagen', image: 'images/volkswagen.png', cars: [] },
-    
-    
-  
-    // Add more brands if you want
-  ];
+  brands: Brand[] | undefined ;
 
-  constructor() { }
+  constructor(private brandService: BrandService) { }
 
   ngOnInit(): void {
+    this.brandService.getAllBrands().subscribe(brands => {
+      this.brands = brands;
+      console.log(this.brands);
+    });
   }
 
 }

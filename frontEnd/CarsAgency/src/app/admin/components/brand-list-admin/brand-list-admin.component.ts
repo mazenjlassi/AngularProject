@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Brand } from '../../../models/brand';
+import { BrandService } from '../../../services/brand.service';
 
 @Component({
   selector: 'app-brand-list-admin',
@@ -8,11 +9,15 @@ import { Brand } from '../../../models/brand';
   styleUrl: './brand-list-admin.component.css',
 })
 export class BrandListAdminComponent {
-  brands: Brand[] = [
-    { id: 1, name: 'Toyota', image: 'assets/toyota.png', cars: [] },
-    { id: 2, name: 'BMW', image: 'assets/bmw.png', cars: [] },
-    { id: 3, name: 'Audi', image: 'assets/audi.png', cars: [] }
-  ];
+  brands: Brand[] | undefined ;
+
+
+  constructor(private brandService: BrandService) {
+    this.brandService.getAllBrands().subscribe(brands => {
+      this.brands = brands;
+      console.log(this.brands);
+    });
+  }
 
   editBrand(brand: Brand) {
     console.log('Edit brand:', brand);
@@ -20,6 +25,9 @@ export class BrandListAdminComponent {
   }
 
   deleteBrand(brandId: number) {
-    this.brands = this.brands.filter(b => b.id !== brandId);
+    this.brandService.deleteBrand(brandId).subscribe(response => {
+      console.log('Brand deleted:', response);
+      this.brands = this.brands?.filter(b => b.id !== brandId);
+    });
   }
 }

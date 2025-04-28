@@ -11,7 +11,6 @@ import { BrandListComponent } from './brand/brand-list/brand-list.component';
 import { CarListComponent } from './car/car-list/car-list.component';
 import { CarDetailComponent } from './car/car-detail/car-detail.component';
 import { CarCardComponent } from './car/car-card/car-card.component';
-import { BrandManagementComponent } from './admin/components/brand-management/brand-management.component';
 import { BrandFormComponent } from './admin/components/brand-form/brand-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrandListAdminComponent } from './admin/components/brand-list-admin/brand-list-admin.component';
@@ -29,7 +28,7 @@ import { CarListAdminComponent } from './admin/components/car-management/car-lis
     CarListComponent,
     CarDetailComponent,
     CarCardComponent,
-    BrandManagementComponent,
+
     BrandFormComponent,
     BrandListAdminComponent,
     CarFormComponent,
