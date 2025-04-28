@@ -1,0 +1,123 @@
+<section class="car-form-container">
+    <h2 class="text-4xl font-bold text-center mb-10">Add New Car</h2>
+  
+    <form (ngSubmit)="submitCar()" class="space-y-6">
+  
+      <!-- Image -->
+      <div>
+        <label class="block mb-2">Car Image Path</label>
+        <input type="text" [(ngModel)]="car.img" name="img" class="input-field">
+      </div>
+  
+      <!-- Model -->
+      <div>
+        <label class="block mb-2">Model</label>
+        <input type="text" [(ngModel)]="car.model" name="model" class="input-field">
+      </div>
+  
+      <!-- Year -->
+      <div>
+        <label class="block mb-2">Year</label>
+        <input type="number" [(ngModel)]="car.year" name="year" class="input-field">
+      </div>
+  
+      <!-- Price -->
+      <div>
+        <label class="block mb-2">Price ($)</label>
+        <input type="number" [(ngModel)]="car.price" name="price" class="input-field">
+      </div>
+  
+      <!-- Brand -->
+      <div>
+        <label class="block mb-2">Brand</label>
+        <select [(ngModel)]="car.brand" name="brand" class="input-field">
+          <option *ngFor="let brand of brands" [ngValue]="brand">{{ brand.name }}</option>
+        </select>
+      </div>
+  
+      <!-- Horsepower -->
+      <div>
+        <label class="block mb-2">Horsepower (HP)</label>
+        <input type="number" [(ngModel)]="car.horsepower" name="horsepower" class="input-field">
+      </div>
+  
+      <!-- Fuel Type -->
+      <div>
+        <label class="block mb-2">Fuel Type</label>
+        <input type="text" [(ngModel)]="car.fuelType" name="fuelType" class="input-field">
+      </div>
+  
+      <!-- Transmission -->
+      <div>
+        <label class="block mb-2">Transmission</label>
+        <input type="text" [(ngModel)]="car.transmission" name="transmission" class="input-field">
+      </div>
+  
+      <!-- Color -->
+      <div>
+        <label class="block mb-2">Color</label>
+        <input type="text" [(ngModel)]="car.color" name="color" class="input-field">
+      </div>
+  
+      <!-- Fuel Efficiency -->
+      <div>
+        <label class="block mb-2">Fuel Efficiency (km/l)</label>
+        <input type="number" step="0.1" [(ngModel)]="car.fuelEfficiency" name="fuelEfficiency" class="input-field">
+      </div>
+  
+      <!-- Engine Capacity -->
+      <div>
+        <label class="block mb-2">Engine Capacity (cc)</label>
+        <input type="number" [(ngModel)]="car.engineCapacity" name="engineCapacity" class="input-field">
+      </div>
+  
+      <!-- Speed -->
+      <div>
+        <label class="block mb-2">Speed (km/h)</label>
+        <input type="number" [(ngModel)]="car.speed" name="speed" class="input-field">
+      </div>
+  
+      <!-- Seats -->
+      <div>
+        <label class="block mb-2">Seats</label>
+        <input type="number" [(ngModel)]="car.seats" name="seats" class="input-field">
+      </div>
+  
+      <!-- Fuel Tank Capacity -->
+      <div>
+        <label class="block mb-2">Fuel Tank Capacity (L)</label>
+        <input type="number" [(ngModel)]="car.fuelTankCapacity" name="fuelTankCapacity" class="input-field">
+      </div>
+  
+      <!-- Fuel Consumption -->
+      <div>
+        <label class="block mb-2">Fuel Consumption (L/100km)</label>
+        <input type="number" step="0.1" [(ngModel)]="car.fuelConsumption" name="fuelConsumption" class="input-field">
+      </div>
+  
+      <!-- Acceleration -->
+      <div>
+        <label class="block mb-2">Acceleration (0-100 km/h sec)</label>
+        <input type="number" step="0.1" [(ngModel)]="car.acceleration" name="acceleration" class="input-field">
+      </div>
+  
+      <!-- Top Speed -->
+      <div>
+        <label class="block mb-2">Top Speed (km/h)</label>
+        <input type="number" [(ngModel)]="car.topSpeed" name="topSpeed" class="input-field">
+      </div>
+  
+      <!-- Torque -->
+      <div>
+        <label class="block mb-2">Torque (Nm)</label>
+        <input type="number" [(ngModel)]="car.torque" name="torque" class="input-field">
+      </div>
+  
+      <!-- Submit Button -->
+      <div class="text-center">
+        <button type="submit" class="submit-button">Add Car</button>
+      </div>
+  
+    </form>
+  </section>
+  

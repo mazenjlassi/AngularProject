@@ -1,0 +1,39 @@
+<section class="admin-car-list-container">
+    <h2 class="text-4xl font-bold text-center mb-10">Manage Cars</h2>
+  
+    <div class="text-center mb-8">
+      <button class="add-button" (click)="addCar()">+ Add New Car</button>
+    </div>
+  
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div *ngFor="let car of cars" class="car-card">
+        <img [src]="car.img" alt="{{ car.model }}" class="w-full h-48 object-cover rounded-t-lg">
+  
+        <div class="p-4">
+          <h3 class="text-2xl font-bold mb-2">{{ car.model }}</h3>
+          <p class="text-gray-400">Brand: {{ car.brand.name }}</p>
+          <p class="text-gray-400">Year: {{ car.year }}</p>
+          <p class="text-gray-400">Price: {{ car.price | currency:'USD' }}</p>
+          <p class="text-gray-400">Horsepower: {{ car.horsepower }} HP</p>
+          <p class="text-gray-400">Fuel Type: {{ car.fuelType }}</p>
+          <p class="text-gray-400">Transmission: {{ car.transmission }}</p>
+          <p class="text-gray-400">Color: {{ car.color }}</p>
+          <p class="text-gray-400">Fuel Efficiency: {{ car.fuelEfficiency }} km/l</p>
+          <p class="text-gray-400">Engine: {{ car.engineCapacity }} cc</p>
+          <p class="text-gray-400">Speed: {{ car.speed }} km/h</p>
+          <p class="text-gray-400">Seats: {{ car.seats }}</p>
+          <p class="text-gray-400">Fuel Tank: {{ car.fuelTankCapacity }} L</p>
+          <p class="text-gray-400">Consumption: {{ car.fuelConsumption }} L/100km</p>
+          <p class="text-gray-400">Acceleration: {{ car.acceleration }}s</p>
+          <p class="text-gray-400">Top Speed: {{ car.topSpeed }} km/h</p>
+          <p class="text-gray-400">Torque: {{ car.torque }} Nm</p>
+  
+          <div class="flex justify-between mt-4">
+            <button class="edit-button" (click)="editCar(car)">Edit</button>
+            <button class="delete-button" (click)="deleteCar(car.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

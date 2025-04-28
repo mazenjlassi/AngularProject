@@ -1,0 +1,513 @@
+/* ========== GLOBAL CONTAINER ========== */
+.admin-car-list-container {
+    background-color: #0a0a0a; /* Deep black for luxury feel */
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    color: #ffffff;
+    font-family: 'Audiowide', 'Orbitron', 'Segoe UI', sans-serif;
+    background-image: 
+        radial-gradient(circle at 70% 20%, rgba(37, 99, 235, 0.1), transparent 30%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.97), rgba(15, 15, 20, 0.99));
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+    z-index: 1;
+}
+
+/* Carbon fiber texture overlay */
+.admin-car-list-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h100v100H0z" fill="%23101010"/><path d="M0 0h2v100H0zM4 0h2v100H4zM8 0h2v100H8zM12 0h2v100H12zM16 0h2v100H16zM20 0h2v100H20zM24 0h2v100H24zM28 0h2v100H28zM32 0h2v100H32zM36 0h2v100H36zM40 0h2v100H40zM44 0h2v100H44zM48 0h2v100H48zM52 0h2v100H52zM56 0h2v100H56zM60 0h2v100H60zM64 0h2v100H64zM68 0h2v100H68zM72 0h2v100H72zM76 0h2v100H76zM80 0h2v100H80zM84 0h2v100H84zM88 0h2v100H88zM92 0h2v100H92zM96 0h2v100H96z" fill="%230a0a0a"/></svg>');
+    background-size: 100px 100px;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Headlight beam effect */
+.admin-car-list-container::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.12), transparent 40%);
+    pointer-events: none;
+    animation: beam 10s infinite alternate;
+    z-index: -1;
+}
+
+/* ========== HEADER ========== */
+.admin-car-list-container h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa, #93c5fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    position: relative;
+    padding-bottom: 1rem;
+    text-align: center;
+}
+
+.admin-car-list-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+    border-radius: 2px;
+}
+
+/* ========== ADD BUTTON ========== */
+.add-button {
+    background: linear-gradient(135deg, #10b981, #34d399);
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.25),
+        0 1px 3px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.add-button::before {
+    content: '+';
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.add-button:hover {
+    background: linear-gradient(135deg, #059669, #10b981);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 7px 14px rgba(0, 0, 0, 0.3),
+        0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.add-button:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.25),
+        inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.add-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+.add-button:hover::after {
+    left: 100%;
+}
+
+/* ========== CAR CARD ========== */
+.car-card {
+    background: linear-gradient(145deg, rgba(25, 25, 35, 0.9), rgba(15, 15, 20, 0.85));
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+    box-shadow: 
+        0 8px 20px rgba(0, 0, 0, 0.5),
+        0 4px 10px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+}
+
+.car-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+        0 12px 30px rgba(0, 0, 0, 0.6),
+        0 6px 15px rgba(0, 0, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Chrome trim effect */
+.car-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 12px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ========== CAR IMAGE ========== */
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    filter: brightness(0.9);
+}
+
+.car-card:hover img {
+    transform: scale(1.05);
+    filter: brightness(1);
+}
+
+/* ========== CAR DETAILS ========== */
+.car-card .p-4 {
+    padding: 1.5rem;
+    background: rgba(20, 20, 25, 0.7);
+    backdrop-filter: blur(5px);
+}
+
+.car-card h3 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.car-card p {
+    font-size: 0.95rem;
+    color: #d1d5db;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.2s ease;
+}
+
+.car-card p::before {
+    content: '•';
+    color: #3b82f6;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+/* Highlight specific fields */
+.car-card p:where(:nth-child(2), :nth-child(3), :nth-child(4)) {
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+/* Performance-related fields */
+.car-card p:where(:nth-child(5), :nth-child(11), :nth-child(15), :nth-child(16), :nth-child(17)) {
+    color: #f87171;
+    font-weight: 500;
+}
+
+/* Efficiency-related fields */
+.car-card p:where(:nth-child(9), :nth-child(13), :nth-child(14)) {
+    color: #34d399;
+    font-weight: 500;
+}
+
+/* Comfort-related fields */
+.car-card p:where(:nth-child(8), :nth-child(12)) {
+    color: #a78bfa;
+    font-weight: 500;
+}
+
+/* ========== ACTION BUTTONS ========== */
+.car-card .flex {
+    margin-top: 1.5rem;
+    gap: 1rem;
+}
+
+.edit-button {
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    box-shadow: 
+        0 3px 5px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.edit-button:hover {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 5px 10px rgba(0, 0, 0, 0.3),
+        0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.edit-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+.edit-button:hover::after {
+    left: 100%;
+}
+
+.delete-button {
+    background: linear-gradient(135deg, #ef4444, #f87171);
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    box-shadow: 
+        0 3px 5px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.delete-button:hover {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 5px 10px rgba(0, 0, 0, 0.3),
+        0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.delete-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+.delete-button:hover::after {
+    left: 100%;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes beam {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(5%, 5%);
+    }
+    50% {
+        transform: translate(-5%, -5%);
+    }
+    75% {
+        transform: translate(5%, -5%);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1024px) {
+    .admin-car-list-container {
+        padding: 3rem 1.5rem;
+    }
+    
+    .admin-car-list-container h2 {
+        font-size: 2.5rem;
+    }
+    
+    .car-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .admin-car-list-container {
+        padding: 2rem 1rem;
+    }
+    .admin-car-list-container h2 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .add-button {
+        padding: 14px 28px;
+        font-size: 1rem;
+    }
+    
+    .car-card img {
+        height: 180px;
+    }
+    
+    .car-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .car-card p {
+        font-size: 0.9rem;
+    }
+    
+    .edit-button, .delete-button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .admin-car-list-container {
+        padding: 1.5rem 0.75rem;
+    }
+    
+    .car-card img {
+        height: 160px;
+    }
+    
+    .car-card .p-4 {
+        padding: 1rem;
+    }
+}
+
+/* ========== CUSTOM SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(20, 20, 25, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.7);
+}
+
+/* ========== LOADING STATE ========== */
+.add-button.loading,
+.edit-button.loading,
+.delete-button.loading {
+    pointer-events: none;
+    color: transparent;
+    position: relative;
+}
+
+.add-button.loading::before,
+.edit-button.loading::before,
+.delete-button.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ========== TOOLTIPS ========== */
+.car-card h3::after {
+    content: '?';
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    background-color: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+    border-radius: 50%;
+    font-size: 0.7rem;
+    margin-left: 0.5rem;
+    cursor: help;
+    position: relative;
+}
+
+.car-card h3:hover::after::before {
+    content: 'View car details';
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(30, 30, 35, 0.95);
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    z-index: 10;
+}

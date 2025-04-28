@@ -1,0 +1,431 @@
+/* ========== GLOBAL FORM CONTAINER ========== */
+.car-form-container {
+    background-color: #0a0a0a; /* Rich black background */
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Audiowide', 'Orbitron', 'Segoe UI', sans-serif;
+    background-image: 
+        radial-gradient(circle at 75% 30%, rgba(37, 99, 235, 0.08) 0%, transparent 30%),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.95), rgba(10, 10, 15, 0.98));
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Carbon fiber texture overlay */
+.car-form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h100v100H0z" fill="%23101010"/><path d="M0 0h2v100H0zM4 0h2v100H4zM8 0h2v100H8zM12 0h2v100H12zM16 0h2v100H16zM20 0h2v100H20zM24 0h2v100H24zM28 0h2v100H28zM32 0h2v100H32zM36 0h2v100H36zM40 0h2v100H40zM44 0h2v100H44zM48 0h2v100H48zM52 0h2v100H52zM56 0h2v100H56zM60 0h2v100H60zM64 0h2v100H64zM68 0h2v100H68zM72 0h2v100H72zM76 0h2v100H76zM80 0h2v100H80zM84 0h2v100H84zM88 0h2v100H88zM92 0h2v100H92zM96 0h2v100H96z" fill="%230a0a0a"/></svg>');
+    background-size: 100px 100px;
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* ========== FORM HEADER ========== */
+.car-form-container h2 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    background: linear-gradient(90deg, #3b82f6, #60a5fa, #93c5fd);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.car-form-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+    border-radius: 2px;
+}
+
+/* ========== FORM LAYOUT ========== */
+.car-form-container form {
+    width: 100%;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+    background: rgba(15, 15, 20, 0.7);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 
+        0 10px 30px rgba(0, 0, 0, 0.5),
+        0 5px 15px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+}
+
+.car-form-container form:hover {
+    box-shadow: 
+        0 15px 40px rgba(0, 0, 0, 0.6),
+        0 8px 20px rgba(0, 0, 0, 0.4),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    transform: translateY(-3px);
+}
+
+/* ========== FORM GROUPS ========== */
+.car-form-container form > div {
+    margin-bottom: 0;
+    position: relative;
+}
+
+.car-form-container label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #d1d5db;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.car-form-container label::before {
+    content: '➤';
+    position: absolute;
+    left: 0;
+    color: #3b82f6;
+    font-size: 0.8rem;
+    transform: rotate(90deg);
+    top: 2px;
+    opacity: 0.8;
+}
+
+/* ========== INPUT FIELDS ========== */
+.input-field {
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 8px;
+    background-color: rgba(25, 25, 30, 0.9);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 
+        inset 0 1px 3px rgba(0, 0, 0, 0.5),
+        0 1px 0 rgba(255, 255, 255, 0.02);
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    position: relative;
+}
+
+.input-field::placeholder {
+    color: #6b7280;
+    opacity: 0.6;
+    font-style: italic;
+}
+
+.input-field:hover {
+    border-color: rgba(59, 130, 246, 0.3);
+    background-color: rgba(30, 30, 35, 0.9);
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.input-field:focus {
+    outline: none;
+    background-color: rgba(35, 35, 40, 0.9);
+    border-color: #3b82f6;
+    box-shadow: 
+        0 0 0 3px rgba(59, 130, 246, 0.2),
+        inset 0 1px 4px rgba(0, 0, 0, 0.7);
+    transform: translateY(-1px);
+}
+
+/* Special styling for number inputs */
+.input-field[type="number"] {
+    font-family: 'Audiowide', monospace;
+    letter-spacing: 1px;
+}
+
+/* ========== SELECT DROPDOWN ========== */
+.input-field[ngModel][name="brand"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%233b82f6'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 18px;
+    padding-right: 42px;
+    cursor: pointer;
+}
+
+/* ========== SUBMIT BUTTON ========== */
+.submit-button {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    padding: 16px 32px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    box-shadow: 
+        0 4px 6px rgba(0, 0, 0, 0.25),
+        0 1px 3px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    transform: translateY(-2px);
+    box-shadow: 
+        0 7px 14px rgba(0, 0, 0, 0.3),
+        0 3px 6px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.25),
+        inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.submit-button::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, 
+                transparent, 
+                rgba(255, 255, 255, 0.15), 
+                transparent);
+    transition: all 0.6s ease;
+}
+
+.submit-button:hover::after {
+    left: 100%;
+}
+
+/* ========== SPECIAL FIELD STYLING ========== */
+/* Performance-related fields */
+.input-field[name="horsepower"],
+.input-field[name="torque"],
+.input-field[name="acceleration"],
+.input-field[name="topSpeed"],
+.input-field[name="speed"] {
+    background: linear-gradient(90deg, rgba(25, 25, 30, 0.9), rgba(30, 30, 40, 0.9));
+    border-left: 3px solid #ef4444;
+}
+
+/* Efficiency-related fields */
+.input-field[name="fuelEfficiency"],
+.input-field[name="fuelConsumption"],
+.input-field[name="fuelTankCapacity"] {
+    background: linear-gradient(90deg, rgba(25, 25, 30, 0.9), rgba(30, 40, 30, 0.9));
+    border-left: 3px solid #10b981;
+}
+
+/* Comfort-related fields */
+.input-field[name="seats"],
+.input-field[name="color"] {
+    background: linear-gradient(90deg, rgba(25, 25, 30, 0.9), rgba(40, 30, 40, 0.9));
+    border-left: 3px solid #8b5cf6;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+    }
+}
+
+@keyframes highlight {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1024px) {
+    .car-form-container form {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .car-form-container {
+        padding: 2rem 1rem;
+    }
+    
+    .car-form-container h2 {
+        font-size: 2.25rem;
+    }
+    
+    .car-form-container form {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .car-form-container h2 {
+        font-size: 1.8rem;
+        letter-spacing: 1px;
+    }
+    
+    .input-field {
+        padding: 12px 16px;
+    }
+    
+    .submit-button {
+        padding: 14px 24px;
+        font-size: 1rem;
+    }
+}
+
+/* ========== VALIDATION STATES ========== */
+.ng-valid:not(form).ng-touched {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2) !important;
+}
+
+.ng-invalid:not(form).ng-touched {
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2) !important;
+}
+
+/* ========== LOADING STATE ========== */
+.submit-button.loading {
+    pointer-events: none;
+    color: transparent;
+    position: relative;
+}
+
+.submit-button.loading::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* ========== CUSTOM SCROLLBAR ========== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(20, 20, 25, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.7);
+}
+
+/* ========== SPECIAL EFFECTS ========== */
+/* Headlight beam effect */
+.car-form-container::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1), transparent 30%);
+    pointer-events: none;
+    animation: beam 8s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes beam {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(5%, 5%);
+    }
+    50% {
+        transform: translate(-5%, -5%);
+    }
+    75% {
+        transform: translate(5%, -5%);
+    }
+}
+
+/* Chrome trim effect */
+.car-form-container form {
+    position: relative;
+    z-index: 1;
+}
+
+.car-form-container form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: -1;
+}

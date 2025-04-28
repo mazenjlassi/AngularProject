@@ -15,6 +15,9 @@ import { BrandManagementComponent } from './admin/components/brand-management/br
 import { BrandFormComponent } from './admin/components/brand-form/brand-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrandListAdminComponent } from './admin/components/brand-list-admin/brand-list-admin.component';
+import { CarFormComponent } from './admin/components/car-management/car-form/car-form.component';
+import { CarListAdminComponent } from './admin/components/car-management/car-list/car-list-admin/car-list-admin.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { BrandListAdminComponent } from './admin/components/brand-list-admin/bra
     CarCardComponent,
     BrandManagementComponent,
     BrandFormComponent,
-    BrandListAdminComponent
+    BrandListAdminComponent,
+    CarFormComponent,
+    CarListAdminComponent,
+    
   ],
   imports: [
     BrowserModule,

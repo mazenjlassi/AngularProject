@@ -1,113 +1,440 @@
-/* Full page background */
+/* ========== PAGE CONTAINER ========== */
 .page-container {
-    background-color: #000; /* pure black */
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-    font-family: 'Poppins', sans-serif;
-  }
-  
-  /* Form Card */
-  .form-container {
-    background: linear-gradient(145deg, #0d0d2b, #1d1d3b); /* dark blue gradient */
-    padding: 30px;
-    border-radius: 14px;
-    width: 100%;
-    max-width: 360px;
-    color: #eee;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7); /* SOFT BIG SHADOW */
-    border: 1px solid rgba(255, 255, 255, 0.05);
-  }
-  
-  /* Form groups */
-  .form-group {
-    margin-bottom: 20px;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  /* Labels */
-  label {
-    margin-bottom: 8px;
-    font-size: 13px;
-    font-weight: 500;
-    color: #ccc;
-  }
-  
-  /* Inputs */
-  input[type="text"],
-  input[type="number"] {
-    width: 100%;
-    padding: 10px 12px;
-    background-color: #222;
-    border: 1px solid #333;
-    border-radius: 8px;
-    color: #eee;
-    font-size: 14px;
-    transition: background-color 0.3s, border 0.3s;
-  }
-  
-  input[type="text"]:focus,
-  input[type="number"]:focus {
-    background-color: #333;
-    border: 1px solid #555;
-    outline: none;
-  }
-  
-  /* Buttons */
-  button[type="submit"],
-  button[type="button"] {
-    width: 100%;
-    padding: 12px;
-    background: linear-gradient(135deg, #4a00e0, #8e2de2);
-    border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    margin-top: 10px;
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  
-  button[type="submit"]:hover,
-  button[type="button"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(142, 45, 226, 0.5);
-  }
-  
-  /* 📷 Add a camera icon before "Select Image" button */
-  button[type="button"]::before {
-    content: "📷 ";
-  }
-  
-  /* Image preview */
-  .image-preview {
-    margin-top: 20px;
-    text-align: center;
-  }
-  
-  /* Animate the uploaded image */
-  .image-preview img {
-    max-width: 180px;
-    height: auto;
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.08);
-    
-    /* Animation */
-    opacity: 0;
-    transform: scale(0.95);
-    animation: fadeInZoom 0.5s ease forwards;
-  }
-  
-  /* Keyframes for fade-in zoom effect */
-  @keyframes fadeInZoom {
-    to {
+  background-color: #0a0a0a; /* Deep black for luxury feel */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1.5rem;
+  font-family: 'Audiowide', 'Orbitron', 'Segoe UI', sans-serif;
+  background-image: 
+      radial-gradient(circle at 70% 20%, rgba(37, 99, 235, 0.1), transparent 30%),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.97), rgba(15, 15, 20, 0.99));
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+  z-index: 1;
+}
+
+/* Carbon fiber texture overlay */
+.page-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h100v100H0z" fill="%23101010"/><path d="M0 0h2v100H0zM4 0h2v100H4zM8 0h2v100H8zM12 0h2v100H12zM16 0h2v100H16zM20 0h2v100H20zM24 0h2v100H24zM28 0h2v100H28zM32 0h2v100H32zM36 0h2v100H36zM40 0h2v100H40zM44 0h2v100H44zM48 0h2v100H48zM52 0h2v100H52zM56 0h2v100H56zM60 0h2v100H60zM64 0h2v100H64zM68 0h2v100H68zM72 0h2v100H72zM76 0h2v100H76zM80 0h2v100H80zM84 0h2v100H84zM88 0h2v100H88zM92 0h2v100H92zM96 0h2v100H96z" fill="%230a0a0a"/></svg>');
+  background-size: 100px 100px;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Headlight beam effect */
+.page-container::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.12), transparent 40%);
+  pointer-events: none;
+  animation: beam 10s infinite alternate;
+  z-index: -1;
+}
+
+/* ========== FORM CONTAINER ========== */
+.form-container {
+  background: linear-gradient(145deg, rgba(15, 15, 20, 0.9), rgba(25, 25, 35, 0.85));
+  padding: 2.5rem;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 400px;
+  color: #e0e0e0;
+  box-shadow: 
+      0 12px 30px rgba(0, 0, 0, 0.6),
+      0 6px 20px rgba(0, 0, 0, 0.4),
+      inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  position: relative;
+  z-index: 2;
+}
+
+.form-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 
+      0 15px 40px rgba(0, 0, 0, 0.7),
+      0 8px 25px rgba(0, 0, 0, 0.5),
+      inset 0 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Chrome trim effect */
+.form-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* ========== FORM GROUPS ========== */
+.form-group {
+  margin-bottom: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ========== LABELS ========== */
+.form-group label {
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #d1d5db;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  position: relative;
+  padding-left: 1.5rem;
+  transition: color 0.2s ease;
+}
+
+.form-group label::before {
+  content: '➤';
+  position: absolute;
+  left: 0;
+  color: #3b82f6;
+  font-size: 0.8rem;
+  transform: rotate(90deg);
+  top: 2px;
+  opacity: 0.7;
+  transition: transform 0.3s ease;
+}
+
+.form-group:hover label::before {
+  transform: rotate(90deg) translateY(-2px);
+}
+
+/* ========== INPUTS ========== */
+input[type="text"],
+input[type="number"] {
+  width: 100%;
+  padding: 14px 18px;
+  background-color: rgba(30, 30, 35, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  transition: all 0.3s ease;
+  box-shadow: 
+      inset 0 1px 3px rgba(0, 0, 0, 0.5),
+      0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+input[type="text"]::placeholder,
+input[type="number"]::placeholder {
+  color: #6b7280;
+  opacity: 0.6;
+  font-style: italic;
+}
+
+input[type="text"]:hover,
+input[type="number"]:hover {
+  border-color: rgba(59, 130, 246, 0.3);
+  background-color: rgba(35, 35, 40, 0.9);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+  outline: none;
+  background-color: rgba(40, 40, 45, 0.9);
+  border-color: #3b82f6;
+  box-shadow: 
+      0 0 0 3px rgba(59, 130, 246, 0.2),
+      inset 0 1px 4px rgba(0, 0, 0, 0.6);
+  transform: translateY(-1px);
+}
+
+/* ========== FILE INPUT ========== */
+input[type="file"] {
+  display: none;
+}
+
+/* ========== BUTTONS ========== */
+button[type="button"],
+button[type="submit"] {
+  width: 100%;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+      0 4px 6px rgba(0, 0, 0, 0.25),
+      0 1px 3px rgba(0, 0, 0, 0.15),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-top: 0.5rem;
+}
+
+button[type="button"]:hover,
+button[type="submit"]:hover {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 
+      0 7px 14px rgba(0, 0, 0, 0.3),
+      0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+button[type="button"]:active,
+button[type="submit"]:active {
+  transform: translateY(0);
+  box-shadow: 
+      0 2px 4px rgba(0, 0, 0, 0.25),
+      inset 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Camera icon for image select button */
+button[type="button"]::before {
+  content: "📷 ";
+  font-size: 1.1rem;
+  margin-right: 0.5rem;
+  opacity: 0.8;
+}
+
+/* Button shine effect */
+button[type="button"]::after,
+button[type="submit"]::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+              transparent, 
+              rgba(255, 255, 255, 0.2), 
+              transparent);
+  transition: all 0.6s ease;
+}
+
+button[type="button"]:hover::after,
+button[type="submit"]:hover::after {
+  left: 100%;
+}
+
+/* ========== IMAGE PREVIEW ========== */
+.image-preview {
+  margin-top: 1.5rem;
+  text-align: center;
+  position: relative;
+  padding: 1rem;
+  background: rgba(20, 20, 25, 0.5);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+}
+
+.image-preview img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+      0 6px 15px rgba(0, 0, 0, 0.4),
+      0 2px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: scale(0.95) translateY(10px);
+  animation: fadeInZoom 0.5s ease forwards;
+  transition: all 0.3s ease;
+}
+
+.image-preview img:hover {
+  transform: scale(1.02);
+  box-shadow: 
+      0 8px 20px rgba(0, 0, 0, 0.5),
+      0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInZoom {
+  to {
       opacity: 1;
-      transform: scale(1);
-    }
+      transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes beam {
+  0%, 100% {
+      transform: translate(0, 0);
+  }
+  25% {
+      transform: translate(5%, 5%);
+  }
+  50% {
+      transform: translate(-5%, -5%);
+  }
+  75% {
+      transform: translate(5%, -5%);
+  }
+}
+
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+/* ========== VALIDATION STATES ========== */
+input.ng-valid.ng-touched {
+  border-color: #10b981 !important;
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2) !important;
+}
+
+input.ng-invalid.ng-touched {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.2) !important;
+}
+
+/* ========== LOADING STATE ========== */
+button[type="submit"].loading {
+  pointer-events: none;
+  color: transparent;
+  position: relative;
+}
+
+button[type="submit"].loading::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+      transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+  .page-container {
+      padding: 2rem 1rem;
   }
   
+  .form-container {
+      padding: 2rem;
+      max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .form-container {
+      padding: 1.5rem;
+  }
+  
+  button[type="button"],
+  button[type="submit"] {
+      padding: 12px 16px;
+      font-size: 0.95rem;
+  }
+  
+  .image-preview img {
+      max-width: 100%;
+  }
+}
+
+/* ========== CUSTOM SCROLLBAR ========== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(20, 20, 25, 0.8);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.7);
+}
+
+/* ========== TOOLTIPS ========== */
+.form-group label[for="name"]::after {
+  content: '?';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  background-color: rgba(59, 130, 246, 0.2);
+  color: #3b82f6;
+  border-radius: 50%;
+  font-size: 0.7rem;
+  margin-left: 0.5rem;
+  cursor: help;
+  position: relative;
+}
+
+.form-group label[for="name"]::after:hover::before {
+  content: 'Enter the car brand name';
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 35, 0.95);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+/* ========== SPECIAL EFFECTS ========== */
+.form-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.3), transparent);
+  z-index: -1;
+}

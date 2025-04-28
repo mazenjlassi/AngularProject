@@ -1,13 +1,44 @@
 <section class="bg-black min-h-screen text-white py-10 px-6 flex flex-col items-center">
-    <div class="max-w-4xl w-full">
-      <img [src]="car.img" alt="{{ car.model }}" class="w-full h-96 object-cover rounded-lg mb-6" />
-      
+  <div class="max-w-4xl w-full">
+    <!-- Image Container -->
+    <div class="image-container">
+      <img [src]="selectedImage" alt="{{ car.model }}" class="main-image" />
+      <div class="thumbnail-list">
+        <img [src]="car.img" alt="{{ car.model }}" class="thumbnail" [class.selected]="selectedImage === car.img" (click)="selectImage(car.img)" />
+        <img [src]="car.img2" alt="{{ car.model }}" class="thumbnail" [class.selected]="selectedImage === car.img2" (click)="selectImage(car.img2)" />
+        <img [src]="car.img3" alt="{{ car.model }}" class="thumbnail" [class.selected]="selectedImage === car.img3" (click)="selectImage(car.img3)" />
+        <img [src]="car.img4" alt="{{ car.model }}" class="thumbnail" [class.selected]="selectedImage === car.img4" (click)="selectImage(car.img4)" />
+      </div>
+    </div>
+
+    <!-- Car Info -->
+    <div class="car-info">
       <h1 class="text-5xl font-bold mb-4">{{ car.model }}</h1>
       <p class="text-gray-400 mb-2">Brand: {{ car.brand.name }}</p>
       <p class="text-gray-400 mb-2">Year: {{ car.year }}</p>
       <p class="text-green-400 text-2xl font-bold mb-4">{{ car.price | currency:'USD' }}</p>
-      
-      <!-- You can add more like: buttons to Save or Buy -->
+
+      <!-- Detailed Car Info -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-lg">
+        <p><span class="font-semibold">Horsepower:</span> {{ car.horsepower }} HP</p>
+        <p><span class="font-semibold">Fuel Type:</span> {{ car.fuelType }}</p>
+        <p><span class="font-semibold">Transmission:</span> {{ car.transmission }}</p>
+        <p><span class="font-semibold">Color:</span> {{ car.color }}</p>
+        <p><span class="font-semibold">Fuel Efficiency:</span> {{ car.fuelEfficiency }} km/l</p>
+        <p><span class="font-semibold">Engine Capacity:</span> {{ car.engineCapacity }} cc</p>
+        <p><span class="font-semibold">Top Speed:</span> {{ car.topSpeed }} km/h</p>
+        <p><span class="font-semibold">Acceleration (0-100):</span> {{ car.acceleration }} sec</p>
+        <p><span class="font-semibold">Seats:</span> {{ car.seats }}</p>
+        <p><span class="font-semibold">Fuel Tank Capacity:</span> {{ car.fuelTankCapacity }} liters</p>
+        <p><span class="font-semibold">Fuel Consumption:</span> {{ car.fuelConsumption }} L/100km</p>
+        <p><span class="font-semibold">Torque:</span> {{ car.torque }} Nm</p>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex space-x-4">
+        <button class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded">Save</button>
+        <button class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded">Buy</button>
+      </div>
     </div>
-  </section>
-  
+  </div>
+</section>
