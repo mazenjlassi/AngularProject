@@ -8,7 +8,7 @@ WORKDIR /app
 COPY target/carsAgency-0.0.1-SNAPSHOT.jar carsAgency.jar
 
 # Exposer le port de l'application
-EXPOSE 8095
+EXPOSE 8080
 
 # Commande pour exécuter l'application
 ENTRYPOINT ["java", "-jar", "carsAgency.jar"]

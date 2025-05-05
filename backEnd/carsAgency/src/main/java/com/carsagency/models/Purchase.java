@@ -11,6 +11,9 @@ public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private int quantity;
+    private LocalDate purchaseDate;
+
 
     @ManyToOne
     private Customer customer;
@@ -18,6 +21,5 @@ public class Purchase {
     @ManyToOne
     private Car car;
 
-    private int quantity;
-    private LocalDate purchaseDate;
+
 }

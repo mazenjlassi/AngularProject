@@ -23,6 +23,11 @@ public class CarService {
 
     public List<Car> findAll() { return carRepository.findAll(); }
 
+    public List<Car> SavedCar(Long id)
+    {
+        return carRepository.findCarsBySavedByCustomers_Id(id);
+    }
+
 
 
 
