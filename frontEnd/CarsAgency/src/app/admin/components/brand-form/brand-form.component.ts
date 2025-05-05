@@ -55,7 +55,8 @@ export class BrandFormComponent implements OnInit {
 
           // Now send the brand to the backend
           const brand: Brand = this.brandForm.value;
-          console.log('Submitting brand:', brand);
+          console.log('//////////////wael////////////');
+          console.log(' brand:', brand);
           this.brandService.addBrand(brand).subscribe({
             next: (res) => {
               console.log('Brand added successfully:', res);

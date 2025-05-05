@@ -1,18 +1,29 @@
 import { Component } from '@angular/core';
 import { Brand } from '../../../../models/brand';
 import { Car } from '../../../../models/car';
+import { CarService } from '../../../../services/car.service';
+import { RedirectCommand, Router } from '@angular/router';
+import { BrandService } from '../../../../services/brand.service';
 
 @Component({
   selector: 'app-car-form',
   standalone: false,
-  templateUrl: './car-form.component.html',
-  styleUrl: './car-form.component.css'
+  templateUrl:'./car-form.component.html',
+  styleUrl: './car-form.component.css',
 })
 export class CarFormComponent {
+  constructor(private carService: CarService, private router: Router,private brandService:BrandService) {}
 
+  brands: Brand[] = [];
+
+  ngOnInit(): void {
+    this.brandService.getAllBrands().subscribe((brands) => {
+      this.brands = brands;
+      console.log(this.brands);
+    });
+  }
 
   car: Car = {
-    id: 0,
     img: '',
     img2: '',
     img3: '',
@@ -35,17 +46,29 @@ export class CarFormComponent {
     topSpeed: 0,
     torque: 0,
     savedByCustomers: [],
-    purchasedByCustomers: []
+    purchasedByCustomers: [],
   };
 
-  brands: Brand[] = [
-    { id: 1, name: 'BMW', image: 'images/bmw2.png', cars: [] },
-    { id: 2, name: 'Audi', image: 'assets/brands/audi.png', cars: [] },
-    { id: 3, name: 'Mercedes', image: 'assets/brands/mercedes.png', cars: [] }
-  ];
+
 
   submitCar() {
+    const selectedBrand = this.brands.find(b => b.id === this.car.brand.id);
+    if (selectedBrand) {
+      this.car.brand = selectedBrand;
+    }
+
     console.log('Car submitted:', this.car);
-    // Here you can send the car object to a service or backend
+    this.carService.addCar(this.car).subscribe(
+      (response) => {
+        console.log('Car added successfully:', response);
+        alert('Car added successfully');
+        this.router.navigate(['/admin/car-management']);
+      },
+      (error) => {
+        alert('Car adding failed');
+        console.error('Error adding car:', error);
+      }
+    );
   }
+
 }
