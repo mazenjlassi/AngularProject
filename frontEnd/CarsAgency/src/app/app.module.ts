@@ -18,6 +18,8 @@ import { CarFormComponent } from './admin/components/car-management/car-form/car
 import { CarListAdminComponent } from './admin/components/car-management/car-list/car-list-admin/car-list-admin.component';
 import { SavedCarsComponent } from './customer/saved-cars/saved-cars.component';
 import { PurchasedCarsComponent } from './customer/purchased-cars/purchased-cars.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 
 @NgModule({
@@ -37,6 +39,8 @@ import { PurchasedCarsComponent } from './customer/purchased-cars/purchased-cars
     CarListAdminComponent,
     SavedCarsComponent,
     PurchasedCarsComponent,
+    LoginComponent,
+    SignupComponent,
     
   ],
   imports: [
