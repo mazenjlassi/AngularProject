@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8
+    container_name: carsAgency-mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: carsAgency
+      MYSQL_USER: user
+      MYSQL_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - carsAgency-network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: carsAgency-phpmyadmin
+    restart: always
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "8081:80"
+    networks:
+      - carsAgency-network
+
+  webserver:
+    image: httpd:latest
+    container_name: carsAgency-apache
+    restart: always
+    ports:
+      - "8080:80"
+    volumes:
+      - ./public_html:/usr/local/apache2/htdocs
+    networks:
+      - carsAgency-network
+
+  app:
+    build: .
+    container_name: carsagency-app
+    restart: on-failure
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/CarsAgency?createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      SERVER_PORT: 8095
+    ports:
+      - "8095:8095"
+    volumes:
+      - ./logs:/app/logs
+    networks:
+      - carsAgency-network
+
+volumes:
+  mysql_data:
+
+networks:
+  carsAgency-network:
+    driver: bridge
