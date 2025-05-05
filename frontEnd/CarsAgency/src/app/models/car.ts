@@ -3,7 +3,7 @@ import { Customer } from './customer';
 import { Brand } from './brand';
 
 export interface Car {
-  id: number;
+  id?: number;
   img: string;
   img2: string;
   img3: string;
@@ -12,7 +12,7 @@ export interface Car {
   year: number;
   price: number;
   brand: Brand;
-  horsepower?: number;         
+  horsepower?: number;
   fuelType?: string;
   transmission?: string;
   color?: string;
