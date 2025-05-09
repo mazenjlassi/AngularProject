@@ -30,7 +30,7 @@
   
           <div class="flex justify-between mt-4">
             <button class="edit-button" (click)="editCar(car)">Edit</button>
-            <button class="delete-button" (click)="deleteCar(car.id)">Delete</button>
+            <button class="delete-button" (click)="deleteCar(car.id ?? 0)">Delete</button>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Brand } from '../../../../../models/brand';
 import { Car } from '../../../../../models/car';
+import { BrandService } from '../../../../../services/brand.service';
+import { CarService } from '../../../../../services/car.service';
 
 @Component({
   selector: 'app-car-list-admin',
@@ -12,46 +14,25 @@ export class CarListAdminComponent {
 
   cars: Car[] = [];
 
-  brands: Brand[] = [
-    { id: 1, name: 'BMW', image: 'images/bmw2.png', cars: [] },
-    { id: 2, name: 'Audi', image: 'assets/brands/audi.png', cars: [] },
-    { id: 3, name: 'Mercedes', image: 'assets/brands/mercedes.png', cars: [] }
-  ];
+  brands: Brand[] = [];
 
-  constructor() {
+  constructor(private brandService: BrandService, private carService: CarService) {
     this.loadCars();
   }
 
+  ngOnInit(): void {
+    this.brandService.getAllBrands().subscribe((brands) => {
+      this.brands = brands;
+      console.log(this.brands);
+    });
+  }
+
   loadCars() {
-    this.cars = [
-      {
-        id: 1,
-        img: 'images/bmw-i8.png',
-        img2: 'images/bmw-i8.png',
-        img3: 'images/bmw-i8.png',
-        img4: 'images/bmw-i8.png',
-        model: 'BMW i8',
-        year: 2020,
-        price: 140000,
-        brand: this.brands[0],
-        horsepower: 362,
-        fuelType: 'Petrol',
-        transmission: 'Automatic',
-        color: 'Red',
-        fuelEfficiency: 15.5,
-        engineCapacity: 1998,
-        speed: 250,
-        seats: 4,
-        fuelTankCapacity: 50,
-        fuelConsumption: 10,
-        acceleration: 3.5,
-        topSpeed: 250,
-        torque: 500,
-        savedByCustomers: [],
-        purchasedByCustomers: []
-      },
-      // You can add more cars here
-    ];
+    this.carService.getAllCars().subscribe((cars) => {
+      if (cars) {
+      this.cars = cars;}
+      console.log(this.cars);
+    });
   }
 
   addCar() {
@@ -65,7 +46,8 @@ export class CarListAdminComponent {
   }
 
   deleteCar(carId: number) {
+    if (this.cars) {
     this.cars = this.cars.filter(car => car.id !== carId);
-    console.log('Deleted car with id:', carId);
+    console.log('Deleted car with id:', carId);}
   }
 }

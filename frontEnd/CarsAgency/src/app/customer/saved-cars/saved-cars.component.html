@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Saved Cars</h2>
+  
+    <div *ngIf="savedCars.length === 0">You have no saved cars.</div>
+  
+    <div class="car-list" *ngIf="savedCars.length > 0">
+      <div class="car-card" *ngFor="let car of savedCars">
+        <img [src]="car.img" alt="{{ car.model }}" />
+        <div class="car-info">
+          <h3>{{ car.brand.name }} {{ car.model }}</h3>
+          <p>Year: {{ car.year }}</p>
+          <p>Price: {{ car.price | currency }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

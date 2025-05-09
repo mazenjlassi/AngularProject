@@ -16,6 +16,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrandListAdminComponent } from './admin/components/brand-list-admin/brand-list-admin.component';
 import { CarFormComponent } from './admin/components/car-management/car-form/car-form.component';
 import { CarListAdminComponent } from './admin/components/car-management/car-list/car-list-admin/car-list-admin.component';
+import { SavedCarsComponent } from './customer/saved-cars/saved-cars.component';
+import { PurchasedCarsComponent } from './customer/purchased-cars/purchased-cars.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 
 @NgModule({
@@ -33,6 +37,10 @@ import { CarListAdminComponent } from './admin/components/car-management/car-lis
     BrandListAdminComponent,
     CarFormComponent,
     CarListAdminComponent,
+    SavedCarsComponent,
+    PurchasedCarsComponent,
+    LoginComponent,
+    SignupComponent,
     
   ],
   imports: [
