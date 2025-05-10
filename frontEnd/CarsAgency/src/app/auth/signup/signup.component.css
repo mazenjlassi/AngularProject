@@ -1,0 +1,186 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling with enhanced luxury gradient */
+  body {
+    background: linear-gradient(180deg, #121212 0%, #080808 100%);
+    font-family: 'Cinzel', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #e6e6e6;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  /* Luxurious body overlay */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(192, 192, 192, 0.15) 0%, transparent 60%);
+    z-index: -1;
+    opacity: 0.8;
+  }
+  
+  /* Form container with premium aesthetic */
+  form {
+    background: linear-gradient(145deg, #1c1c1c, #141414);
+    padding: 3.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), inset 0 0 15px rgba(192, 192, 192, 0.15);
+    width: 100%;
+    max-width: 480px;
+    border: 1px solid rgba(192, 192, 192, 0.3);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Form hover transformation */
+  form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 72px rgba(0, 0, 0, 0.95), inset 0 0 18px rgba(192, 192, 192, 0.2);
+  }
+  
+  /* Form background overlay with subtle silver shimmer */
+  form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(192, 192, 192, 0.08) 0%, transparent 75%);
+    z-index: -1;
+  }
+  
+  /* Heading with regal typography */
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #c0c0c0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 3rem;
+    text-align: center;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6), 0 0 10px rgba(192, 192, 192, 0.3);
+    position: relative;
+  }
+  
+  /* Heading underline with gradient flourish */
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c0c0c0, transparent);
+    box-shadow: 0 0 8px rgba(192, 192, 192, 0.5);
+  }
+  
+  /* Input group with refined spacing */
+  .input-group {
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  
+  /* Labels with elegant typography */
+  label {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Label hover effect with subtle lift */
+  label:hover {
+    color: #c0c0c0;
+    transform: translateY(-2px);
+  }
+  
+  /* Inputs with premium look */
+  input {
+    width: 100%;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    background: #222222;
+    color: #e6e6e6;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    transition: all 0.5s ease;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Input focus state with glowing border */
+  input:focus {
+    outline: none;
+    background: #2a2a2a;
+    box-shadow: 0 0 15px rgba(192, 192, 192, 0.5), inset 0 0 8px rgba(192, 192, 192, 0.3);
+    border: 1px solid #c0c0c0;
+  }
+  
+  /* Input placeholder with refined style */
+  input::placeholder {
+    color: #999;
+    font-style: italic;
+    font-size: 1rem;
+    opacity: 0.6;
+  }
+  
+  /* Input hover state */
+  input:hover {
+    background: #2a2a2a;
+    box-shadow: 0 0 12px rgba(192, 192, 192, 0.3);
+  }
+  
+  /* Button with opulent design */
+  button {
+    width: 100%;
+    padding: 1.4rem;
+    background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
+    border: none;
+    border-radius: 12px;
+    color: #121212;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: 0 6px 20px rgba(192, 192, 192, 0.5);
+  }
+  
+  /* Button hover state with subtle glow */
+  button:hover{
+    background: linear-gradient(135deg, #a8a8a8, #c0c0c0);
+    box-shadow: 0 8px 24px rgba(192, 192, 192, 0.6);
+  }
+  /* Button disabled state with muted appearance */
+  button[disabled] {
+    background: #444444;    
+    color: #888888;
+    cursor: not-allowed;
+  }
+  /* Button hover state with subtle glow */
+  button:hover{
+    background: linear-gradient(135deg, #a8a8a8, #c0c0c0);
+    box-shadow: 0 8px 24px rgba(192, 192, 192, 0.6);
+  }

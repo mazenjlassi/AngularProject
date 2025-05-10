@@ -1,1 +1,35 @@
-<p>signup works!</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Car Registration</title>
+</head>
+<body>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <h2>Register to Buy Luxury Cars</h2>
+  
+    <div class="input-group">
+      <label for="fullName">Full Name</label>
+      <input id="fullName" formControlName="fullName" type="text" placeholder="John Doe">
+    </div>
+  
+    <div class="input-group">
+      <label for="phoneNumber">Phone Number</label>
+      <input id="phoneNumber" formControlName="phoneNumber" type="text" placeholder="+1234567890">
+    </div>
+  
+    <div class="input-group">
+      <label for="email">Email</label>
+      <input id="email" formControlName="email" type="email" placeholder="john@example.com">
+    </div>
+  
+    <div class="input-group">
+      <label for="password">Password</label>
+      <input id="password" formControlName="password" type="password" placeholder="••••••••">
+    </div>
+  
+    <button type="submit" [disabled]="registerForm.invalid">Register</button>
+  </form>
+</body>
+</html>

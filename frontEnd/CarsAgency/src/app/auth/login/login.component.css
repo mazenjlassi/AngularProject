@@ -1,0 +1,356 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Body styling with enhanced luxury gradient */
+  body {
+    background: linear-gradient(180deg, #121212 0%, #080808 100%);
+    font-family: 'Cinzel', serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #e6e6e6;
+    overflow-x: hidden;
+    position: relative;
+  }
+  
+  /* Luxurious body overlay */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top left, rgba(192, 192, 192, 0.15) 0%, transparent 60%);
+    z-index: -1;
+    opacity: 0.8;
+  }
+  
+  /* Form container with premium aesthetic */
+  form {
+    background: linear-gradient(145deg, #1c1c1c, #141414);
+    padding: 3.5rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9), inset 0 0 15px rgba(192, 192, 192, 0.15);
+    width: 100%;
+    max-width: 480px;
+    border: 1px solid rgba(192, 192, 192, 0.3);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  /* Form hover transformation */
+  form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 24px 72px rgba(0, 0, 0, 0.95), inset 0 0 18px rgba(192, 192, 192, 0.2);
+  }
+  
+  /* Form background overlay with subtle silver shimmer */
+  form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(192, 192, 192, 0.08) 0%, transparent 75%);
+    z-index: -1;
+  }
+  
+  /* Heading with regal typography */
+  h2 {
+    font-family: 'Cinzel', serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: #c0c0c0;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 3rem;
+    text-align: center;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.6), 0 0 10px rgba(192, 192, 192, 0.3);
+    position: relative;
+  }
+  
+  /* Heading underline with gradient flourish */
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #c0c0c0, transparent);
+    box-shadow: 0 0 8px rgba(192, 192, 192, 0.5);
+  }
+  
+  /* Input group with refined spacing */
+  .input-group {
+    margin-bottom: 2.5rem;
+    position: relative;
+  }
+  
+  /* Labels with elegant typography */
+  label {
+    display: block;
+    font-family: 'Lora', serif;
+    font-size: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Label hover effect with subtle lift */
+  label:hover {
+    color: #c0c0c0;
+    transform: translateY(-2px);
+  }
+  
+  /* Inputs with premium look */
+  input {
+    width: 100%;
+    padding: 1.2rem;
+    border: none;
+    border-radius: 12px;
+    background: #222222;
+    color: #e6e6e6;
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    transition: all 0.5s ease;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.4), 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Input focus state with glowing border */
+  input:focus {
+    outline: none;
+    background: #2a2a2a;
+    box-shadow: 0 0 15px rgba(192, 192, 192, 0.5), inset 0 0 8px rgba(192, 192, 192, 0.3);
+    border: 1px solid #c0c0c0;
+  }
+  
+  /* Input placeholder with refined style */
+  input::placeholder {
+    color: #999;
+    font-style: italic;
+    font-size: 1rem;
+    opacity: 0.6;
+  }
+  
+  /* Input hover state */
+  input:hover {
+    background: #2a2a2a;
+    box-shadow: 0 0 12px rgba(192, 192, 192, 0.3);
+  }
+  
+  /* Button with opulent design */
+  button {
+    width: 100%;
+    padding: 1.4rem;
+    background: linear-gradient(135deg, #c0c0c0, #a8a8a8);
+    border: none;
+    border-radius: 12px;
+    color: #121212;
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    box-shadow: 0 6px 20px rgba(192, 192, 192, 0.5), inset 0 0 10px rgba(192, 192, 192, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Button hover effect with lift and glow */
+  button:hover {
+    background: linear-gradient(135deg, #a8a8a8, #c0c0c0);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(192, 192, 192, 0.7);
+  }
+  
+  /* Button disabled state */
+  button:disabled {
+    background: #555;
+    color: #999;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+  }
+  
+  /* Button ripple effect */
+  button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.7s ease, height 0.7s ease;
+  }
+  
+  /* Button hover ripple */
+  button:hover::before {
+    width: 350px;
+    height: 350px;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 480px) {
+    form {
+      padding: 2.5rem;
+      margin: 2rem;
+      border-radius: 16px;
+    }
+  
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 2.5rem;
+    }
+  
+    .input-group {
+      margin-bottom: 2rem;
+    }
+  
+    input {
+      padding: 1rem;
+      font-size: 1rem;
+    }
+  
+    button {
+      padding: 1.2rem;
+      font-size: 1.2rem;
+    }
+  
+    label {
+      font-size: 0.95rem;
+    }
+  }
+  
+  /* Animations for elegant transitions */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  form {
+    animation: fadeInUp 1s ease-out forwards;
+  }
+  
+  /* Input group staggered animation */
+  .input-group {
+    animation: fadeInUp 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+    opacity: 0;
+  }
+  
+  /* Input focus underline animation */
+  input:focus::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background: #c0c0c0;
+    transition: width 0.5s ease;
+    transform: translateX(-50%);
+  }
+  
+  input:focus::after {
+    width: 90%;
+  }
+  
+  /* Typography refinements */
+  h2 {
+    line-height: 1.5;
+    font-kerning: normal;
+    text-rendering: optimizeLegibility;
+  }
+  
+  label {
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+  }
+  
+  input {
+    letter-spacing: 0.8px;
+    font-kerning: normal;
+  }
+  
+  button {
+    letter-spacing: 1.5px;
+    font-kerning: normal;
+  }
+  
+  /* Subtle border enhancements */
+  form {
+    border-top: 1px solid rgba(192, 192, 192, 0.3);
+    border-bottom: 1px solid rgba(192, 192, 192, 0.3);
+  }
+  
+  /* Input group separation with elegant divider */
+  .input-group:not(:last-child)::after {
+    content: '';
+    display: block;
+    width: 85%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #555, transparent);
+    margin: 1.5rem auto;
+  }
+  
+  /* Accessibility enhancements */
+  input:focus {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  
+  button:focus {
+    outline: 3px solid #c0c0c0;
+    outline-offset: 3px;
+  }
+  
+  /* High-resolution display support */
+  @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    form {
+      box-shadow: 0 22px 66px rgba(0, 0, 0, 0.95), inset 0 0 16px rgba(192, 192, 192, 0.18);
+    }
+  
+    button {
+      box-shadow: 0 8px 22px rgba(192, 192, 192, 0.6);
+    }
+  }
+  
+  /* Print styles for clean output */
+  @media print {
+    body {
+      background: none;
+    }
+  
+    form {
+      box-shadow: none;
+      border: 1px solid #000;
+    }
+  
+    button {
+      background: #c0c0c0;
+    }
+  }

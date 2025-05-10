@@ -10,6 +10,8 @@ import { CarFormComponent } from './admin/components/car-management/car-form/car
 import { CarListAdminComponent } from './admin/components/car-management/car-list/car-list-admin/car-list-admin.component';
 import { SavedCarsComponent } from './customer/saved-cars/saved-cars.component';
 import { PurchasedCarsComponent } from './customer/purchased-cars/purchased-cars.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,10 @@ const routes: Routes = [
   {path: 'admin/car/new',component:CarFormComponent},
   {path: 'admin/cars',component:CarListAdminComponent},
   {path: 'customer/saved-cars', component: SavedCarsComponent},
-  {path: 'customer/purchased-cars', component: PurchasedCarsComponent}
+  {path: 'customer/purchased-cars', component: PurchasedCarsComponent},
+  {path: 'auth/signup', component: SignupComponent},
+  {path: 'auth/login', component: LoginComponent}
+
 ];
 
 @NgModule({
