@@ -15,7 +15,10 @@ public class CarService {
 
     public Car add(Car car ){return carRepository.save(car);}
 
-    public Car find(Long id){return  carRepository.findById(id).get();}
+    public Car find(Long id) {
+        return carRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Car with ID " + id + " not found"));
+    }
 
     public void delete(Long id){carRepository.deleteById(id);}
 

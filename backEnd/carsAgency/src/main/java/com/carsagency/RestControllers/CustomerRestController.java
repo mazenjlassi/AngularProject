@@ -83,21 +83,40 @@ public class CustomerRestController {
         }
     }
 
+    @PostMapping("/saveCars")
+    public ResponseEntity<?> saveCar(@RequestParam Long idCar, @RequestParam Long idCustomer) {
+        try {
+            Car car = carService.find(idCar);
+            Customer customer = customerService.find(idCustomer);
+
+            if (!customer.getSavedCars().contains(car)) {
+                customer.getSavedCars().add(car);
+                customerService.add(customer); // Persist the customer with updated savedCars list
+            }
+
+            return ResponseEntity.ok("Car saved successfully!");
+        } catch (Exception e) {
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error saving car: " + e.getMessage());
+        }
+    }
+
 
     @GetMapping("/SavedCars/{id}")
     public ResponseEntity<?> SavedCar(@PathVariable Long id) {
         try {
             List<Car> savedCars = carService.SavedCar(id);
 
-            if (savedCars.isEmpty()) {
-                return new ResponseEntity<>(HttpStatus.NO_CONTENT);
-            }
+            System.out.println("DEBUG - Saved cars found: " + savedCars.size()); // ✅ Log it
+
             return new ResponseEntity<>(savedCars, HttpStatus.OK);
         } catch (Exception e) {
+            e.printStackTrace(); // ✅ Always log the stack trace
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-
     }
+
 
     @PostMapping("/Signup")
     public ResponseEntity<Customer> Signup(@RequestBody Customer customer) {

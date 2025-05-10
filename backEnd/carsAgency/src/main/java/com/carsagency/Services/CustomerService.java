@@ -2,6 +2,7 @@ package com.carsagency.Services;
 
 
 import com.carsagency.Repositories.CustomerRepository;
+import com.carsagency.models.Car;
 import com.carsagency.models.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,8 @@ public class CustomerService {
     }
 
     public Customer find(Long id) {
-        return customerRepository.findById(id).get();
+        return customerRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Customer with ID " + id + " not found"));
     }
 
     public void delete(Long id) {
@@ -33,4 +35,14 @@ public class CustomerService {
     public List<Customer> findAll() {
         return customerRepository.findAll();
     }
+
+    public List<Car> SavedCar(Long customerId) {
+        Customer customer = customerRepository.findCustomerWithSavedCars(customerId);
+        if (customer == null) {
+            throw new RuntimeException("Customer not found");
+        }
+        return customer.getSavedCars();
+    }
+
+
 }
