@@ -4,9 +4,24 @@
     <form (ngSubmit)="submitCar()" class="space-y-6">
 
       <!-- Image -->
-      <div>
-        <label class="block mb-2">Car Image Path</label>
-        <input type="text" [(ngModel)]="car.img" name="img" class="input-field">
+      <div class="form-group">
+        <label>Images (up to 4):</label>
+        <button type="button" (click)="triggerFileInput(fileInput)">Select Images</button>
+        <input #fileInput type="file" (change)="onFileSelected($event)" multiple hidden>
+      </div>
+
+      <!-- Image Previews -->
+      <div class="image-previews flex flex-wrap gap-4">
+        <div *ngFor="let url of previewUrls; let i = index" class="image-preview-item relative">
+          <img [src]="url" alt="Selected Image" class="max-w-xs h-auto">
+          <button
+            type="button"
+            (click)="removeImage(i)"
+            class="absolute top-0 right-0 bg-red-500 text-white rounded-full w-6 h-6 flex items-center justify-center"
+          >
+            ×
+          </button>
+        </div>
       </div>
 
       <!-- Model -->

@@ -1,7 +1,9 @@
 package com.carsagency.Services;
 
 
+import com.carsagency.Repositories.BrandRepository;
 import com.carsagency.Repositories.CarRepository;
+import com.carsagency.models.Brand;
 import com.carsagency.models.Car;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,21 @@ import java.util.List;
 public class CarService {
     @Autowired
     private CarRepository carRepository;
+
+    @Autowired
+    private BrandRepository brandRepository; // inject brand repo
+
+    public Car addCar(Car car) {
+        // Fetch the real Brand entity
+        if (car.getBrand() != null && car.getBrand().getId() != null) {
+            Brand brand = brandRepository.findById(car.getBrand().getId())
+                    .orElseThrow(() -> new RuntimeException("Brand not found with ID: " + car.getBrand().getId()));
+            car.setBrand(brand);
+        } else {
+            car.setBrand(null);
+        }
+        return carRepository.save(car);
+    }
 
     public Car add(Car car ){return carRepository.save(car);}
 

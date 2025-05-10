@@ -1,5 +1,6 @@
 package com.carsagency.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -15,5 +16,6 @@ public class Brand {
     private String image;
 
     @OneToMany(mappedBy = "brand")
+    @JsonIgnore
     private List<Car> cars;
 }

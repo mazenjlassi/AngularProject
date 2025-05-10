@@ -31,6 +31,7 @@ selectedImage: string = '';
     this.carService.getCarById(id).subscribe(car => {
       this.car = car;
       this.selectedImage = this.car.img;
+      console.log(this.car);
     });
 
   }

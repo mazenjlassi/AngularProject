@@ -20,7 +20,7 @@ public class CarRestController {
     @PostMapping("/add")
     public ResponseEntity<Car> add(@RequestBody Car cars) {
         try {
-            carService.add(cars);
+            carService.addCar(cars);
             return new ResponseEntity<>(cars, HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
@@ -28,7 +28,7 @@ public class CarRestController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Car>> all() {
+    public ResponseEntity<?> all() {
         try {
             List<Car> carsList = carService.findAll();
             if (carsList.isEmpty()) {
