@@ -1,6 +1,7 @@
 package com.carsagency.models;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 import jakarta.persistence.*;
 import lombok.Data;
 import java.util.List;
@@ -23,8 +24,8 @@ public class Car {
     private double price;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "brand_id")
+    @JsonIncludeProperties({"id", "name", "image"})
     private Brand brand;
 
     private Integer horsepower;

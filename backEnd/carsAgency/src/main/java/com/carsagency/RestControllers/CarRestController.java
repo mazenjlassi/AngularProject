@@ -28,7 +28,7 @@ public class CarRestController {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<Car>> all() {
+    public ResponseEntity<?> all() {
         try {
             List<Car> carsList = carService.findAll();
             if (carsList.isEmpty()) {
