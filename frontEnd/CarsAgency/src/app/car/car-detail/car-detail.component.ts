@@ -68,6 +68,34 @@ selectedImage: string = '';
   
 
 
+  purchaseCar() {
+    const idCustomer = localStorage.getItem('id');
+    this.carId = Number(this.route.snapshot.paramMap.get('id'));
+
+    if (!idCustomer || !this.carId) {
+      this.message = 'Car ID or Customer ID is missing.';
+      console.error('Missing IDs:', { carId: this.carId, idCustomer });
+      return;
+    }
+
+    const params = new HttpParams()
+      .set('idCar', this.carId.toString())
+      .set('idCustomer', idCustomer);
+
+    this.http.post('http://localhost:8080/Customer/purchaseCars', null, { params, responseType: 'text' })
+      .subscribe({
+        next: response => {
+          console.log('Success:', response);
+          this.message = response;
+        },
+        error: err => {
+          console.error('Error:', err);
+          this.message = 'Error: ' + err.error;
+        }
+      });
+  }
+
+
   }
 
 

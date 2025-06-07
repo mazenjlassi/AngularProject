@@ -20,6 +20,7 @@ import { SavedCarsComponent } from './customer/saved-cars/saved-cars.component';
 import { PurchasedCarsComponent } from './customer/purchased-cars/purchased-cars.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
+import { CapitalizePipe } from './capitalize.pipe';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { SignupComponent } from './auth/signup/signup.component';
     PurchasedCarsComponent,
     LoginComponent,
     SignupComponent,
+    CapitalizePipe,
     
   ],
   imports: [

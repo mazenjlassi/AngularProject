@@ -12,7 +12,7 @@ import { SavedCarsComponent } from './customer/saved-cars/saved-cars.component';
 import { PurchasedCarsComponent } from './customer/purchased-cars/purchased-cars.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { LoginComponent } from './auth/login/login.component';
-
+import { CapitalizePipe } from './capitalize.pipe';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -26,7 +26,8 @@ const routes: Routes = [
   {path: 'customer/saved-cars', component: SavedCarsComponent},
   {path: 'customer/purchased-cars', component: PurchasedCarsComponent},
   {path: 'auth/signup', component: SignupComponent},
-  {path: 'auth/login', component: LoginComponent}
+  {path: 'auth/login', component: LoginComponent},
+  {path: 'capitalize', component: CapitalizePipe}
 
 ];
 
@@ -35,5 +36,7 @@ const routes: Routes = [
   exports: [RouterModule]
 
 })
+
 export class AppRoutingModule {
 }
+
