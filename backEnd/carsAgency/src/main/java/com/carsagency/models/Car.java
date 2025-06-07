@@ -42,13 +42,10 @@ public class Car {
     private Double topSpeed;
     private Double torque;
 
-    @ManyToMany
-    @JoinTable(
-            name = "car_saved_by_customer",
-            joinColumns = @JoinColumn(name = "car_id"),
-            inverseJoinColumns = @JoinColumn(name = "customer_id")
-    )
+    @ManyToMany(mappedBy = "savedCars")
+    @JsonIgnore // To avoid infinite loop during serialization
     private List<Customer> savedByCustomers;
+
 
     @ManyToMany
     @JoinTable(

@@ -117,6 +117,40 @@ public class CustomerRestController {
         }
     }
 
+    @PostMapping("/purchaseCars")
+    public ResponseEntity<?> purchaseCar(@RequestParam Long idCar, @RequestParam Long idCustomer) {
+        try {
+            Car car = carService.find(idCar);
+            Customer customer = customerService.find(idCustomer);
+
+            if (!customer.getPurchasedCars().contains(car)) {
+                customer.getPurchasedCars().add(car);
+                customerService.add(customer);
+            }
+
+            return ResponseEntity.ok("Car purchased successfully!");
+        } catch (Exception e) {
+            return ResponseEntity
+                    .status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body("Error purchase car: " + e.getMessage());
+        }
+    }
+
+    @GetMapping("/PurchasedCars/{id}")
+    public ResponseEntity<?> PurchasedCar(@PathVariable Long id) {
+        try {
+            List<Car> purchasedCar = carService.PurchasedCar(id);
+
+            System.out.println("DEBUG - Saved cars found: " + purchasedCar.size()); // ✅ Log it
+
+            return new ResponseEntity<>(purchasedCar, HttpStatus.OK);
+        } catch (Exception e) {
+            e.printStackTrace(); // ✅ Always log the stack trace
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+
 
     @PostMapping("/Signup")
     public ResponseEntity<Customer> Signup(@RequestBody Customer customer) {

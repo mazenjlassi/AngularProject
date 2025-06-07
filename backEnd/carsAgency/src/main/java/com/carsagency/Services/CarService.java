@@ -47,6 +47,11 @@ public class CarService {
     {
         return carRepository.findCarsBySavedByCustomers_Id(id);
     }
+    public List<Car> PurchasedCar(Long id)
+    {
+        return carRepository.findCarsByPurchasedByCustomers_Id(id);
+    }
+
 
 
 

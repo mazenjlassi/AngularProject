@@ -3,6 +3,7 @@ package com.carsagency.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,7 +24,8 @@ public class Customer {
             joinColumns = @JoinColumn(name = "customer_id"),
             inverseJoinColumns = @JoinColumn(name = "car_id")
     )
-    private List<Car> savedCars;
+    private List<Car> savedCars = new ArrayList<>();
+
 
     @ManyToMany
     @JoinTable(

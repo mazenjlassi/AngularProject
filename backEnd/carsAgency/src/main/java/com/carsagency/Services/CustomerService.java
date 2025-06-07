@@ -44,5 +44,23 @@ public class CustomerService {
         return customer.getSavedCars();
     }
 
+    public List<Car> PurchasedCar(Long customerId) {
+        Customer customer = customerRepository.findCustomerWithPurchasedCars(customerId);
+
+        if (customer == null) {
+            throw new RuntimeException("Customer not found");
+        }
+
+        System.out.println("Customer ID: " + customer.getId());
+        System.out.println("Number of purchased cars: " + customer.getPurchasedCars().size());
+
+        for (Car car : customer.getPurchasedCars()) {
+            System.out.println("Car ID: " + car.getId() + ", Model: " + car.getModel());
+        }
+
+        return customer.getPurchasedCars();
+    }
+
+
 
 }
